@@ -12,20 +12,27 @@ const titleMap = {
 export default function Topbar({ pathname }) {
   const title = titleMap[pathname] || "Dashboard";
   const { theme, toggleTheme } = useTheme();
+  
+  // Check if we're on the edit project page
+  const isEditPage = pathname.includes("/edit");
 
   return (
     <div className="topbar">
       <div className="row space">
-        <div className="stack" style={{ gap: 2 }}>
-          <div className="h1">{title}</div>
-        </div>
-
-        <div className="row" style={{ gap: 10 }}>
-          <div className="search">
-            <Search size={16} />
-            <input className="searchInput" placeholder="Search projects, candidates…" />
-            <kbd>⌘K</kbd>
+        {!isEditPage && (
+          <div className="stack" style={{ gap: 2 }}>
+            <div className="h1">{title}</div>
           </div>
+        )}
+
+        <div className="row" style={{ gap: 10, marginLeft: isEditPage ? 0 : "auto" }}>
+          {!isEditPage && (
+            <div className="search">
+              <Search size={16} />
+              <input className="searchInput" placeholder="Search projects, candidates…" />
+              <kbd>⌘K</kbd>
+            </div>
+          )}
 
           <button
             className="btn btnGhost"
