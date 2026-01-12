@@ -132,18 +132,21 @@ export default function Dashboard() {
 
         {d.activeRun ? (
           <>
-            <div style={{ 
-              background: "var(--card2)", 
-              padding: 16, 
-              borderRadius: 8, 
-              marginBottom: 20,
-              border: "1px solid var(--border)"
-            }}>
-              <div style={{ fontSize: 15, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>
-                {getDetailedStatus(d.activeRun.step, d.activeRun.progress)}
-              </div>
-              <div style={{ fontSize: 13, color: "var(--muted2)" }}>
-                Processing your request...
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>
+              <div style={{ 
+                background: "var(--card2)", 
+                padding: 16, 
+                borderRadius: 8, 
+                border: "1px solid var(--border)",
+                width: "50%",
+                textAlign: "center"
+              }}>
+                <div style={{ fontSize: 15, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>
+                  {getDetailedStatus(d.activeRun.step, d.activeRun.progress)}
+                </div>
+                <div style={{ fontSize: 13, color: "var(--muted2)" }}>
+                  Processing your request...
+                </div>
               </div>
             </div>
 
