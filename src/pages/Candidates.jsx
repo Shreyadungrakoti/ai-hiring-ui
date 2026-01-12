@@ -134,7 +134,7 @@ export default function Candidates() {
           <tbody>
             {sortedCandidates.map((c) => (
               <tr key={c.id}>
-                <td>
+                <td style={{ verticalAlign: "middle" }}>
                   <a 
                     href={c.linkedin} 
                     target="_blank" 
@@ -147,7 +147,7 @@ export default function Candidates() {
                     </div>
                   </a>
                 </td>
-                <td>
+                <td style={{ verticalAlign: "middle" }}>
                   <span 
                     className="pill"
                     style={{ 
@@ -160,8 +160,8 @@ export default function Candidates() {
                     {c.score.toFixed(1)}
                   </span>
                 </td>
-                <td>{c.project}</td>
-                <td className="right">
+                <td style={{ verticalAlign: "middle" }}>{c.project}</td>
+                <td className="right" style={{ verticalAlign: "middle" }}>
                   {c.inmail_sent ? (
                     <span className="pill" style={{ background: "#10b981", color: "#ffffff", border: "none" }}>
                       Sent
