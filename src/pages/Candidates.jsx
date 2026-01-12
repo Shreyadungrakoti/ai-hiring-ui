@@ -125,10 +125,10 @@ export default function Candidates() {
         <table className="table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Score</th>
-              <th>Project</th>
-              <th className="right">InMail option</th>
+              <th style={{ verticalAlign: "middle" }}>Name</th>
+              <th style={{ verticalAlign: "middle" }}>Score</th>
+              <th style={{ verticalAlign: "middle" }}>Project</th>
+              <th className="right" style={{ verticalAlign: "middle" }}>InMail option</th>
             </tr>
           </thead>
           <tbody>
