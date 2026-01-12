@@ -32,6 +32,47 @@ body{
 }
 
 a{ color:inherit; text-decoration:none; }
+
+.candidateLink{
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.candidateLink:hover{
+  color: var(--accent);
+}
+
+.projectNameLink{
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.projectNameLink:hover{
+  color: var(--accent);
+}
+
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
 button, input, textarea, select{ font:inherit; }
 ::selection{ background: rgba(110,231,255,0.25); }
 
@@ -1172,6 +1213,7 @@ html[data-theme="light"] .d2ChartBar{
 .d2Strong{ font-weight: 600; color: var(--text); }
 .d2Muted{ color: var(--muted2); font-weight: 500; font-size: 12px; }
 .right{ text-align:right !important; }
+.center{ text-align:center !important; }
 
 .d2Pill{
   display:inline-flex;
@@ -1238,7 +1280,134 @@ html[data-theme="light"] .d2ChartBar{
 }
 .d2GhostBtn:hover{ background: var(--card2); }
 
+.d2VerticalCharts{
+  display: flex;
+  gap: 32px;
+  padding-top: 16px;
+}
+.d2VerticalChartGroup{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.d2ChartGroupTitle{
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+}
+.d2VerticalBars{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 8px;
+  height: 180px;
+  padding: 12px 12px 0 12px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+.d2VerticalBarCol{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  justify-content: flex-end;
+}
+.d2VerticalBar{
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  transition: height 0.3s ease;
+  min-height: 20px;
+}
+.d2VerticalBarValue{
+  color: white;
+}
+.d2VerticalBarLabel{
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted2);
+  padding-bottom: 8px;
+}
+
+.d2SearchWrap{
+  margin-bottom: 24px;
+}
+.d2SearchInput{
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  background-size: 20px;
+}
+.d2SearchInput::placeholder{
+  color: var(--muted2);
+}
+.d2SearchInput:focus{
+  border-color: var(--accent);
+}
+
+/* Modal styles */
+.modalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent{
+  background: #1a1d29;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+/* Danger button */
+.btnDanger{
+  background: #dc2626 !important;
+  color: white !important;
+  border-color: #dc2626 !important;
+}
+
+.btnDanger:hover{
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+.btnDanger:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media (max-width: 1100px){
   .d2Tiles{ grid-template-columns: repeat(2, 1fr); }
   .d2GridRow{ grid-template-columns: 1fr; }
+  .d2Grid3Charts{ grid-template-columns: 1fr !important; }
 }

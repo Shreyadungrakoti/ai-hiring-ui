@@ -10,7 +10,7 @@ const titleMap = {
 };
 
 export default function Topbar({ pathname }) {
-  const title = titleMap[pathname] || "Recruiter Console";
+  const title = titleMap[pathname] || "Dashboard";
   const { theme, toggleTheme } = useTheme();
 
   return (

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api.js";
 import { useAuth } from "../state/auth.jsx";
+import { Play, Trash2, ExternalLink } from "lucide-react";
 
 export default function Projects() {
   const { auth } = useAuth();
@@ -9,6 +10,7 @@ export default function Projects() {
 
   const [projects, setProjects] = useState([]);
   const [deletingId, setDeletingId] = useState(null);
+  const [runAgainProject, setRunAgainProject] = useState(null);
 
   const refresh = async () => {
     const list = await api.listProjects({ token: auth.token });
@@ -33,70 +35,154 @@ export default function Projects() {
     }
   };
 
+  const handleRunAgain = (project) => {
+    setRunAgainProject(project);
+  };
+
+  const confirmRunAgain = () => {
+    // Here you would call the API to start a new run
+    console.log(`Starting new run for project ${runAgainProject.id} with ${runAgainProject.target_profiles} target profiles`);
+    setRunAgainProject(null);
+    // TODO: Call API to start run
+  };
+
+  const getStatusPill = (status) => {
+    const colors = {
+      active: { bg: "#10b981", text: "Active" },
+      completed: { bg: "#3b82f6", text: "Completed" },
+      paused: { bg: "#f59e0b", text: "Paused" },
+    };
+    const style = colors[status] || colors.active;
+    return (
+      <span style={{ 
+        background: style.bg, 
+        color: "#ffffff", 
+        padding: "6px 12px", 
+        borderRadius: "6px", 
+        fontSize: "13px", 
+        fontWeight: 600 
+      }}>
+        {style.text}
+      </span>
+    );
+  };
+
   return (
-    <div className="card" style={{ padding: 16 }}>
-      <div className="row space">
-        <div className="h2">Recruiting projects</div>
-        <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
-          Create project
-        </button>
-      </div>
+    <>
+      <div className="card" style={{ padding: 16 }}>
+        <div className="row space">
+          <div className="h2">Recruiting projects</div>
+          <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
+            Create project
+          </button>
+        </div>
 
-      <div className="hr" />
+        <div className="hr" />
 
-      <div className="tableWrap">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Project</th>
-              <th>Candidates</th>
-              <th className="right">Updated</th>
-              <th className="right">Actions</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {projects.map((p) => (
-              <tr key={p.id}>
-                <td>
-                  <div className="cellMain">{p.name}</div>
-                  <div className="cellSub">Track sourcing + outreach here</div>
-                </td>
-
-                <td>{p.candidates}</td>
-                <td className="right">{p.updated_at}</td>
-
-                <td className="right">
-                  <div className="row" style={{ justifyContent: "flex-end", gap: 8 }}>
-                    <button className="btn btnSmall" onClick={() => nav(`/projects/${p.id}`)}>
-                      Open
-                    </button>
-
-                    <button
-                      className="btn btnSmall"
-                      onClick={() => onDelete(p)}
-                      disabled={deletingId === p.id}
-                      title="Delete project"
-                    >
-                      {deletingId === p.id ? "Deleting…" : "Delete"}
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-
-            {projects.length === 0 ? (
+        <div className="tableWrap">
+          <table className="table">
+            <thead>
               <tr>
-                <td colSpan={4}>
-                  <div className="small muted" style={{ padding: 12 }}>
-                    No projects yet. Create one to get started.
-                  </div>
-                </td>
+                <th>Project name</th>
+                <th style={{ textAlign: "center" }}>Shortlisted</th>
+                <th style={{ textAlign: "center" }}>Candidates screened</th>
+                <th style={{ textAlign: "center" }}>Status</th>
+                <th style={{ textAlign: "center" }}>Actions</th>
               </tr>
-            ) : null}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {projects.map((p) => (
+                <tr key={p.id}>
+                  <td>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                      <button 
+                        className="cellMain projectNameLink" 
+                        onClick={() => nav(`/projects/${p.id}/edit`)}
+                        style={{ background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left" }}
+                      >
+                        {p.name}
+                      </button>
+                      {p.linkedin_url && (
+                        <a 
+                          href={p.linkedin_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="candidateLink"
+                          style={{ fontSize: 12, display: "flex", alignItems: "center", gap: 4 }}
+                        >
+                          LinkedIn Project <ExternalLink size={12} style={{ opacity: 0.6 }} />
+                        </a>
+                      )}
+                    </div>
+                  </td>
+
+                  <td style={{ textAlign: "center" }}>{p.shortlisted || 0}</td>
+                  <td style={{ textAlign: "center" }}>{p.screened || 0}</td>
+                  <td style={{ textAlign: "center" }}>{getStatusPill(p.status || "active")}</td>
+
+                  <td style={{ textAlign: "center" }}>
+                    <div className="row" style={{ justifyContent: "center", gap: 8 }}>
+                      <button 
+                        className="btn btnSmall btnPrimary" 
+                        onClick={() => handleRunAgain(p)}
+                        title="Run again"
+                        style={{ display: "flex", alignItems: "center", gap: 6 }}
+                      >
+                        <Play size={16} fill="currentColor" />
+                        Run again
+                      </button>
+
+                      <button
+                        className="btn btnSmall"
+                        onClick={() => onDelete(p)}
+                        disabled={deletingId === p.id}
+                        title="Delete project"
+                        style={{ color: "#ef4444" }}
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+
+              {projects.length === 0 ? (
+                <tr>
+                  <td colSpan={5}>
+                    <div className="small muted" style={{ padding: 12 }}>
+                      No projects yet. Create one to get started.
+                    </div>
+                  </td>
+                </tr>
+              ) : null}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+
+      {/* Run Again Confirmation Modal */}
+      {runAgainProject && (
+        <div className="modal-overlay" onClick={() => setRunAgainProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="h2">Confirm Run Again</div>
+            <div className="hr" />
+            <p style={{ margin: "16px 0" }}>
+              Start a new run for <strong>{runAgainProject.name}</strong> with{" "}
+              <strong>{runAgainProject.target_profiles || 25}</strong> target profiles?
+            </p>
+            <div className="row" style={{ justifyContent: "flex-end", gap: 8 }}>
+              <button className="btn" onClick={() => setRunAgainProject(null)}>
+                Cancel
+              </button>
+              <button className="btn btnPrimary" onClick={confirmRunAgain}>
+                <Play size={16} />
+                Start Run
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

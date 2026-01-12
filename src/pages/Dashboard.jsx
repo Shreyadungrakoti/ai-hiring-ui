@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api.js";
 import { useAuth } from "../state/auth.jsx";
-import { FolderKanban, Activity, Users, Clock, ArrowUpRight } from "lucide-react";
+import { FolderKanban, Activity, Users, Clock, ArrowUpRight, TrendingUp, Target } from "lucide-react";
 
 function fmtDuration(sec) {
   if (!Number.isFinite(sec)) return "—";
@@ -21,6 +21,20 @@ function StatusPill({ status }) {
     status === "running" ? "warn" : status === "done" ? "good" : status === "failed" ? "bad" : "neutral";
   const displayText = status ? status.charAt(0).toUpperCase() + status.slice(1) : "Idle";
   return <span className={`d2Pill d2Pill-${tone}`}>{displayText}</span>;
+}
+
+function getDetailedStatus(step, progress) {
+  const statuses = {
+    parse: "Analyzing job description...",
+    search: "Generating search queries...",
+    scrape: "Screening candidates...",
+    score: "Scoring candidate matches...",
+    rank: "Ranking top candidates...",
+    message: "Generating outreach messages...",
+  };
+  
+  if (progress >= 1) return "Run completed successfully";
+  return statuses[step] || "Initializing...";
 }
 
 export default function Dashboard() {
@@ -70,12 +84,6 @@ export default function Dashboard() {
 
   return (
     <div className="d2Wrap">
-      {/* Big page heading (separate from topbar) */}
-      <div className="d2PageHeader">
-        <div className="d2PageTitle">Dashboard</div>
-        <div className="d2PageSub">Project performance and AI pipeline status</div>
-      </div>
-
       {/* KPI tiles */}
       <div className="d2Tiles">
         <div className="d2Tile">
@@ -115,60 +123,142 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Two-row grid layout - 4 columns matching tiles above */}
-      <div className="d2GridRow">
-        {/* Running now - spans 2 columns */}
-        <div className="d2Panel d2Span2">
-          <div className="d2PanelHeader">
-            <div className="d2Title">Running now</div>
-            <StatusPill status={d.activeRun?.status || "idle"} />
-          </div>
-
-          {d.activeRun ? (
-            <>
-              <div className="d2KeyVals">
-                <div className="d2KV">
-                  <div className="d2KVk">Project</div>
-                  <div className="d2KVv">
-                    {projects.find((p) => p.id === d.activeRun.project_id)?.name || d.activeRun.role || "—"}
-                  </div>
-                </div>
-                <div className="d2KV">
-                  <div className="d2KVk">Step</div>
-                  <div className="d2KVv">{(d.activeRun.step || "—").charAt(0).toUpperCase() + (d.activeRun.step || "").slice(1)}</div>
-                </div>
-                <div className="d2KV">
-                  <div className="d2KVk">Time taken</div>
-                  <div className="d2KVv">{fmtDuration(Number(d.activeRun.duration_sec))}</div>
-                </div>
-                <div className="d2KV">
-                  <div className="d2KVk">Screening limit</div>
-                  <div className="d2KVv">{d.activeRun.max_profiles ?? "—"}</div>
-                </div>
-                <div className="d2KV">
-                  <div className="d2KVk">Started</div>
-                  <div className="d2KVv">{d.activeRun.created_at || "—"}</div>
-                </div>
-              </div>
-
-              <div className="d2Progress">
-                <div className="d2ProgressTrack">
-                  <div
-                    className="d2ProgressFill"
-                    style={{ width: `${Math.max(0, Math.min(100, Math.round((Number(d.activeRun.progress) || 0) * 100)))}%` }}
-                  />
-                </div>
-                <div className="d2Muted" style={{ fontSize: 12, fontWeight: 600 }}>
-                  {Math.round((Number(d.activeRun.progress) || 0) * 100)}% complete
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="d2Muted">No active run.</div>
-          )}
+      {/* Running now - full width */}
+      <div className="d2Panel">
+        <div className="d2PanelHeader" style={{ marginBottom: 20 }}>
+          <div className="d2Title">Running now</div>
+          <StatusPill status={d.activeRun?.status || "idle"} />
         </div>
 
-        {/* Recent runs - spans 2 columns */}
+        {d.activeRun ? (
+          <>
+            <div style={{ 
+              background: "var(--card2)", 
+              padding: 16, 
+              borderRadius: 8, 
+              marginBottom: 20,
+              border: "1px solid var(--border)"
+            }}>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>
+                {getDetailedStatus(d.activeRun.step, d.activeRun.progress)}
+              </div>
+              <div style={{ fontSize: 13, color: "var(--muted2)" }}>
+                Processing your request...
+              </div>
+            </div>
+
+            <div className="d2KeyVals" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: "16px 24px", marginBottom: 20 }}>
+              <div className="d2KV">
+                <div className="d2KVk">Project</div>
+                <div className="d2KVv">
+                  {projects.find((p) => p.id === d.activeRun.project_id)?.name || d.activeRun.role || "—"}
+                </div>
+              </div>
+              <div className="d2KV">
+                <div className="d2KVk">Time taken</div>
+                <div className="d2KVv">{fmtDuration(Number(d.activeRun.duration_sec))}</div>
+              </div>
+              <div className="d2KV">
+                <div className="d2KVk">Screened candidates</div>
+                <div className="d2KVv">{d.activeRun.screened_count ?? "—"}</div>
+              </div>
+              <div className="d2KV">
+                <div className="d2KVk">Shortlisted</div>
+                <div className="d2KVv">{d.activeRun.qualified_count ?? "—"}</div>
+              </div>
+              <div className="d2KV">
+                <div className="d2KVk">Started</div>
+                <div className="d2KVv">{d.activeRun.created_at || "—"}</div>
+              </div>
+            </div>
+
+            <div className="d2Progress">
+              <div className="d2ProgressTrack">
+                <div
+                  className="d2ProgressFill"
+                  style={{ width: `${Math.max(0, Math.min(100, Math.round((Number(d.activeRun.progress) || 0) * 100)))}%` }}
+                />
+              </div>
+              <div className="d2Muted" style={{ fontSize: 12, fontWeight: 600 }}>
+                {Math.round((Number(d.activeRun.progress) || 0) * 100)}% complete
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="d2Muted">No active run.</div>
+        )}
+      </div>
+
+
+      {/* Analytics - Vertical bar charts */}
+      <div className="d2Panel">
+        <div className="d2PanelHeader">
+          <div className="d2Title">Run activity</div>
+          <div className="d2Tabs">
+            <button className="d2Tab d2TabActive">Weekly</button>
+            <button className="d2Tab">Monthly</button>
+          </div>
+        </div>
+
+        <div className="d2VerticalCharts">
+          <div className="d2VerticalChartGroup">
+            <div className="d2ChartGroupTitle">Total Runs</div>
+            <div className="d2VerticalBars">
+              {d.activityBars.map((v, i) => {
+                const maxBar = Math.max(1, ...d.activityBars);
+                const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
+                return (
+                  <div key={i} className="d2VerticalBarCol">
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "#3b82f6" }}>
+                      <span className="d2VerticalBarValue">{v}</span>
+                    </div>
+                    <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="d2VerticalChartGroup">
+            <div className="d2ChartGroupTitle">Shortlisted</div>
+            <div className="d2VerticalBars">
+              {d.activityBars.map((v, i) => {
+                const maxBar = Math.max(1, ...d.activityBars);
+                const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
+                return (
+                  <div key={i} className="d2VerticalBarCol">
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "#10b981" }}>
+                      <span className="d2VerticalBarValue">{v}</span>
+                    </div>
+                    <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="d2VerticalChartGroup">
+            <div className="d2ChartGroupTitle">Screened</div>
+            <div className="d2VerticalBars">
+              {d.activityBars.map((v, i) => {
+                const maxBar = Math.max(1, ...d.activityBars);
+                const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
+                return (
+                  <div key={i} className="d2VerticalBarCol">
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "#f59e0b" }}>
+                      <span className="d2VerticalBarValue">{v}</span>
+                    </div>
+                    <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent runs and Recent projects side by side */}
+      <div className="d2GridRow">
         <div className="d2Panel d2Span2">
           <div className="d2PanelHeader">
             <div className="d2Title">Recent runs</div>
@@ -178,16 +268,16 @@ export default function Dashboard() {
             <table className="d2Table d2TableCompact">
               <thead>
                 <tr>
-                  <th>Run</th>
-                  <th>Status</th>
+                  <th className="center">Run</th>
+                  <th className="center">Status</th>
                   <th className="right">Time</th>
                 </tr>
               </thead>
               <tbody>
                 {d.recentRuns.slice(0, 4).map((r) => (
                   <tr key={r.id}>
-                    <td className="d2Strong">{r.id}</td>
-                    <td><StatusPill status={r.status} /></td>
+                    <td className="d2Strong center">{r.id}</td>
+                    <td className="center"><StatusPill status={r.status} /></td>
                     <td className="right">{fmtDuration(Number(r.duration_sec))}</td>
                   </tr>
                 ))}
@@ -198,34 +288,7 @@ export default function Dashboard() {
             </table>
           </div>
         </div>
-      </div>
 
-      <div className="d2GridRow">
-        {/* Run activity - spans 2 columns */}
-        <div className="d2Panel d2Span2">
-          <div className="d2PanelHeader">
-            <div className="d2Title">Run activity</div>
-            <div className="d2Tabs">
-              <button className="d2Tab d2TabActive">Week</button>
-              <button className="d2Tab">Month</button>
-            </div>
-          </div>
-
-          <div className="d2Chart d2ChartSmall">
-            {d.activityBars.map((v, i) => {
-              const maxBar = Math.max(1, ...d.activityBars);
-              const h = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
-              return (
-                <div key={i} className="d2ChartCol">
-                  <div className="d2ChartBar" style={{ height: `${h}%` }} />
-                  <div className="d2ChartLabel">{["M","T","W","T","F","S","S"][i]}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Recent projects - spans 2 columns */}
         <div className="d2Panel d2Span2">
           <div className="d2PanelHeader">
             <div className="d2Title">Recent projects</div>

@@ -25,7 +25,53 @@ const LS_PROJECTS_KEY = "ai_hiring_ui_projects_v1";
 function loadProjectsFromLS() {
   try {
     const raw = localStorage.getItem(LS_PROJECTS_KEY);
-    if (!raw) return [];
+    if (!raw) {
+      // Return mock data if no projects exist
+      return [
+        {
+          id: "p_1001",
+          name: "Senior Data Scientist - AI Team",
+          shortlisted: 12,
+          screened: 45,
+          status: "active",
+          jd_text: "We are looking for a Senior Data Scientist...",
+          search_method: "both",
+          target_profiles: 50,
+          channel: "inmail",
+          linkedin_url: "https://linkedin.com/jobs/ai-data-scientist",
+          updated_at: "2 days ago",
+          created_at: "2026-01-10T10:30:00Z",
+        },
+        {
+          id: "p_1002",
+          name: "ML Engineer - Computer Vision",
+          shortlisted: 8,
+          screened: 30,
+          status: "completed",
+          jd_text: "Seeking an experienced ML Engineer...",
+          search_method: "linkedin",
+          target_profiles: 30,
+          channel: "email",
+          linkedin_url: "https://linkedin.com/jobs/ml-engineer-cv",
+          updated_at: "5 days ago",
+          created_at: "2026-01-05T14:20:00Z",
+        },
+        {
+          id: "p_1003",
+          name: "Backend Developer - Python",
+          shortlisted: 15,
+          screened: 60,
+          status: "active",
+          jd_text: "Looking for a skilled Backend Developer...",
+          search_method: "both",
+          target_profiles: 75,
+          channel: "inmail",
+          linkedin_url: "https://linkedin.com/jobs/backend-python",
+          updated_at: "1 day ago",
+          created_at: "2026-01-11T09:15:00Z",
+        },
+      ];
+    }
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch {
@@ -53,6 +99,37 @@ export const api = {
     return created;
   },
 
+  async getProject({ token, projectId }) {
+    // return http(`/api/projects/${projectId}`, { token });
+
+    const current = loadProjectsFromLS();
+    const project = current.find((p) => p.id === projectId);
+    if (!project) throw new Error("Project not found");
+    return project;
+  },
+
+  async updateProject({ token, projectId, payload }) {
+    // return http(`/api/projects/${projectId}`, { method:"PUT", body: payload, token });
+
+    const current = loadProjectsFromLS();
+    const index = current.findIndex((p) => p.id === projectId);
+    if (index === -1) throw new Error("Project not found");
+
+    current[index] = {
+      ...current[index],
+      name: payload.name || current[index].name,
+      jd_text: payload.jd_text || current[index].jd_text,
+      search_method: payload.search_method || current[index].search_method,
+      target_profiles: payload.target_profiles || current[index].target_profiles,
+      channel: payload.channel || current[index].channel,
+      linkedin_url: payload.linkedin_url !== undefined ? payload.linkedin_url : current[index].linkedin_url,
+      updated_at: "Just now",
+    };
+
+    saveProjectsToLS(current);
+    return { ok: true };
+  },
+
   async deleteProject({ token, projectId }) {
   // return http(`/api/projects/${projectId}`, { method:"DELETE", token });
 
@@ -67,21 +144,40 @@ export const api = {
     // return http("/api/projects", { method:"POST", body: payload, token });
 
     const id = "p_" + Math.floor(Math.random() * 9000 + 1000);
+    
+    // Auto-generate project name from JD or use timestamp if not provided
+    const generateName = () => {
+      // Use provided name if available
+      if (payload?.name && payload.name.trim()) {
+        return payload.name.trim();
+      }
+      
+      const jd = payload?.jd_text || "";
+      // Try to extract first meaningful line (often job title)
+      const lines = jd.split("\n").filter(l => l.trim().length > 0);
+      if (lines.length > 0 && lines[0].length < 50) {
+        return lines[0].trim();
+      }
+      // Fallback to date-based name
+      const now = new Date();
+      return `Project ${now.toLocaleDateString()}`;
+    };
 
     const project = {
       id,
-      name: payload?.name || payload?.job_title || "Untitled project",
+      name: generateName(),
       updated_at: "Just now",
       candidates: 0,
+      shortlisted: 0,
+      screened: 0,
+      status: "active",
 
-      // keep extra fields for later (won’t break UI if unused)
-      job_title: payload?.job_title || "",
-      location: payload?.location || "",
+      // keep extra fields for later (won't break UI if unused)
       jd_text: payload?.jd_text || "",
       search_method: payload?.search_method || "both",
-      max_profiles: Number(payload?.max_profiles ?? 25),
-      min_score: Number(payload?.min_score ?? 7),
+      target_profiles: Number(payload?.target_profiles ?? 25),
       channel: payload?.channel || "inmail",
+      linkedin_url: payload?.linkedin_url || "",
       created_at: new Date().toISOString(),
     };
 

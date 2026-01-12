@@ -3,6 +3,7 @@ import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Projects from "./pages/Projects.jsx";
 import NewProject from "./pages/NewProject.jsx";
+import ProjectEdit from "./pages/ProjectEdit.jsx";
 import RunDetail from "./pages/RunDetail.jsx";
 import Candidates from "./pages/Candidates.jsx";
 import Settings from "./pages/Settings.jsx";
@@ -26,6 +27,7 @@ export default function App() {
         <Route index element={<Dashboard />} />
         <Route path="projects" element={<Projects />} />
         <Route path="projects/new" element={<NewProject />} />
+        <Route path="projects/:projectId/edit" element={<ProjectEdit />} />
         
         <Route path="candidates" element={<Candidates />} />
         <Route path="settings" element={<Settings />} />

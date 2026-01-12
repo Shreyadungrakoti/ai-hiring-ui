@@ -8,14 +8,10 @@ export default function NewProject() {
   const { auth } = useAuth();
   const nav = useNavigate();
 
-  const [jobTitle, setJobTitle] = useState("");
-  const [location, setLocation] = useState("");
+  const [projectName, setProjectName] = useState("");
   const [jdText, setJdText] = useState("");
-
-  // keep these for now; can drive “merged projects/runs” later
   const [searchMethod, setSearchMethod] = useState("both");
-  const [maxProfiles, setMaxProfiles] = useState(25);
-  const [minScore, setMinScore] = useState(7);
+  const [targetProfiles, setTargetProfiles] = useState(25);
   const [channel, setChannel] = useState("inmail");
 
   const [loading, setLoading] = useState(false);
@@ -24,28 +20,21 @@ export default function NewProject() {
     setLoading(true);
     try {
       const payload = {
-        name: jobTitle?.trim() || "Untitled project",
-        job_title: jobTitle,
-        location,
+        name: projectName,
         jd_text: jdText,
         search_method: searchMethod,
-        max_profiles: Number(maxProfiles),
-        min_score: Number(minScore),
+        target_profiles: Number(targetProfiles),
         channel,
       };
 
-      // Placeholder API. We’ll wire this to your backend later.
-      const res = await api.createProject({ token: auth.token, payload });
-
-      // For now go back to Projects list.
-      // Later: nav(`/projects/${res.project_id}`);
+      await api.createProject({ token: auth.token, payload });
       nav("/projects");
     } finally {
       setLoading(false);
     }
   };
 
-  const canCreate = Boolean(jdText?.trim()) && Boolean(jobTitle?.trim());
+  const canCreate = Boolean(jdText?.trim()) && targetProfiles > 0;
 
   return (
     <div className="grid2">
@@ -53,7 +42,7 @@ export default function NewProject() {
         <div className="row space">
           <div>
             <div className="h2">New project</div>
-            <div className="small muted">Create a job project with JD + sourcing settings.</div>
+            <div className="small muted">Create a job project with JD and sourcing settings.</div>
           </div>
           <button className="btn btnPrimary" onClick={create} disabled={loading || !canCreate}>
             <Plus size={18} />
@@ -64,25 +53,14 @@ export default function NewProject() {
         <div className="hr" />
 
         <div className="stack">
-          <div className="row" style={{ gap: 12 }}>
-            <div style={{ flex: 1 }}>
-              <div className="small">Job title</div>
-              <input
-                className="input"
-                value={jobTitle}
-                onChange={(e) => setJobTitle(e.target.value)}
-                placeholder="e.g. Data Scientist"
-              />
-            </div>
-            <div style={{ flex: 1 }}>
-              <div className="small">Location</div>
-              <input
-                className="input"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder="e.g. United States (Remote)"
-              />
-            </div>
+          <div>
+            <div className="small">Project name</div>
+            <input
+              className="input"
+              value={projectName}
+              onChange={(e) => setProjectName(e.target.value)}
+              placeholder="e.g. Senior Data Scientist - AI Team"
+            />
           </div>
 
           <div>
@@ -92,6 +70,7 @@ export default function NewProject() {
               value={jdText}
               onChange={(e) => setJdText(e.target.value)}
               placeholder="Paste full JD here…"
+              style={{ minHeight: 200 }}
             />
           </div>
         </div>
@@ -111,15 +90,16 @@ export default function NewProject() {
             </select>
           </div>
 
-          <div className="row" style={{ gap: 12 }}>
-            <div style={{ flex: 1 }}>
-              <div className="small">Max profiles</div>
-              <input className="input" type="number" value={maxProfiles} onChange={(e) => setMaxProfiles(e.target.value)} />
-            </div>
-            <div style={{ flex: 1 }}>
-              <div className="small">Min score</div>
-              <input className="input" type="number" value={minScore} onChange={(e) => setMinScore(e.target.value)} />
-            </div>
+          <div>
+            <div className="small">Target profiles</div>
+            <input 
+              className="input" 
+              type="number" 
+              value={targetProfiles} 
+              onChange={(e) => setTargetProfiles(e.target.value)}
+              min="1"
+              placeholder="e.g. 25"
+            />
           </div>
 
           <div>
