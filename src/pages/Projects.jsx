@@ -95,7 +95,7 @@ export default function Projects() {
               {projects.map((p) => (
                 <tr key={p.id}>
                   <td>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <button 
                         className="cellMain projectNameLink" 
                         onClick={() => nav(`/projects/${p.id}/edit`)}
@@ -108,10 +108,18 @@ export default function Projects() {
                           href={p.linkedin_url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="candidateLink"
-                          style={{ fontSize: 12, display: "flex", alignItems: "center", gap: 4 }}
+                          title="Open LinkedIn Project"
+                          style={{ 
+                            display: "flex", 
+                            alignItems: "center", 
+                            color: "var(--accent)", 
+                            opacity: 0.8,
+                            transition: "opacity 0.2s"
+                          }}
+                          onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                          onMouseLeave={(e) => e.currentTarget.style.opacity = 0.8}
                         >
-                          LinkedIn Project <ExternalLink size={12} style={{ opacity: 0.6 }} />
+                          <ExternalLink size={16} />
                         </a>
                       )}
                     </div>
