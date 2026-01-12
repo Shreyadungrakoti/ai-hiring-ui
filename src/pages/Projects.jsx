@@ -94,7 +94,7 @@ export default function Projects() {
             <tbody>
               {projects.map((p) => (
                 <tr key={p.id}>
-                  <td>
+                  <td style={{ verticalAlign: "middle" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <button 
                         className="cellMain projectNameLink" 
@@ -125,11 +125,11 @@ export default function Projects() {
                     </div>
                   </td>
 
-                  <td style={{ textAlign: "center" }}>{p.shortlisted || 0}</td>
-                  <td style={{ textAlign: "center" }}>{p.screened || 0}</td>
-                  <td style={{ textAlign: "center" }}>{getStatusPill(p.status || "active")}</td>
+                  <td style={{ textAlign: "center", verticalAlign: "middle" }}>{p.shortlisted || 0}</td>
+                  <td style={{ textAlign: "center", verticalAlign: "middle" }}>{p.screened || 0}</td>
+                  <td style={{ textAlign: "center", verticalAlign: "middle" }}>{getStatusPill(p.status || "active")}</td>
 
-                  <td style={{ textAlign: "center" }}>
+                  <td style={{ textAlign: "center", verticalAlign: "middle" }}>
                     <div className="row" style={{ justifyContent: "center", gap: 8 }}>
                       <button 
                         className="btn btnSmall btnPrimary" 
