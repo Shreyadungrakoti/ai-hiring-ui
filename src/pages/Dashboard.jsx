@@ -125,14 +125,14 @@ export default function Dashboard() {
 
       {/* Running now - full width */}
       <div className="d2Panel">
-        <div className="d2PanelHeader" style={{ marginBottom: 20 }}>
+        <div className="d2PanelHeader" style={{ marginBottom: 12 }}>
           <div className="d2Title">Running now</div>
           <StatusPill status={d.activeRun?.status || "idle"} />
         </div>
 
         {d.activeRun ? (
           <>
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>
+            <div style={{ display: "flex", justifyContent: "center", margin: "20px 0" }}>
               <div style={{ 
                 background: "var(--card2)", 
                 padding: 16, 
