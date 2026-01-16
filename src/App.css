@@ -1479,19 +1479,19 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn {
-  background: #7c3aed;
-  color: #ffffff;
-  border: none;
-  padding: 10px 24px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
+  background: #7c3aed !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px 24px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
 }
 
 .landingGetStartedBtn:hover {
-  background: #6d28d9;
+  background: #6d28d9 !important;
   transform: translateY(-1px);
 }
 
@@ -1550,24 +1550,66 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .btnLarge.btnPrimary {
-  background: #7c3aed;
-  color: #ffffff;
-  border: none;
+  background: #7c3aed !important;
+  color: #ffffff !important;
+  border: none !important;
 }
 
 .btnLarge.btnPrimary:hover {
-  background: #6d28d9;
-  transform: translateY(-1px);
+  background: #6d28d9 !important;
+  transform: translateY(-1px) !important;
 }
 
 .btnLarge:not(.btnPrimary) {
-  background: #f3f4f6;
-  color: #1a1a1a;
-  border: 1px solid #e5e7eb;
+  background: #f3f4f6 !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e5e7eb !important;
 }
 
 .btnLarge:not(.btnPrimary):hover {
-  background: #e5e7eb;
+  background: #e5e7eb !important;
+}
+
+/* Demo Video Section */
+.landingDemo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 32px;
+}
+
+.landingDemoContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.landingDemoPlaceholder {
+  aspect-ratio: 16 / 9;
+  background: #f9fafb;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+
+.landingDemoPlaceholder:hover {
+  border-color: #7c3aed;
+  background: #f3f4f6;
+}
+
+.landingDemoIcon {
+  color: #7c3aed;
+  opacity: 0.5;
+}
+
+.landingDemoText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0;
 }
 
 /* Features Section */
@@ -1608,17 +1650,17 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFeatureCard {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 28px;
-  transition: all 0.3s ease;
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 28px !important;
+  transition: all 0.3s ease !important;
 }
 
 .landingFeatureCard:hover {
-  border-color: #7c3aed;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
-  transform: translateY(-2px);
+  border-color: #7c3aed !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1) !important;
+  transform: translateY(-2px) !important;
 }
 
 .landingFeatureIcon {
@@ -1658,10 +1700,10 @@ html[data-theme="light"] .d2ChartBar{
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 56px 48px;
+  background: #f9fafb !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 56px 48px !important;
 }
 
 .landingCTATitle {
@@ -1691,11 +1733,11 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 40px;
-  margin-top: 40px;
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 40px !important;
+  margin-top: 40px !important;
 }
 
 .landingContactForm form {

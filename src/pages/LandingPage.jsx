@@ -42,12 +42,13 @@ export default function LandingPage() {
   };
 
   const handleLoginClick = () => {
+    // Go to login page
     nav("/login");
   };
 
   const handlePortalClick = () => {
     if (!auth) {
-      // Not logged in → go to login/signup
+      // Not logged in → go to signup
       nav("/login?mode=signup");
     } else if (!auth.hasPortal) {
       // Logged in but no portal → go to create portal
@@ -59,7 +60,6 @@ export default function LandingPage() {
   };
 
   const getPortalButtonText = () => {
-    if (!auth) return "Get Started";
     if (!auth.hasPortal) return "Create Portal";
     return "My Portal";
   };
@@ -74,15 +74,15 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            {!auth && (
-              <button className="landingLoginBtn" onClick={handleLoginClick}>
+            {!auth ? (
+              <button className="landingGetStartedBtn" onClick={handleLoginClick}>
                 Login
               </button>
+            ) : (
+              <button className="landingGetStartedBtn" onClick={handlePortalClick}>
+                {getPortalButtonText()}
+              </button>
             )}
-            <button className="landingGetStartedBtn" onClick={handlePortalClick}>
-              {getPortalButtonText()}
-            </button>
-          </div>
         </div>
       </nav>
 
@@ -99,9 +99,24 @@ export default function LandingPage() {
           </p>
           <div className="landingHeroCTA">
             <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-              {getPortalButtonText()}
+              {!auth ? "Get Started" : getPortalButtonText()}
               <ArrowRight size={20} />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Video Section */}
+      <section className="landingDemo">
+        <div className="landingDemoContent">
+          <div className="landingDemoPlaceholder">
+            <div className="landingDemoIcon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="10 8 16 12 10 16 10 8"/>
+              </svg>
+            </div>
+            <p className="landingDemoText">Demo Video Coming Soon</p>
           </div>
         </div>
       </section>
@@ -188,7 +203,7 @@ export default function LandingPage() {
             Join companies that are already finding better candidates, faster.
           </p>
           <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-            {getPortalButtonText()}
+            {!auth ? "Get Started" : getPortalButtonText()}
             <ArrowRight size={20} />
           </button>
         </div>
