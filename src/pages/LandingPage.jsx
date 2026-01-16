@@ -64,6 +64,11 @@ export default function LandingPage() {
     return "My Portal";
   };
 
+  const getCtaText = () => {
+    if (!auth) return "Get Started";
+    return getPortalButtonText();
+  };
+
   return (
     <div className="landingPage">
       {/* Navigation */}
@@ -74,15 +79,12 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            {!auth ? (
-              <button className="landingGetStartedBtn" onClick={handleLoginClick}>
-                Login
-              </button>
-            ) : (
-              <button className="landingGetStartedBtn" onClick={handlePortalClick}>
-                {getPortalButtonText()}
-              </button>
-            )}
+            <button className="landingLoginBtn" onClick={handleLoginClick}>
+              Login
+            </button>
+            <button className="landingGetStartedBtn" onClick={handlePortalClick}>
+              {getCtaText()}
+            </button>
           </div>
         </div>
       </nav>
