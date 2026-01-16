@@ -41,20 +41,7 @@ export default function LandingPage() {
     }, 3000);
   };
 
-  const handlePrimaryClick = () => {
-    if (!auth) {
-      // Not logged in → go to signup
-      nav("/login?mode=signup");
-    } else if (!auth.hasPortal) {
-      // Logged in but no portal → go to create portal
-      nav("/create-portal");
-    } else {
-      // Has portal → go to dashboard
-      nav("/portal/dashboard");
-    }
-  };
-
-  const handleSecondaryClick = () => {
+  const handleNavButtonClick = () => {
     if (!auth) {
       // Not logged in → go to login
       nav("/login");
@@ -65,18 +52,6 @@ export default function LandingPage() {
       // Has portal → go to dashboard
       nav("/portal/dashboard");
     }
-  };
-
-  const getPrimaryButtonText = () => {
-    if (!auth) return "Get Started";
-    if (!auth.hasPortal) return "Create My Portal";
-    return "Go to My Portal";
-  };
-
-  const getSecondaryButtonText = () => {
-    if (!auth) return "Sign In";
-    if (!auth.hasPortal) return "Create Portal";
-    return "My Portal";
   };
 
   const getNavButtonText = () => {
@@ -95,10 +70,7 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            {auth && (
-              <span className="landingUserEmail">{auth.user?.email?.split("@")[0]}</span>
-            )}
-            <button className="btn" onClick={handleSecondaryClick}>
+            <button className="btn" onClick={handleNavButtonClick}>
               {getNavButtonText()}
             </button>
           </div>
@@ -117,20 +89,10 @@ export default function LandingPage() {
             to match you with the perfect candidates in minutes, not weeks.
           </p>
           <div className="landingHeroCTA">
-            <button className="btn btnPrimary btnLarge" onClick={handlePrimaryClick}>
-              {getPrimaryButtonText()}
+            <button className="btn btnPrimary btnLarge" onClick={handleNavButtonClick}>
+              {getNavButtonText()}
               <ArrowRight size={20} />
             </button>
-            {!auth && (
-              <button className="btn btnLarge" onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>
-                Learn More
-              </button>
-            )}
-            {auth && !auth.hasPortal && (
-              <button className="btn btnLarge" onClick={() => nav("/")}>
-                Not Now
-              </button>
-            )}
           </div>
         </div>
       </section>
@@ -216,8 +178,8 @@ export default function LandingPage() {
           <p className="landingCTASubtitle">
             Join companies that are already finding better candidates, faster.
           </p>
-          <button className="btn btnPrimary btnLarge" onClick={handlePrimaryClick}>
-            {getPrimaryButtonText()}
+          <button className="btn btnPrimary btnLarge" onClick={handleNavButtonClick}>
+            {getNavButtonText()}
             <ArrowRight size={20} />
           </button>
         </div>
