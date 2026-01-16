@@ -1462,6 +1462,15 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
 }
 
+.landingUserEmail {
+  padding: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--muted);
+}
+
 /* Hero Section */
 .landingHero {
   max-width: 1280px;
@@ -1655,6 +1664,106 @@ html[data-theme="light"] .d2ChartBar{
   margin: 0;
 }
 
+/* Create Portal Page */
+.createPortalPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: 
+    radial-gradient(900px 500px at 50% 20%, rgba(110,231,255,0.16), transparent 55%),
+    radial-gradient(900px 500px at 50% 80%, rgba(167,139,250,0.16), transparent 55%),
+    var(--bg);
+}
+
+.createPortalContainer {
+  max-width: 600px;
+  width: 100%;
+}
+
+.createPortalContent {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.createPortalIcon {
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(110, 231, 255, 0.2), rgba(167, 139, 250, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.createPortalTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.createPortalSubtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 450px;
+}
+
+.createPortalFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.createPortalFeature {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.createPortalFeature svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.createPortalFeatureTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.createPortalFeatureText {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.createPortalNote {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .landingFeaturesGrid {
@@ -1687,5 +1796,13 @@ html[data-theme="light"] .d2ChartBar{
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+  
+  .createPortalContent {
+    padding: 32px 24px;
+  }
+  
+  .createPortalTitle {
+    font-size: 24px;
   }
 }

@@ -51,7 +51,7 @@ export default function Sidebar({ pathname, onNav }) {
           className="sbIconBtn"
           onClick={() => {
             logout();
-            onNav("/login");
+            onNav("/");
           }}
           title="Logout"
         >

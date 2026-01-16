@@ -6,12 +6,48 @@ export default function LandingPage() {
   const { auth } = useAuth();
   const nav = useNavigate();
 
-  const handlePortalClick = () => {
-    if (auth) {
-      nav("/portal/dashboard");
+  const handlePrimaryClick = () => {
+    if (!auth) {
+      // Not logged in → go to signup
+      nav("/login?mode=signup");
+    } else if (!auth.hasPortal) {
+      // Logged in but no portal → go to create portal
+      nav("/create-portal");
     } else {
-      nav("/login");
+      // Has portal → go to dashboard
+      nav("/portal/dashboard");
     }
+  };
+
+  const handleSecondaryClick = () => {
+    if (!auth) {
+      // Not logged in → go to login
+      nav("/login");
+    } else if (!auth.hasPortal) {
+      // Logged in but no portal → go to create portal
+      nav("/create-portal");
+    } else {
+      // Has portal → go to dashboard
+      nav("/portal/dashboard");
+    }
+  };
+
+  const getPrimaryButtonText = () => {
+    if (!auth) return "Get Started";
+    if (!auth.hasPortal) return "Create My Portal";
+    return "Go to My Portal";
+  };
+
+  const getSecondaryButtonText = () => {
+    if (!auth) return "Sign In";
+    if (!auth.hasPortal) return "Create Portal";
+    return "My Portal";
+  };
+
+  const getNavButtonText = () => {
+    if (!auth) return "Login";
+    if (!auth.hasPortal) return "Create Portal";
+    return "My Portal";
   };
 
   return (
@@ -24,8 +60,11 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            <button className="btn" onClick={handlePortalClick}>
-              {auth ? "My Portal" : "Login"}
+            {auth && (
+              <span className="landingUserEmail">{auth.user?.email?.split("@")[0]}</span>
+            )}
+            <button className="btn" onClick={handleSecondaryClick}>
+              {getNavButtonText()}
             </button>
           </div>
         </div>
@@ -43,13 +82,20 @@ export default function LandingPage() {
             to match you with the perfect candidates in minutes, not weeks.
           </p>
           <div className="landingHeroCTA">
-            <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-              {auth ? "Go to My Portal" : "Get Started"}
+            <button className="btn btnPrimary btnLarge" onClick={handlePrimaryClick}>
+              {getPrimaryButtonText()}
               <ArrowRight size={20} />
             </button>
-            <button className="btn btnLarge" onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>
-              Learn More
-            </button>
+            {!auth && (
+              <button className="btn btnLarge" onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>
+                Learn More
+              </button>
+            )}
+            {auth && !auth.hasPortal && (
+              <button className="btn btnLarge" onClick={() => nav("/")}>
+                Not Now
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -135,8 +181,8 @@ export default function LandingPage() {
           <p className="landingCTASubtitle">
             Join companies that are already finding better candidates, faster.
           </p>
-          <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-            {auth ? "Go to My Portal" : "Start Free Trial"}
+          <button className="btn btnPrimary btnLarge" onClick={handlePrimaryClick}>
+            {getPrimaryButtonText()}
             <ArrowRight size={20} />
           </button>
         </div>
