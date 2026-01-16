@@ -98,12 +98,6 @@ export default function LandingPage() {
             Find, screen, and shortlist top talent automatically. Our AI analyzes thousands of profiles 
             to match you with the perfect candidates in minutes, not weeks.
           </p>
-          <div className="landingHeroCTA">
-            <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-              {!auth ? "Get Started" : getPortalButtonText()}
-              <ArrowRight size={20} />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -203,10 +197,6 @@ export default function LandingPage() {
           <p className="landingCTASubtitle">
             Join companies that are already finding better candidates, faster.
           </p>
-          <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
-            {!auth ? "Get Started" : getPortalButtonText()}
-            <ArrowRight size={20} />
-          </button>
         </div>
       </section>
 
