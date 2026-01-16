@@ -83,6 +83,7 @@ export default function LandingPage() {
                 {getPortalButtonText()}
               </button>
             )}
+          </div>
         </div>
       </nav>
 
