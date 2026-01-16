@@ -12,7 +12,7 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
     login({ email: email || "recruiter@company.com", remember });
-    nav("/", { replace: true });
+    nav("/portal/dashboard", { replace: true });
   };
 
   return (

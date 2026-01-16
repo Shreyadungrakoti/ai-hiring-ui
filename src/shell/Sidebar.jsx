@@ -2,10 +2,10 @@ import { LayoutDashboard, FolderKanban, Users, Settings, LogOut, Plus } from "lu
 import { useAuth } from "../state/auth.jsx";
 
 const nav = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
-  { to: "/projects", label: "Projects", icon: FolderKanban },
-  { to: "/candidates", label: "Candidates", icon: Users },
-  { to: "/settings", label: "Settings", icon: Settings },
+  { to: "/portal/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/portal/projects", label: "Projects", icon: FolderKanban },
+  { to: "/portal/candidates", label: "Candidates", icon: Users },
+  { to: "/portal/settings", label: "Settings", icon: Settings },
 ];
 
 export default function Sidebar({ pathname, onNav }) {
@@ -14,12 +14,12 @@ export default function Sidebar({ pathname, onNav }) {
   return (
     <aside className="sidebar sidebarCompact">
       <div className="sbTop">
-        <button className="sbBrand" onClick={() => onNav("/")} title="Home">
+        <button className="sbBrand" onClick={() => onNav("/portal/dashboard")} title="Home">
           <div className="sbBrandMark">AI</div>
         </button>
 
         {/* Plus exactly between AI and first nav item */}
-        <button className="sbPlusBtn" onClick={() => onNav("/projects/new")} title="New project">
+        <button className="sbPlusBtn" onClick={() => onNav("/portal/projects/new")} title="New project">
           <Plus size={18} />
         </button>
       </div>
