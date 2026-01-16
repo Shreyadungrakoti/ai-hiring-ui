@@ -41,10 +41,14 @@ export default function LandingPage() {
     }, 3000);
   };
 
-  const handleNavButtonClick = () => {
+  const handleLoginClick = () => {
+    nav("/login");
+  };
+
+  const handlePortalClick = () => {
     if (!auth) {
-      // Not logged in → go to login
-      nav("/login");
+      // Not logged in → go to login/signup
+      nav("/login?mode=signup");
     } else if (!auth.hasPortal) {
       // Logged in but no portal → go to create portal
       nav("/create-portal");
@@ -54,8 +58,8 @@ export default function LandingPage() {
     }
   };
 
-  const getNavButtonText = () => {
-    if (!auth) return "Login";
+  const getPortalButtonText = () => {
+    if (!auth) return "Get Started";
     if (!auth.hasPortal) return "Create Portal";
     return "My Portal";
   };
@@ -70,8 +74,13 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            <button className="btn" onClick={handleNavButtonClick}>
-              {getNavButtonText()}
+            {!auth && (
+              <button className="landingLoginBtn" onClick={handleLoginClick}>
+                Login
+              </button>
+            )}
+            <button className="landingGetStartedBtn" onClick={handlePortalClick}>
+              {getPortalButtonText()}
             </button>
           </div>
         </div>
@@ -89,8 +98,8 @@ export default function LandingPage() {
             to match you with the perfect candidates in minutes, not weeks.
           </p>
           <div className="landingHeroCTA">
-            <button className="btn btnPrimary btnLarge" onClick={handleNavButtonClick}>
-              {getNavButtonText()}
+            <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
+              {getPortalButtonText()}
               <ArrowRight size={20} />
             </button>
           </div>
@@ -178,8 +187,8 @@ export default function LandingPage() {
           <p className="landingCTASubtitle">
             Join companies that are already finding better candidates, faster.
           </p>
-          <button className="btn btnPrimary btnLarge" onClick={handleNavButtonClick}>
-            {getNavButtonText()}
+          <button className="btn btnPrimary btnLarge" onClick={handlePortalClick}>
+            {getPortalButtonText()}
             <ArrowRight size={20} />
           </button>
         </div>
