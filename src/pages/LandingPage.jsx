@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
-import { ArrowRight, Users, Zap, Target, Shield, TrendingUp, Sparkles, Send } from "lucide-react";
+import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X } from "lucide-react";
 
 export default function LandingPage() {
-  const { auth } = useAuth();
+  const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const nav = useNavigate();
+
+  const isAuthed = !!auth?.user;
+
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState("login"); // "login" | "signup"
+  const [authForm, setAuthForm] = useState({ fullName: "", email: "", password: "" });
+  const [authSubmitting, setAuthSubmitting] = useState(false);
+  const [authError, setAuthError] = useState("");
+
+  const authTitle = useMemo(
+    () => (authMode === "signup" ? "Create your account" : "Welcome back"),
+    [authMode]
+  );
 
   // Contact form state
   const [contactForm, setContactForm] = useState({
@@ -42,14 +55,18 @@ export default function LandingPage() {
   };
 
   const handleLoginClick = () => {
-    // Go to login page
-    nav("/login");
+    setAuthError("");
+    setAuthSubmitting(false);
+    setAuthMode("login");
+    setAuthOpen(true);
   };
 
   const handlePortalClick = () => {
-    if (!auth) {
-      // Not logged in → go to signup
-      nav("/login?mode=signup");
+    if (!isAuthed) {
+      setAuthError("");
+      setAuthSubmitting(false);
+      setAuthMode("signup");
+      setAuthOpen(true);
     } else if (!auth.hasPortal) {
       // Logged in but no portal → go to create portal
       nav("/create-portal");
@@ -65,8 +82,52 @@ export default function LandingPage() {
   };
 
   const getCtaText = () => {
-    if (!auth) return "Get Started";
+    if (!isAuthed) return "Get Started";
     return getPortalButtonText();
+  };
+
+  const closeAuth = () => {
+    setAuthOpen(false);
+    setAuthError("");
+    setAuthSubmitting(false);
+  };
+
+  const onAuthChange = (e) => {
+    const { name, value } = e.target;
+    setAuthForm((s) => ({ ...s, [name]: value }));
+  };
+
+  const onGoogle = async () => {
+    setAuthError("");
+    setAuthSubmitting(true);
+    try {
+      await signInWithGoogle();
+      closeAuth();
+    } catch (err) {
+      setAuthError(err?.message || "Google sign-in failed.");
+      setAuthSubmitting(false);
+    }
+  };
+
+  const onAuthSubmit = async (e) => {
+    e.preventDefault();
+    setAuthError("");
+    setAuthSubmitting(true);
+    try {
+      if (authMode === "signup") {
+        await signUpWithEmail({
+          email: authForm.email,
+          password: authForm.password,
+          fullName: authForm.fullName,
+        });
+      } else {
+        await signInWithEmail({ email: authForm.email, password: authForm.password });
+      }
+      closeAuth();
+    } catch (err) {
+      setAuthError(err?.message || "Authentication failed.");
+      setAuthSubmitting(false);
+    }
   };
 
   return (
@@ -79,15 +140,107 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            <button className="landingLoginBtn" onClick={handleLoginClick}>
-              Login
-            </button>
+            {isAuthed ? (
+              <button className="landingLoginBtn landingLoginBtnDisabled" disabled>
+                Logged in
+              </button>
+            ) : (
+              <button className="landingLoginBtn" onClick={handleLoginClick}>
+                Login
+              </button>
+            )}
             <button className="landingGetStartedBtn" onClick={handlePortalClick}>
               {getCtaText()}
             </button>
           </div>
         </div>
       </nav>
+
+      {authOpen && (
+        <div className="landingAuthOverlay" onClick={closeAuth}>
+          <div className="landingAuthModal" onClick={(e) => e.stopPropagation()}>
+            <button className="landingAuthClose" onClick={closeAuth} aria-label="Close">
+              <X size={18} />
+            </button>
+
+            <div className="landingAuthHeader">
+              <div className="landingAuthBrand">
+                <Sparkles size={18} />
+                <span>AI Hiring</span>
+              </div>
+              <div className="landingAuthTitle">{authTitle}</div>
+            </div>
+
+            <button className="landingGoogleBtn" onClick={onGoogle} disabled={authSubmitting}>
+              Continue with Google
+            </button>
+
+            <div className="landingAuthOr">
+              <span />
+              <div>Or</div>
+              <span />
+            </div>
+
+            <form className="landingAuthForm" onSubmit={onAuthSubmit}>
+              {authMode === "signup" && (
+                <label className="landingAuthField">
+                  <div className="landingAuthLabel">Full Name</div>
+                  <input
+                    className="landingAuthInput"
+                    name="fullName"
+                    value={authForm.fullName}
+                    onChange={onAuthChange}
+                    placeholder="Your full name"
+                    autoComplete="name"
+                  />
+                </label>
+              )}
+
+              <label className="landingAuthField">
+                <div className="landingAuthLabel">Email</div>
+                <input
+                  className="landingAuthInput"
+                  name="email"
+                  value={authForm.email}
+                  onChange={onAuthChange}
+                  placeholder="Your email address"
+                  autoComplete="email"
+                />
+              </label>
+
+              <label className="landingAuthField">
+                <div className="landingAuthLabel">Password</div>
+                <input
+                  className="landingAuthInput"
+                  name="password"
+                  type="password"
+                  value={authForm.password}
+                  onChange={onAuthChange}
+                  placeholder="Password"
+                  autoComplete={authMode === "signup" ? "new-password" : "current-password"}
+                />
+              </label>
+
+              {authError && <div className="landingAuthError">{authError}</div>}
+
+              <button className="landingAuthPrimary" type="submit" disabled={authSubmitting}>
+                {authSubmitting ? "Please wait…" : authMode === "signup" ? "Continue" : "Continue"}
+              </button>
+
+              <button
+                type="button"
+                className="landingAuthSwitch"
+                onClick={() => setAuthMode((m) => (m === "signup" ? "login" : "signup"))}
+                disabled={authSubmitting}
+              >
+                {authMode === "signup"
+                  ? "Already have an account? Sign in"
+                  : "New here? Create an account"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="landingHero">
