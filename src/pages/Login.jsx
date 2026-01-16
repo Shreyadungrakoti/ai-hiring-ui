@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Shield, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Login() {
-  const { login } = useAuth();
+  const { signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const nav = useNavigate();
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") || "login";
@@ -13,22 +13,45 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (e) => {
+  const primaryLabel = useMemo(() => (isSignup ? "Create account" : "Sign in"), [isSignup]);
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    login({ email: email || "recruiter@company.com", isSignup });
-    
-    // After signup, redirect to landing page (they need to create portal)
-    // After login, check if they have portal
-    if (isSignup) {
+    setError("");
+    setSubmitting(true);
+    try {
+      if (isSignup) {
+        await signUpWithEmail({ email, password, fullName: name });
+      } else {
+        await signInWithEmail({ email, password });
+      }
+      // After auth, send user back to website landing page
       nav("/", { replace: true });
-    } else {
-      nav("/", { replace: true }); // Will be handled by landing page logic
+    } catch (err) {
+      setError(err?.message || "Authentication failed. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   const toggleMode = () => {
     nav(isSignup ? "/login" : "/login?mode=signup");
+  };
+
+  const onGoogle = async () => {
+    setError("");
+    setSubmitting(true);
+    try {
+      await signInWithGoogle();
+      nav("/", { replace: true });
+    } catch (err) {
+      setError(err?.message || "Google sign-in failed. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -68,6 +91,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="name@company.com"
+              autoComplete="email"
             />
           </label>
 
@@ -79,11 +103,24 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
+              autoComplete={isSignup ? "new-password" : "current-password"}
             />
           </label>
 
-          <button className="btn btnPrimary" type="submit">
-            {isSignup ? "Create Account" : "Sign In"} <ArrowRight size={18} />
+          {error && (
+            <div className="card" style={{ padding: 12, borderColor: "rgba(239, 68, 68, 0.35)" }}>
+              <div className="small" style={{ color: "#ef4444" }}>
+                {error}
+              </div>
+            </div>
+          )}
+
+          <button className="btn btnPrimary" type="submit" disabled={submitting}>
+            {submitting ? "Please wait…" : primaryLabel} <ArrowRight size={18} />
+          </button>
+
+          <button type="button" className="btn" onClick={onGoogle} disabled={submitting}>
+            Continue with Google
           </button>
 
           <div className="hr" style={{ margin: "8px 0" }} />
@@ -95,7 +132,7 @@ export default function Login() {
           </button>
 
           <div className="small muted" style={{ textAlign: "center" }}>
-            Demo mode - Backend will handle real authentication
+            You can sign up with email/password or Google.
           </div>
         </form>
       </div>

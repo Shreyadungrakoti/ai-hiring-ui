@@ -1,47 +1,90 @@
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { auth as fbAuth, googleProvider } from "../lib/firebase.js";
 
 const AuthCtx = createContext(null);
 
-const STORAGE_KEY = "ai_hiring_auth";
+const PORTAL_KEY_PREFIX = "ai_hiring_has_portal:";
+
+function getHasPortalKey(uid) {
+  return `${PORTAL_KEY_PREFIX}${uid}`;
+}
 
 export function AuthProvider({ children }) {
-  const [auth, setAuth] = useState(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : { token: "", user: null, hasPortal: false };
-    } catch {
-      return { token: "", user: null, hasPortal: false };
+  const [authState, setAuthState] = useState({ user: null, hasPortal: false });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(fbAuth, (user) => {
+      if (!user) {
+        setAuthState({ user: null, hasPortal: false });
+        setLoading(false);
+        return;
+      }
+      const hasPortal = localStorage.getItem(getHasPortalKey(user.uid)) === "true";
+      setAuthState({ user, hasPortal });
+      setLoading(false);
+    });
+    return () => unsub();
+  }, []);
+
+  const isAuthed = !!authState?.user;
+
+  const signUpWithEmail = async ({ email, password, fullName }) => {
+    const cred = await createUserWithEmailAndPassword(fbAuth, email, password);
+    if (fullName) {
+      await updateProfile(cred.user, { displayName: fullName });
     }
-  });
+    // New user starts with no portal
+    localStorage.setItem(getHasPortalKey(cred.user.uid), "false");
+    setAuthState({ user: cred.user, hasPortal: false });
+  };
 
-  const isAuthed = !!auth?.token;
+  const signInWithEmail = async ({ email, password }) => {
+    const cred = await signInWithEmailAndPassword(fbAuth, email, password);
+    const hasPortal = localStorage.getItem(getHasPortalKey(cred.user.uid)) === "true";
+    setAuthState({ user: cred.user, hasPortal });
+  };
 
-  const login = ({ email, isSignup = false }) => {
-    // UI-only placeholder. Your bf should replace with real backend auth.
-    const next = {
-      token: "dev_token_" + Math.random().toString(16).slice(2),
-      user: { email, role: "recruiter" },
-      hasPortal: false, // New users don't have a portal yet
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    setAuth(next);
+  const signInWithGoogle = async () => {
+    const cred = await signInWithPopup(fbAuth, googleProvider);
+    const existing = localStorage.getItem(getHasPortalKey(cred.user.uid));
+    const hasPortal = existing === "true";
+    // If first time, initialize
+    if (existing === null) localStorage.setItem(getHasPortalKey(cred.user.uid), "false");
+    setAuthState({ user: cred.user, hasPortal });
   };
 
   const createPortal = () => {
-    // Mark that user has created their portal
-    const next = { ...auth, hasPortal: true };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    setAuth(next);
+    if (!authState.user) return;
+    localStorage.setItem(getHasPortalKey(authState.user.uid), "true");
+    setAuthState((s) => ({ ...s, hasPortal: true }));
   };
 
-  const logout = () => {
-    localStorage.removeItem(STORAGE_KEY);
-    setAuth({ token: "", user: null, hasPortal: false });
+  const logout = async () => {
+    await signOut(fbAuth);
+    setAuthState({ user: null, hasPortal: false });
   };
 
   const value = useMemo(
-    () => ({ auth, isAuthed, login, logout, createPortal }),
-    [auth, isAuthed]
+    () => ({
+      auth: authState,
+      isAuthed,
+      loading,
+      signUpWithEmail,
+      signInWithEmail,
+      signInWithGoogle,
+      logout,
+      createPortal,
+    }),
+    [authState, isAuthed, loading]
   );
   return <AuthCtx.Provider value={value}>{children}</AuthCtx.Provider>;
 }
