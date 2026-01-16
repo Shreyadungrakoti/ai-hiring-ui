@@ -1631,6 +1631,80 @@ html[data-theme="light"] .d2ChartBar{
   margin: 0 0 32px 0;
 }
 
+/* Contact Us Section */
+.landingContact {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.landingContactContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.landingContactForm {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px;
+  margin-top: 48px;
+}
+
+.landingContactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.landingFormGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.landingFormField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.landingFormLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.landingFormSuccess {
+  text-align: center;
+  padding: 32px;
+}
+
+.landingSuccessIcon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(110, 231, 255, 0.2), rgba(167, 139, 250, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.landingSuccessTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+.landingSuccessText {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* Footer */
 .landingFooter {
   border-top: 1px solid var(--border);
@@ -1804,5 +1878,13 @@ html[data-theme="light"] .d2ChartBar{
   
   .createPortalTitle {
     font-size: 24px;
+  }
+  
+  .landingContactForm {
+    padding: 32px 24px;
+  }
+  
+  .landingCTAContent {
+    padding: 48px 32px;
   }
 }

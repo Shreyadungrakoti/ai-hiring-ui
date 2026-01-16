@@ -1,10 +1,45 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
-import { ArrowRight, Users, Zap, Target, Shield, TrendingUp, Sparkles } from "lucide-react";
+import { ArrowRight, Users, Zap, Target, Shield, TrendingUp, Sparkles, Send } from "lucide-react";
 
 export default function LandingPage() {
   const { auth } = useAuth();
   const nav = useNavigate();
+
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    note: ""
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    
+    // Simulate form submission (backend will handle this)
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    console.log("Contact form submitted:", contactForm);
+    
+    setFormSubmitted(true);
+    setSubmitting(false);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setContactForm({ fullName: "", email: "", phone: "", note: "" });
+      setFormSubmitted(false);
+    }, 3000);
+  };
 
   const handlePrimaryClick = () => {
     if (!auth) {
@@ -185,6 +220,97 @@ export default function LandingPage() {
             {getPrimaryButtonText()}
             <ArrowRight size={20} />
           </button>
+        </div>
+      </section>
+
+      {/* Contact Us Section */}
+      <section className="landingContact" id="contact">
+        <div className="landingContactContent">
+          <div className="landingSectionHeader">
+            <h2 className="landingSectionTitle">Get In Touch</h2>
+            <p className="landingSectionSubtitle">
+              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+          </div>
+
+          <div className="landingContactForm">
+            {formSubmitted ? (
+              <div className="landingFormSuccess">
+                <div className="landingSuccessIcon">
+                  <Sparkles size={48} />
+                </div>
+                <h3 className="landingSuccessTitle">Thank you for reaching out!</h3>
+                <p className="landingSuccessText">
+                  We've received your message and will get back to you shortly.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleContactSubmit}>
+                <div className="landingFormGrid">
+                  <div className="landingFormField">
+                    <label className="landingFormLabel">Full Name</label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      className="input"
+                      value={contactForm.fullName}
+                      onChange={handleContactChange}
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+
+                  <div className="landingFormField">
+                    <label className="landingFormLabel">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="input"
+                      value={contactForm.email}
+                      onChange={handleContactChange}
+                      placeholder="john@company.com"
+                      required
+                    />
+                  </div>
+
+                  <div className="landingFormField">
+                    <label className="landingFormLabel">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      className="input"
+                      value={contactForm.phone}
+                      onChange={handleContactChange}
+                      placeholder="+1 (555) 000-0000"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="landingFormField">
+                  <label className="landingFormLabel">Note</label>
+                  <textarea
+                    name="note"
+                    className="textarea"
+                    value={contactForm.note}
+                    onChange={handleContactChange}
+                    placeholder="Tell us about your hiring needs..."
+                    rows="5"
+                    required
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btnPrimary btnLarge"
+                  disabled={submitting}
+                >
+                  {submitting ? "Sending..." : "Submit"}
+                  {!submitting && <Send size={20} />}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
 
