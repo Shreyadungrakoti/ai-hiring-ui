@@ -3,8 +3,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
 import HeroIllustration from "../components/HeroIllustration.jsx";
-import TestimonialsCarousel from "../components/TestimonialsCarousel.jsx";
 import StatsCarousel from "../components/StatsCarousel.jsx";
+import ProductShowcase from "../components/ProductShowcase.jsx";
 
 export default function LandingPage() {
   const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword, logout } = useAuth();
@@ -510,8 +510,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials Carousel */}
-      <TestimonialsCarousel />
+      {/* Product Showcase */}
+      <ProductShowcase />
 
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">
@@ -606,24 +606,76 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="landingFooter">
-        <div className="landingFooterContent">
-          <div className="landingFooterLeft">
-            <div className="landingFooterLogo">
-              <Sparkles size={24} />
-              <span>AI Hiring</span>
+        <div className="landingFooterMain">
+          <div className="landingFooterGrid">
+            {/* Company Info */}
+            <div className="landingFooterColumn">
+              <div className="landingFooterLogo">
+                <Sparkles size={28} />
+                <span>AI Hiring</span>
+              </div>
+              <p className="landingFooterDesc">
+                Transform your recruitment with AI-powered screening and matching. 
+                Find the perfect candidates faster than ever.
+              </p>
             </div>
-            <p className="landingFooterText">
-              © 2026 AI Hiring. All rights reserved.
-            </p>
+
+            {/* Product */}
+            <div className="landingFooterColumn">
+              <h4 className="landingFooterHeading">Product</h4>
+              <ul className="landingFooterLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/dashboard"); }}>Dashboard</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/projects"); }}>Projects</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/candidates"); }}>Candidates</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Pricing</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>API</a></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="landingFooterColumn">
+              <h4 className="landingFooterHeading">Company</h4>
+              <ul className="landingFooterLinks">
+                <li><a href="#" onClick={(e) => e.preventDefault()}>About Us</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Careers</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Blog</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Press</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Partners</a></li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div className="landingFooterColumn">
+              <h4 className="landingFooterHeading">Resources</h4>
+              <ul className="landingFooterLinks">
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Help Center</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Documentation</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Guides</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Community</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Status</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="landingFooterColumn">
+              <h4 className="landingFooterHeading">Contact</h4>
+              <ul className="landingFooterLinks">
+                <li><a href="mailto:kathanrshah@gmail.com">kathanrshah@gmail.com</a></li>
+                <li><a href="mailto:shreyadungrakoti@gmail.com">shreyadungrakoti@gmail.com</a></li>
+                <li><a href="#contact">Contact Form</a></li>
+                <li><a href="#" onClick={(e) => e.preventDefault()}>Support</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="landingFooterRight">
-            <p className="landingFooterContact">Contact us:</p>
-            <a href="mailto:kathanrshah@gmail.com" className="landingFooterEmail">
-              kathanrshah@gmail.com
-            </a>
-            <a href="mailto:shreyadungrakoti@gmail.com" className="landingFooterEmail">
-              shreyadungrakoti@gmail.com
-            </a>
+        </div>
+
+        <div className="landingFooterBottom">
+          <p className="landingFooterCopyright">© 2026 AI Hiring. All rights reserved.</p>
+          <div className="landingFooterLegal">
+            <a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Terms of Service</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Cookie Policy</a>
           </div>
         </div>
       </footer>
