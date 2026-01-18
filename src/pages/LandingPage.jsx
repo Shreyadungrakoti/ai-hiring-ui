@@ -1,10 +1,10 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
-import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X } from "lucide-react";
+import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
 
 export default function LandingPage() {
-  const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword } = useAuth();
+  const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword, logout } = useAuth();
   const nav = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -17,6 +17,10 @@ export default function LandingPage() {
   const [authError, setAuthError] = useState("");
   const [authSuccess, setAuthSuccess] = useState("");
 
+  // Me dropdown state
+  const [meDropdownOpen, setMeDropdownOpen] = useState(false);
+  const meDropdownRef = useRef(null);
+
   // Auto-open auth modal if redirected from logout
   useEffect(() => {
     const showAuth = searchParams.get("showAuth");
@@ -27,6 +31,17 @@ export default function LandingPage() {
       setSearchParams({});
     }
   }, [searchParams, setSearchParams]);
+
+  // Close Me dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (meDropdownRef.current && !meDropdownRef.current.contains(e.target)) {
+        setMeDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const authTitle = useMemo(
     () => {
@@ -91,6 +106,12 @@ export default function LandingPage() {
       // Has portal → go to dashboard
       nav("/portal/dashboard");
     }
+  };
+
+  const handleSignOut = async () => {
+    setMeDropdownOpen(false);
+    await logout();
+    // Will redirect to landing with signup modal per sidebar logic
   };
 
   const getPortalButtonText = () => {
@@ -170,9 +191,66 @@ export default function LandingPage() {
           </div>
           <div className="landingNavLinks">
             {isAuthed ? (
-              <button className="landingLoginBtn landingLoginBtnDisabled" disabled>
-                Logged in
-              </button>
+              <div className="landingMeDropdown" ref={meDropdownRef}>
+                <button
+                  className="landingMeBtn"
+                  onClick={() => setMeDropdownOpen(!meDropdownOpen)}
+                >
+                  <User size={20} />
+                  <span>Me</span>
+                  <ChevronDown size={16} />
+                </button>
+
+                {meDropdownOpen && (
+                  <div className="landingMeMenu">
+                    {!auth.hasPortal ? (
+                      <button
+                        className="landingMeItem"
+                        onClick={() => {
+                          setMeDropdownOpen(false);
+                          nav("/create-portal");
+                        }}
+                      >
+                        <Sparkles size={18} />
+                        <span>Create Portal</span>
+                      </button>
+                    ) : (
+                      <button
+                        className="landingMeItem"
+                        onClick={() => {
+                          setMeDropdownOpen(false);
+                          nav("/portal/dashboard");
+                        }}
+                      >
+                        <Target size={18} />
+                        <span>My Portal</span>
+                      </button>
+                    )}
+
+                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                      <Settings size={18} />
+                      <span>Settings</span>
+                    </button>
+
+                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                      <HelpCircle size={18} />
+                      <span>Help</span>
+                    </button>
+
+                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                      <Globe size={18} />
+                      <span>Language</span>
+                    </button>
+
+                    <div className="landingMeDivider" />
+
+                    <button className="landingMeItem" onClick={handleSignOut}>
+                      <LogOut size={18} />
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
               <button className="landingLoginBtn" onClick={handleLoginClick}>
                 Login
