@@ -1106,6 +1106,66 @@ body[data-theme="light"] .table tr:hover {
   border-color: #94a3b8 !important;
 }
 
+/* Dark mode button overrides */
+body[data-theme="dark"] .btn {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+
+body[data-theme="dark"] .btn:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.20) !important;
+}
+
+body[data-theme="dark"] .btnGhost {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+body[data-theme="dark"] .btnGhost:hover {
+  background: rgba(255,255,255,0.08) !important;
+}
+
+/* Dark mode primary button */
+body[data-theme="dark"] .btnPrimary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+  border-color: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"] .btnPrimary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  border-color: #6d28d9 !important;
+}
+
+/* Dark mode modal styling */
+body[data-theme="dark"] .modal-content {
+  background: #1a1d29 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Dark mode search bar */
+body[data-theme="dark"] .search {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+body[data-theme="dark"] .searchInput {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body[data-theme="dark"] .searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body[data-theme="dark"] kbd {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
 /* Primary button enhancements for light mode */
 body[data-theme="light"] .btnPrimary {
   background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
