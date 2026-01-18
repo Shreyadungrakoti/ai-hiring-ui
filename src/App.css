@@ -676,6 +676,21 @@ kbd{
   display: grid;
   place-items: center;
   padding: 6px 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+}
+
+.sbBrand:hover {
+  transform: scale(1.05);
+}
+
+.sbBrand svg {
+  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.sbBrand:hover svg {
+  filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.5));
 }
 
 .sbBrandMark{
@@ -718,25 +733,45 @@ kbd{
 
 .sbIconBtn{
   width: 72px;
-  padding: 10px 6px;
-  border-radius: 16px;
+  padding: 12px 6px;
+  border-radius: 18px;
   cursor: pointer;
   border: 1px solid transparent;
   background: transparent;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.sbIconBtn svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sbIconBtn:hover{
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.10);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.20);
+  color: rgba(255,255,255,0.95);
+  transform: translateY(-2px);
+}
+
+.sbIconBtn:hover svg {
+  transform: scale(1.1);
 }
 
 .sbIconBtnActive{
-  background: rgba(255,255,255,0.07);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border-color: rgba(124, 58, 237, 0.30);
+  color: #a78bfa;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.sbIconBtnActive svg {
+  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.3));
+}
   border-color: rgba(255,255,255,0.12);
 }
 
@@ -819,19 +854,31 @@ kbd{
 }
 
 .sbPlusBtn{
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   display: grid;
   place-items: center;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  color: #a78bfa;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 .sbPlusBtn:hover{
-  background: rgba(255,255,255,0.10);
-  border-color: rgba(255,255,255,0.18);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%);
+  border-color: rgba(124, 58, 237, 0.40);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
+}
+
+.sbPlusBtn svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sbPlusBtn:hover svg {
+  transform: rotate(90deg);
 }
 
 .sbNav{
@@ -1044,16 +1091,30 @@ html[data-theme="light"] body{
 .sbPlusBtn,
 .sbIconBtn{
   color: var(--text) !important;
-  border: 1px solid var(--border) !important;
-  background: var(--card2) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.04) 0%, rgba(168, 85, 247, 0.04) 100%) !important;
+}
+
+.sbPlusBtn {
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08) !important;
+}
+
+.sbPlusBtn:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(168, 85, 247, 0.10) 100%) !important;
+  border-color: rgba(124, 58, 237, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15) !important;
 }
 
 .sbIconBtn:hover{
-  background: rgba(127,127,127,0.08) !important;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%) !important;
+  border-color: rgba(124, 58, 237, 0.20) !important;
 }
 
 .sbIconBtnActive{
-  background: rgba(127,127,127,0.10) !important;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%) !important;
+  border-color: rgba(124, 58, 237, 0.30) !important;
+  color: #7c3aed !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
 }
 
 .sbIconLabel{
