@@ -281,7 +281,7 @@ export default function LandingPage() {
 
             <div className="landingAuthHeader">
               <div className="landingAuthBrand">
-                <Sparkles size={18} />
+                <Logo size={24} />
                 <span>AI Hiring</span>
               </div>
               <div className="landingAuthTitle">{authTitle}</div>

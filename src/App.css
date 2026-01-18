@@ -1505,7 +1505,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn {
-  background: #3b82f6 !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
   color: #ffffff !important;
   border: none !important;
   padding: 10px 24px !important;
@@ -1514,11 +1514,13 @@ html[data-theme="light"] .d2ChartBar{
   border-radius: 8px !important;
   cursor: pointer !important;
   transition: all 0.2s !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
 }
 
 .landingGetStartedBtn:hover {
-  background: #6d28d9 !important;
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
 }
 
 /* Me Dropdown */
@@ -1749,6 +1751,14 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.landingHeroIllustration svg {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
 }
 
 .landingHeroTitle {
