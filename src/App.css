@@ -772,8 +772,6 @@ kbd{
 .sbIconBtnActive svg {
   filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.3));
 }
-  border-color: rgba(255,255,255,0.12);
-}
 
 .sbIconLabel{
   font-size: 12px;
