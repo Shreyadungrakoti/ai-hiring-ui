@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
+import HeroIllustration from "../components/HeroIllustration.jsx";
 
 export default function LandingPage() {
   const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword, logout } = useAuth();
@@ -389,14 +390,19 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="landingHero">
         <div className="landingHeroContent">
-          <h1 className="landingHeroTitle">
-            Transform Your Hiring with
-            <span className="landingGradientText"> AI-Powered</span> Recruitment
-          </h1>
-          <p className="landingHeroSubtitle">
-            Find, screen, and shortlist top talent automatically. Our AI analyzes thousands of profiles 
-            to match you with the perfect candidates in minutes, not weeks.
-          </p>
+          <div className="landingHeroText">
+            <h1 className="landingHeroTitle">
+              Transform Your Hiring with
+              <span className="landingGradientText"> AI-Powered</span> Recruitment
+            </h1>
+            <p className="landingHeroSubtitle">
+              Find, screen, and shortlist top talent automatically. Our AI analyzes thousands of profiles 
+              to match you with the perfect candidates in minutes, not weeks.
+            </p>
+          </div>
+          <div className="landingHeroIllustration">
+            <HeroIllustration />
+          </div>
         </div>
       </section>
 

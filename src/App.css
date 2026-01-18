@@ -1698,17 +1698,28 @@ html[data-theme="light"] .d2ChartBar{
 .landingHero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 100px 32px 80px;
-  text-align: center;
+  padding: 80px 32px;
 }
 
 .landingHeroContent {
-  max-width: 900px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.landingHeroText {
+  text-align: left;
+}
+
+.landingHeroIllustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .landingHeroTitle {
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 20px 0;
@@ -1720,13 +1731,11 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingHeroSubtitle {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   color: #6b7280;
-  margin: 0 0 40px 0;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 0 32px 0;
+  max-width: 500px;
 }
 
 .landingHeroCTA {
@@ -2189,8 +2198,17 @@ html[data-theme="light"] .d2ChartBar{
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .landingHeroContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .landingHeroText {
+    text-align: center;
+  }
+  
   .landingHeroTitle {
-    font-size: 48px;
+    font-size: 44px;
   }
 }
 
@@ -2204,7 +2222,7 @@ html[data-theme="light"] .d2ChartBar{
   }
   
   .landingHeroSubtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .landingHeroCTA {
