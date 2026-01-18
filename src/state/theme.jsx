@@ -11,6 +11,7 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme; // <html data-theme="dark|light">
+    document.body.dataset.theme = theme; // <body data-theme="dark|light">
     localStorage.setItem(LS_THEME_KEY, theme);
   }, [theme]);
 

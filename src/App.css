@@ -3393,3 +3393,192 @@ html[data-theme="light"] .d2ChartBar{
     font-size: 20px;
   }
 }
+/* Light mode overrides */
+body[data-theme="light"] {
+  --bg: #f8f9fb;
+  --panel: #ffffff;
+  --card: rgba(124, 58, 237, 0.04);
+  --card2: rgba(124, 58, 237, 0.08);
+  --border: rgba(124, 58, 237, 0.12);
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --muted2: #9ca3af;
+  --shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+}
+
+body[data-theme="light"] {
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #e0e7ff 50%, #ede9fe 75%, #f3e8ff 100%);
+  background-attachment: fixed;
+}
+
+/* Modal overlays in light mode */
+body[data-theme="light"] .modal-content {
+  background: #ffffff;
+  border: 2px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15);
+}
+
+body[data-theme="light"] .landingAuthModal {
+  background: #ffffff !important;
+  border: 2px solid rgba(124, 58, 237, 0.15);
+}
+
+/* Candidate Analysis Styles */
+.candidatesPage {
+  width: 100%;
+}
+
+.candidateRowActive {
+  background: var(--card);
+}
+
+.candidateNameLink {
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.candidateNameLink:hover {
+  color: #7c3aed;
+}
+
+.candidateProfileLink {
+  color: #7c3aed;
+  opacity: 0.7;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.candidateProfileLink:hover {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.candidateScorePill {
+  font-size: 14px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.candidateAnalysisRow {
+  background: var(--card);
+}
+
+.candidateAnalysisRow td {
+  padding: 0 !important;
+}
+
+.candidateAnalysis {
+  padding: 32px;
+  border-top: 2px solid var(--border);
+  background: var(--panel);
+  border-radius: 0 0 12px 12px;
+}
+
+.candidateAnalysisHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.candidateAnalysisTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.candidateAnalysisClose {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.candidateAnalysisClose:hover {
+  background: var(--card);
+  color: var(--text);
+}
+
+.candidateAnalysisScore {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--card);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+
+.candidateAnalysisScoreLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.candidateAnalysisScoreValue {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.candidateAnalysisSection {
+  margin-bottom: 24px;
+}
+
+.candidateAnalysisSectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+.candidateAnalysisList {
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.candidateAnalysisList li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  line-height: 1.6;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.candidateAnalysisList li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.candidateAnalysisListPositive li::before {
+  color: #10b981;
+}
+
+.candidateAnalysisListNeutral li::before {
+  color: #f59e0b;
+}
+
+.candidateAnalysisSummary {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text);
+  font-size: 15px;
+  padding: 16px 20px;
+  background: var(--card);
+  border-radius: 12px;
+  border-left: 4px solid #7c3aed;
+}
