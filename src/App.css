@@ -2855,3 +2855,259 @@ html[data-theme="light"] .d2ChartBar{
   }
 }
 
+
+/* ============================================
+   SETTINGS PAGE
+   ============================================ */
+
+.settingsPage {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 0;
+}
+
+.settingsContainer {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.settingsSidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 32px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.settingsHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.settingsTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.settingsNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+}
+
+.settingsNavItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.settingsNavItem:hover {
+  background: var(--card);
+  color: var(--text);
+}
+
+.settingsNavItemActive {
+  background: var(--card2);
+  color: #7c3aed;
+}
+
+.settingsNavItemActive svg {
+  color: #7c3aed;
+}
+
+.settingsContent {
+  padding: 48px 64px;
+  overflow-y: auto;
+}
+
+.settingsSection {
+  max-width: 800px;
+}
+
+.settingsSectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: var(--text);
+}
+
+.settingsDescription {
+  font-size: 14px;
+  color: var(--muted);
+  margin: -12px 0 24px 0;
+  line-height: 1.6;
+}
+
+.settingsCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.settingsCard:hover {
+  padding-left: 8px;
+}
+
+.settingsCard:last-child {
+  border-bottom: none;
+}
+
+.settingsCardContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.settingsCardLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.settingsCardValue {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Settings Modal */
+.settingsModal {
+  max-width: 500px;
+  width: 90%;
+}
+
+.settingsModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.settingsModalHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.settingsModalClose {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.settingsModalClose:hover {
+  color: var(--text);
+}
+
+.settingsModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.settingsLanguageOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  position: relative;
+}
+
+.settingsLanguageOption:hover {
+  background: var(--card);
+  border-color: #7c3aed;
+}
+
+.settingsLanguageOptionActive {
+  background: var(--card2);
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.settingsLanguageOptionActive svg {
+  color: #7c3aed;
+}
+
+.settingsLanguageCheck {
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .settingsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsSidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .settingsContent {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .settingsContent {
+    padding: 24px 16px;
+  }
+
+  .settingsSectionTitle {
+    font-size: 20px;
+  }
+}

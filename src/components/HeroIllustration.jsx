@@ -35,13 +35,13 @@ export default function HeroIllustration() {
       
       {/* Human - Arms */}
       <rect x="425" y="365" width="30" height="12" fill="#3b82f6" rx="6" transform="rotate(-20 440 371)" />
-      <circle cx="420" cy="375" r="8" fill="#fbbf24" />
+      <circle cx="420" cy="375" r="8" fill="#fde4cf" />
       
       <rect x="505" y="365" width="30" height="12" fill="#3b82f6" rx="6" transform="rotate(20 520 371)" />
-      <circle cx="530" cy="375" r="8" fill="#fbbf24" />
+      <circle cx="530" cy="375" r="8" fill="#fde4cf" />
       
       {/* Human - Head */}
-      <circle cx="480" cy="325" r="25" fill="#fbbf24" />
+      <circle cx="480" cy="325" r="25" fill="#fde4cf" />
       
       {/* Human - Face */}
       <circle cx="472" cy="322" r="2" fill="#1f2937" />
@@ -101,15 +101,27 @@ export default function HeroIllustration() {
       {/* Checkmarks floating around */}
       <g opacity="0.6">
         <path d="M 220 280 L 228 288 L 245 265" stroke="#10b981" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
         </path>
       </g>
       
       <g opacity="0.6">
         <path d="M 620 200 L 628 208 L 645 185" stroke="#10b981" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2.5s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="2.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" />
         </path>
       </g>
+      
+      {/* More floating elements for dynamics */}
+      <circle cx="250" cy="220" r="4" fill="#7c3aed" opacity="0.5">
+        <animate attributeName="cy" values="220;200;220" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="550" cy="250" r="3" fill="#3b82f6" opacity="0.5">
+        <animate attributeName="cy" values="250;235;250" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite" />
+      </circle>
     </svg>
   );
 }
