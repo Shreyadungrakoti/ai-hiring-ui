@@ -25,3 +25,8 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 
+// Force account selection every time (shows previously used accounts + "Use another account")
+googleProvider.setCustomParameters({
+  prompt: 'select_account'
+});
+
