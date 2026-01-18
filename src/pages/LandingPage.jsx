@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
 import HeroIllustration from "../components/HeroIllustration.jsx";
+import TestimonialsCarousel from "../components/TestimonialsCarousel.jsx";
+import StatsCarousel from "../components/StatsCarousel.jsx";
 
 export default function LandingPage() {
   const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword, logout } = useAuth();
@@ -421,6 +423,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Stats Carousel */}
+      <StatsCarousel />
+
       {/* Features Section */}
       <section className="landingFeatures" id="features">
         <div className="landingFeaturesContent">
@@ -504,6 +509,9 @@ export default function LandingPage() {
           </p>
         </div>
       </section>
+
+      {/* Testimonials Carousel */}
+      <TestimonialsCarousel />
 
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">
@@ -599,13 +607,24 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="landingFooter">
         <div className="landingFooterContent">
-          <div className="landingFooterLogo">
-            <Sparkles size={24} />
-            <span>AI Hiring</span>
+          <div className="landingFooterLeft">
+            <div className="landingFooterLogo">
+              <Sparkles size={24} />
+              <span>AI Hiring</span>
+            </div>
+            <p className="landingFooterText">
+              © 2026 AI Hiring. All rights reserved.
+            </p>
           </div>
-          <p className="landingFooterText">
-            © 2026 AI Hiring. All rights reserved.
-          </p>
+          <div className="landingFooterRight">
+            <p className="landingFooterContact">Contact us:</p>
+            <a href="mailto:kathanrshah@gmail.com" className="landingFooterEmail">
+              kathanrshah@gmail.com
+            </a>
+            <a href="mailto:shreyadungrakoti@gmail.com" className="landingFooterEmail">
+              shreyadungrakoti@gmail.com
+            </a>
+          </div>
         </div>
       </footer>
     </div>

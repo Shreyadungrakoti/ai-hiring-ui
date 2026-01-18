@@ -1417,7 +1417,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 25%, #e9d5ff 50%, #ddd6fe 100%);
+  background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 25%, #e0e7ff 50%, #ddd6fe 100%);
   background-attachment: fixed;
   color: #1a1a1a;
 }
@@ -2085,7 +2085,7 @@ html[data-theme="light"] .d2ChartBar{
 /* Footer */
 .landingFooter {
   border-top: 1px solid rgba(124, 58, 237, 0.1);
-  padding: 40px 32px;
+  padding: 48px 32px;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
 }
@@ -2096,6 +2096,21 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.landingFooterLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.landingFooterRight {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
 }
 
 .landingFooterLogo {
@@ -2115,6 +2130,26 @@ html[data-theme="light"] .d2ChartBar{
   font-size: 14px;
   color: #6b7280;
   margin: 0;
+}
+
+.landingFooterContact {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.landingFooterEmail {
+  font-size: 15px;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.landingFooterEmail:hover {
+  color: #7c3aed;
+  text-decoration: underline;
 }
 
 /* Create Portal Page */
@@ -2276,3 +2311,222 @@ html[data-theme="light"] .d2ChartBar{
     padding: 48px 32px;
   }
 }
+
+/* ============================================
+   TESTIMONIALS CAROUSEL
+   ============================================ */
+
+.landingTestimonials {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 32px;
+  background: transparent;
+}
+
+.landingTestimonialsContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonialsSwiper {
+  padding: 20px 10px 60px;
+}
+
+.testimonialCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 36px !important;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 16px 48px rgba(59, 130, 246, 0.18);
+}
+
+.testimonialQuote {
+  color: #3b82f6;
+  opacity: 0.5;
+}
+
+.testimonialRating {
+  display: flex;
+  gap: 4px;
+}
+
+.testimonialText {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0;
+  flex: 1;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.testimonialAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.testimonialInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonialName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.testimonialRole {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Swiper navigation buttons */
+.testimonialsSwiper .swiper-button-prev,
+.testimonialsSwiper .swiper-button-next {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s;
+}
+
+.testimonialsSwiper .swiper-button-prev:hover,
+.testimonialsSwiper .swiper-button-next:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  transform: scale(1.1);
+}
+
+.testimonialsSwiper .swiper-button-prev:after,
+.testimonialsSwiper .swiper-button-next:after {
+  font-size: 20px;
+  color: #7c3aed;
+  font-weight: 900;
+}
+
+.testimonialsSwiper .swiper-button-prev:hover:after,
+.testimonialsSwiper .swiper-button-next:hover:after {
+  color: #ffffff;
+}
+
+/* Swiper pagination dots */
+.testimonialsSwiper .swiper-pagination-bullet {
+  background: #d1d5db;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s;
+}
+
+.testimonialsSwiper .swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* ============================================
+   STATS CAROUSEL
+   ============================================ */
+
+.landingStats {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  background: transparent;
+}
+
+.landingStatsContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statsSwiper {
+  padding: 20px 10px;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  border-radius: 16px !important;
+  padding: 32px 24px !important;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.statCard:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+.statIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.statDescription {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
