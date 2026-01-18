@@ -3783,15 +3783,27 @@ body[data-theme="light"] .landingAuthModal {
   border-left: 4px solid #7c3aed;
 }
 
-/* Candidate Link Icon - contrasting color */
+/* Candidate Link Icon - navy blue like Google */
 .candidateLinkIcon {
-  color: #3b82f6 !important;
-  opacity: 0.7;
+  color: #1a73e8 !important;
+  opacity: 1;
   transition: all 0.2s;
 }
 
 .candidateLinkIcon:hover {
   opacity: 1;
-  color: #2563eb !important;
+  color: #174ea6 !important;
   transform: translateX(2px);
+}
+
+/* Send InMail Button - Navy Blue */
+.btnInMail {
+  background: #1a73e8 !important;
+  border-color: #1a73e8 !important;
+  color: #ffffff !important;
+}
+
+.btnInMail:hover {
+  background: #174ea6 !important;
+  border-color: #174ea6 !important;
 }

@@ -258,7 +258,7 @@ export default function Candidates() {
                           Sent
                         </span>
                       ) : (
-                        <button className="btn btnSmall btnPrimary">
+                        <button className="btn btnSmall btnInMail">
                           Send InMail
                         </button>
                       )}
