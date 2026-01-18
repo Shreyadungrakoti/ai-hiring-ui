@@ -1,6 +1,7 @@
 import { LayoutDashboard, FolderKanban, Users, Settings, LogOut, Plus } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "../state/auth.jsx";
+import Logo from "../components/Logo.jsx";
 
 const nav = [
   { to: "/portal/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -23,7 +24,7 @@ export default function Sidebar({ pathname, onNav }) {
     <aside className="sidebar sidebarCompact">
       <div className="sbTop">
         <button className="sbBrand" onClick={() => onNav("/portal/dashboard")} title="Home">
-          <div className="sbBrandMark">AI</div>
+          <Logo size={44} />
         </button>
 
         {/* Plus exactly between AI and first nav item */}

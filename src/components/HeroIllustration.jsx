@@ -1,163 +1,189 @@
-export default function HeroIllustration() {
+import React from 'react';
+
+const HeroIllustration = () => {
   return (
-    <svg
-      viewBox="0 0 800 600"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', height: 'auto', maxWidth: '700px' }}
-    >
-      {/* Background elements */}
-      <circle cx="400" cy="300" r="280" fill="#f3f4f6" opacity="0.5" />
-      
-      {/* Desk */}
-      <rect x="150" y="400" width="500" height="20" fill="#9ca3af" rx="4" />
-      <rect x="140" y="420" width="520" height="15" fill="#6b7280" rx="4" />
-      
-      {/* Resume stack on desk - more prominent */}
-      <rect x="250" y="300" width="140" height="180" fill="#ffffff" stroke="#d1d5db" strokeWidth="2" rx="4" />
-      <rect x="255" y="295" width="140" height="180" fill="#ffffff" stroke="#d1d5db" strokeWidth="2" rx="4" />
-      <rect x="260" y="290" width="140" height="180" fill="#ffffff" stroke="#d1d5db" strokeWidth="2" rx="4" />
-      
-      {/* Resume details - lines */}
-      <line x1="280" y1="315" x2="370" y2="315" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" />
-      <line x1="280" y1="335" x2="360" y2="335" stroke="#d1d5db" strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="280" y1="355" x2="375" y2="355" stroke="#d1d5db" strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="280" y1="375" x2="355" y2="375" stroke="#d1d5db" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="285" cy="405" r="4" fill="#10b981" />
-      <circle cx="297" cy="405" r="4" fill="#10b981" />
-      <circle cx="309" cy="405" r="4" fill="#10b981" />
-      <circle cx="321" cy="405" r="4" fill="#10b981" />
-      <circle cx="333" cy="405" r="4" fill="#d1d5db" />
-      
-      {/* Human - IMPROVED - Body (professional recruiter) */}
-      <ellipse cx="500" cy="470" rx="60" ry="15" fill="#6b7280" opacity="0.3" />
-      
-      {/* Legs */}
-      <rect x="485" y="390" width="15" height="80" fill="#1f2937" rx="8" />
-      <rect x="500" y="390" width="15" height="80" fill="#1f2937" rx="8" />
-      
-      {/* Body - Suit */}
-      <rect x="470" y="310" width="60" height="85" fill="#3b82f6" rx="10" />
-      
-      {/* Tie */}
-      <polygon points="500,320 495,345 500,370 505,345" fill="#1e40af" />
-      
-      {/* Arms - Better proportions */}
-      <rect x="435" y="335" width="35" height="14" fill="#fbbf24" rx="7" transform="rotate(-25 452 342)" />
-      <rect x="455" y="320" width="15" height="50" fill="#3b82f6" rx="7" transform="rotate(-25 462 345)" />
-      
-      <rect x="530" y="335" width="35" height="14" fill="#fbbf24" rx="7" transform="rotate(25 548 342)" />
-      <rect x="530" y="320" width="15" height="50" fill="#3b82f6" rx="7" transform="rotate(25 537 345)" />
-      
-      {/* Hands */}
-      <circle cx="445" cy="365" r="10" fill="#fbbf24" />
-      <circle cx="555" cy="365" r="10" fill="#fbbf24" />
-      
-      {/* Neck */}
-      <rect x="492" y="295" width="16" height="20" fill="#fbbf24" rx="4" />
-      
-      {/* Head - Better proportions */}
-      <circle cx="500" cy="280" r="32" fill="#fbbf24" />
-      
-      {/* Hair - Professional style */}
-      <path d="M 468 275 Q 468 255 485 250 Q 500 248 515 250 Q 532 255 532 275 L 530 280 Q 520 270 500 268 Q 480 270 470 280 Z" fill="#1f2937" />
-      
-      {/* Face - Better features */}
-      <circle cx="488" cy="278" r="3" fill="#1f2937" />
-      <circle cx="512" cy="278" r="3" fill="#1f2937" />
-      <path d="M 485 292 Q 500 298 515 292" stroke="#1f2937" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-      
-      {/* Eyebrows */}
-      <path d="M 480 270 Q 488 268 495 270" stroke="#1f2937" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <path d="M 505 270 Q 512 268 520 270" stroke="#1f2937" strokeWidth="2" fill="none" strokeLinecap="round" />
-      
-      {/* Laptop on desk */}
-      <rect x="420" y="370" width="90" height="60" fill="#1f2937" rx="4" />
-      <rect x="426" y="376" width="78" height="48" fill="#7c3aed" opacity="0.3" rx="2" />
-      <line x1="432" y1="385" x2="455" y2="385" stroke="#a78bfa" strokeWidth="1.5" />
-      <line x1="432" y1="392" x2="460" y2="392" stroke="#a78bfa" strokeWidth="1.5" />
-      <line x1="432" y1="399" x2="450" y2="399" stroke="#a78bfa" strokeWidth="1.5" />
-      
-      {/* AI Robot - BIGGER and more dynamic */}
-      <g transform="translate(590, 240) scale(1.4)">
-        {/* Robot body */}
-        <rect x="0" y="60" width="65" height="75" fill="#a78bfa" rx="10" />
-        
-        {/* Robot head */}
-        <rect x="5" y="15" width="55" height="50" fill="#7c3aed" rx="8" />
-        
-        {/* Robot antenna */}
-        <line x1="32.5" y1="15" x2="32.5" y2="3" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="32.5" cy="0" r="5" fill="#ef4444" />
-        <circle cx="32.5" cy="0" r="5" fill="#ef4444" opacity="0.5">
-          <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite" />
-        </circle>
-        
-        {/* Robot eyes - more expressive */}
-        <ellipse cx="20" cy="35" rx="8" ry="10" fill="#ffffff" />
-        <ellipse cx="45" cy="35" rx="8" ry="10" fill="#ffffff" />
-        <circle cx="22" cy="36" r="4" fill="#1f2937">
-          <animate attributeName="cy" values="36;38;36" dur="3s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="47" cy="36" r="4" fill="#1f2937">
-          <animate attributeName="cy" values="36;38;36" dur="3s" repeatCount="indefinite" />
-        </circle>
-        
-        {/* Robot smile */}
-        <path d="M 18 52 Q 32.5 60 47 52" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" />
-        
-        {/* Robot arms */}
-        <rect x="-12" y="75" width="20" height="12" fill="#a78bfa" rx="6" />
-        <circle cx="-15" cy="81" r="8" fill="#7c3aed" />
-        
-        <rect x="57" y="75" width="20" height="12" fill="#a78bfa" rx="6" />
-        <circle cx="80" cy="81" r="8" fill="#7c3aed" />
-        
-        {/* Sparkles around robot - MORE DYNAMIC */}
-        <g opacity="0.9">
-          <circle cx="-10" cy="20" r="3" fill="#fbbf24">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
-            <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite" />
+    <div className="landingHeroIllustration">
+      <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Gradients */}
+        <defs>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="800" y2="600">
+            <stop offset="0%" stopColor="#dbeafe" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#e0e7ff" stopOpacity="0.3" />
+          </linearGradient>
+          <linearGradient id="humanSkin" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#fcd34d" />
+            <stop offset="100%" stopColor="#fbbf24" />
+          </linearGradient>
+          <linearGradient id="robotBody" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#f3f4f6" />
+          </linearGradient>
+          <linearGradient id="robotAccent" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#6d28d9" />
+          </linearGradient>
+        </defs>
+
+        {/* Background circle */}
+        <circle cx="400" cy="300" r="250" fill="url(#bgGrad)" />
+
+        {/* HUMAN CHARACTER (LEFT SIDE) */}
+        <g className="human-character">
+          {/* Human body */}
+          <ellipse cx="280" cy="420" rx="50" ry="20" fill="#93c5fd" opacity="0.3" />
+          
+          {/* Legs */}
+          <rect x="260" y="380" width="20" height="60" rx="10" fill="#60a5fa" />
+          <rect x="280" y="380" width="20" height="60" rx="10" fill="#60a5fa" />
+          
+          {/* Shoes */}
+          <ellipse cx="270" cy="440" rx="15" ry="8" fill="#1e40af" />
+          <ellipse cx="290" cy="440" rx="15" ry="8" fill="#1e40af" />
+          
+          {/* Torso */}
+          <rect x="240" y="280" width="80" height="110" rx="15" fill="#ffffff" />
+          <path d="M 250 300 Q 280 310 310 300" stroke="#e5e7eb" strokeWidth="2" fill="none" />
+          
+          {/* Left arm (extended for handshake) */}
+          <rect x="230" y="300" width="30" height="15" rx="7" fill="url(#humanSkin)" transform="rotate(-10 245 307)" />
+          <rect x="260" y="295" width="40" height="12" rx="6" fill="#ffffff" transform="rotate(-5 280 301)" />
+          <circle cx="300" cy="297" r="12" fill="url(#humanSkin)" className="human-hand-left" />
+          
+          {/* Right arm */}
+          <rect x="290" y="310" width="30" height="15" rx="7" fill="url(#humanSkin)" transform="rotate(20 305 317)" />
+          <rect x="280" y="325" width="40" height="12" rx="6" fill="#ffffff" transform="rotate(15 300 331)" />
+          
+          {/* Neck */}
+          <rect x="270" y="260" width="20" height="25" rx="5" fill="url(#humanSkin)" />
+          
+          {/* Head */}
+          <circle cx="280" cy="240" r="35" fill="url(#humanSkin)" />
+          
+          {/* Hair */}
+          <path d="M 250 230 Q 260 210 280 205 Q 300 210 310 230 Q 305 220 280 215 Q 255 220 250 230 Z" fill="#1f2937" />
+          
+          {/* Face */}
+          <ellipse cx="270" cy="240" rx="3" ry="4" fill="#1f2937" />
+          <ellipse cx="290" cy="240" rx="3" ry="4" fill="#1f2937" />
+          <path d="M 270 255 Q 280 260 290 255" stroke="#1f2937" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M 265 232 Q 268 230 272 232" stroke="#1f2937" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          <path d="M 285 232 Q 288 230 292 232" stroke="#1f2937" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+        </g>
+
+        {/* ROBOT CHARACTER (RIGHT SIDE) */}
+        <g className="robot-character">
+          {/* Robot shadow */}
+          <ellipse cx="520" cy="450" rx="60" ry="20" fill="#000000" opacity="0.1" />
+          
+          {/* Legs */}
+          <rect x="490" y="380" width="25" height="75" rx="8" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="3" />
+          <rect x="525" y="380" width="25" height="75" rx="8" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="3" />
+          
+          {/* Feet */}
+          <rect x="485" y="450" width="35" height="15" rx="7" fill="#1f2937" />
+          <rect x="520" y="450" width="35" height="15" rx="7" fill="#1f2937" />
+          
+          {/* Hip joint */}
+          <rect x="485" y="365" width="70" height="20" rx="10" fill="url(#robotAccent)" />
+          <circle cx="502" cy="375" r="5" fill="#ffffff" />
+          <circle cx="538" cy="375" r="5" fill="#ffffff" />
+          
+          {/* Torso */}
+          <rect x="470" y="250" width="100" height="120" rx="20" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="3" />
+          
+          {/* Chest panel */}
+          <rect x="490" y="280" width="60" height="70" rx="8" fill="#e0e7ff" />
+          <circle cx="520" cy="315" r="15" fill="url(#robotAccent)" className="robot-core" />
+          <circle cx="520" cy="315" r="10" fill="#a78bfa" className="robot-core-inner" />
+          
+          {/* Screen lines */}
+          <line x1="495" y1="290" x2="545" y2="290" stroke="#7c3aed" strokeWidth="2" />
+          <line x1="495" y1="300" x2="535" y2="300" stroke="#7c3aed" strokeWidth="2" />
+          <line x1="495" y1="340" x2="545" y2="340" stroke="#7c3aed" strokeWidth="2" />
+          
+          {/* Right arm (extended for handshake) */}
+          <rect x="440" y="290" width="35" height="18" rx="9" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" />
+          <circle cx="455" cy="299" r="8" fill="url(#robotAccent)" />
+          <rect x="390" y="292" width="55" height="15" rx="7" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" />
+          <circle cx="390" cy="299" r="12" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" className="robot-hand-right" />
+          <line x1="385" y1="294" x2="385" y2="304" stroke="#7c3aed" strokeWidth="2" />
+          <line x1="380" y1="295" x2="380" y2="303" stroke="#7c3aed" strokeWidth="2" />
+          <line x1="375" y1="296" x2="375" y2="302" stroke="#7c3aed" strokeWidth="2" />
+          
+          {/* Left arm */}
+          <rect x="565" y="290" width="35" height="18" rx="9" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" />
+          <circle cx="585" cy="299" r="8" fill="url(#robotAccent)" />
+          <rect x="595" y="292" width="55" height="15" rx="7" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" />
+          
+          {/* Neck */}
+          <rect x="505" y="230" width="30" height="25" rx="8" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="2" />
+          
+          {/* Head */}
+          <rect x="475" y="160" width="90" height="80" rx="20" fill="url(#robotBody)" stroke="#7c3aed" strokeWidth="3" />
+          
+          {/* Face screen */}
+          <rect x="490" y="180" width="60" height="50" rx="10" fill="#1f2937" />
+          
+          {/* Eyes */}
+          <circle cx="505" cy="200" r="8" fill="#7c3aed" className="robot-eye-left">
+            <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite" />
           </circle>
-          <circle cx="75" cy="30" r="3" fill="#fbbf24">
-            <animate attributeName="opacity" values="0.2;0.9;0.2" dur="1.8s" repeatCount="indefinite" />
-            <animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite" />
+          <circle cx="535" cy="200" r="8" fill="#7c3aed" className="robot-eye-right">
+            <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite" />
           </circle>
-          <circle cx="70" cy="65" r="3" fill="#fbbf24">
-            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.3s" repeatCount="indefinite" />
-            <animate attributeName="r" values="2;4;2" dur="1.3s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="5" cy="50" r="2" fill="#3b82f6">
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+          
+          {/* Smile */}
+          <path d="M 505 220 Q 520 228 535 220" stroke="#7c3aed" strokeWidth="3" fill="none" strokeLinecap="round" />
+          
+          {/* Antenna */}
+          <rect x="518" y="145" width="4" height="20" fill="#7c3aed" />
+          <circle cx="520" cy="140" r="8" fill="url(#robotAccent)" className="robot-antenna">
+            <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" />
           </circle>
         </g>
-      </g>
-      
-      {/* Checkmarks floating around - more dynamic */}
-      <g opacity="0.7">
-        <path d="M 180 240 L 192 252 L 215 220" stroke="#10b981" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2s" repeatCount="indefinite" />
-        </path>
-      </g>
-      
-      <g opacity="0.7">
-        <path d="M 650 180 L 662 192 L 685 160" stroke="#10b981" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2.5s" repeatCount="indefinite" />
-        </path>
-      </g>
-      
-      {/* AI processing indicators */}
-      <g opacity="0.6">
-        <circle cx="150" cy="350" r="4" fill="#7c3aed">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="165" cy="350" r="4" fill="#7c3aed">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="180" cy="350" r="4" fill="#7c3aed">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.4s" repeatCount="indefinite" />
-        </circle>
-      </g>
-    </svg>
+
+        {/* HANDSHAKE CONNECTION */}
+        <g className="handshake-connection">
+          {/* Connection sparkles */}
+          <circle cx="345" cy="297" r="4" fill="#fbbf24" opacity="0.8">
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="355" cy="292" r="3" fill="#7c3aed" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
+          <circle cx="350" cy="302" r="3" fill="#3b82f6" opacity="0.8">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" begin="1s" />
+          </circle>
+          
+          {/* Energy waves */}
+          <circle cx="345" cy="297" r="15" fill="none" stroke="#7c3aed" strokeWidth="2" opacity="0.3">
+            <animate attributeName="r" values="10;25;10" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" />
+          </circle>
+        </g>
+
+        {/* Floating UI elements */}
+        <g className="ui-elements" opacity="0.7">
+          {/* Checkmark */}
+          <circle cx="320" cy="200" r="20" fill="#10b981" opacity="0.2" />
+          <path d="M 310 200 L 318 208 L 330 190" stroke="#10b981" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" />
+          </path>
+          
+          {/* Data points */}
+          <circle cx="560" cy="180" r="3" fill="#3b82f6">
+            <animate attributeName="cy" values="180;170;180" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="575" cy="190" r="3" fill="#7c3aed">
+            <animate attributeName="cy" values="190;180;190" dur="2s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
+          <circle cx="590" cy="185" r="3" fill="#ec4899">
+            <animate attributeName="cy" values="185;175;185" dur="2s" repeatCount="indefinite" begin="1s" />
+          </circle>
+        </g>
+      </svg>
+    </div>
   );
-}
+};
+
+export default HeroIllustration;

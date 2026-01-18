@@ -655,7 +655,7 @@ export default function LandingPage() {
             {/* Company Info */}
             <div className="landingFooterColumn">
               <div className="landingFooterLogo">
-                <Sparkles size={28} />
+                <Logo size={32} />
                 <span>AI Hiring</span>
               </div>
               <p className="landingFooterDesc">
