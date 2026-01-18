@@ -2,6 +2,8 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -42,6 +44,8 @@ export function AuthProvider({ children }) {
     if (fullName) {
       await updateProfile(cred.user, { displayName: fullName });
     }
+    // Send verification email
+    await sendEmailVerification(cred.user);
     // New user starts with no portal
     localStorage.setItem(getHasPortalKey(cred.user.uid), "false");
     setAuthState({ user: cred.user, hasPortal: false });
@@ -73,6 +77,10 @@ export function AuthProvider({ children }) {
     setAuthState({ user: null, hasPortal: false });
   };
 
+  const resetPassword = async (email) => {
+    await sendPasswordResetEmail(fbAuth, email);
+  };
+
   const value = useMemo(
     () => ({
       auth: authState,
@@ -83,6 +91,7 @@ export function AuthProvider({ children }) {
       signInWithGoogle,
       logout,
       createPortal,
+      resetPassword,
     }),
     [authState, isAuthed, loading]
   );

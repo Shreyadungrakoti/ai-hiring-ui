@@ -4,17 +4,18 @@ import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X } from "lucide-react";
 
 export default function LandingPage() {
-  const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
+  const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword } = useAuth();
   const nav = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const isAuthed = !!auth?.user;
 
   const [authOpen, setAuthOpen] = useState(false);
-  const [authMode, setAuthMode] = useState("login"); // "login" | "signup"
+  const [authMode, setAuthMode] = useState("login"); // "login" | "signup" | "reset"
   const [authForm, setAuthForm] = useState({ fullName: "", email: "", password: "" });
   const [authSubmitting, setAuthSubmitting] = useState(false);
   const [authError, setAuthError] = useState("");
+  const [authSuccess, setAuthSuccess] = useState("");
 
   // Auto-open auth modal if redirected from logout
   useEffect(() => {
@@ -28,7 +29,11 @@ export default function LandingPage() {
   }, [searchParams, setSearchParams]);
 
   const authTitle = useMemo(
-    () => (authMode === "signup" ? "Create your account" : "Welcome back"),
+    () => {
+      if (authMode === "signup") return "Create your account";
+      if (authMode === "reset") return "Reset password";
+      return "Welcome back";
+    },
     [authMode]
   );
 
@@ -101,6 +106,7 @@ export default function LandingPage() {
   const closeAuth = () => {
     setAuthOpen(false);
     setAuthError("");
+    setAuthSuccess("");
     setAuthSubmitting(false);
   };
 
@@ -124,14 +130,25 @@ export default function LandingPage() {
   const onAuthSubmit = async (e) => {
     e.preventDefault();
     setAuthError("");
+    setAuthSuccess("");
     setAuthSubmitting(true);
     try {
+      if (authMode === "reset") {
+        await resetPassword(authForm.email);
+        setAuthSuccess("Password reset email sent! Check your inbox.");
+        setAuthSubmitting(false);
+        return;
+      }
       if (authMode === "signup") {
         await signUpWithEmail({
           email: authForm.email,
           password: authForm.password,
           fullName: authForm.fullName,
         });
+        setAuthSuccess("Account created! Check your email to verify your account.");
+        setAuthSubmitting(false);
+        // Don't close modal yet, show success message
+        return;
       } else {
         await signInWithEmail({ email: authForm.email, password: authForm.password });
       }
@@ -213,6 +230,7 @@ export default function LandingPage() {
                 <input
                   className="landingAuthInput"
                   name="email"
+                  type="email"
                   value={authForm.email}
                   onChange={onAuthChange}
                   placeholder="Your email address"
@@ -220,33 +238,69 @@ export default function LandingPage() {
                 />
               </label>
 
-              <label className="landingAuthField">
-                <div className="landingAuthLabel">Password</div>
-                <input
-                  className="landingAuthInput"
-                  name="password"
-                  type="password"
-                  value={authForm.password}
-                  onChange={onAuthChange}
-                  placeholder="Password"
-                  autoComplete={authMode === "signup" ? "new-password" : "current-password"}
-                />
-              </label>
+              {authMode !== "reset" && (
+                <label className="landingAuthField">
+                  <div className="landingAuthLabel">Password</div>
+                  <input
+                    className="landingAuthInput"
+                    name="password"
+                    type="password"
+                    value={authForm.password}
+                    onChange={onAuthChange}
+                    placeholder="Password"
+                    autoComplete={authMode === "signup" ? "new-password" : "current-password"}
+                  />
+                </label>
+              )}
+
+              {authMode === "login" && (
+                <div style={{ textAlign: "right", marginTop: "-8px", marginBottom: "8px" }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAuthMode("reset");
+                      setAuthError("");
+                      setAuthSuccess("");
+                    }}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: "#7c3aed",
+                      fontSize: "14px",
+                      cursor: "pointer",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+              )}
 
               {authError && <div className="landingAuthError">{authError}</div>}
+              {authSuccess && <div className="landingAuthSuccess">{authSuccess}</div>}
 
               <button className="landingAuthPrimary" type="submit" disabled={authSubmitting}>
-                {authSubmitting ? "Please wait…" : authMode === "signup" ? "Continue" : "Continue"}
+                {authSubmitting
+                  ? "Please wait…"
+                  : authMode === "reset"
+                  ? "Send reset email"
+                  : "Continue"}
               </button>
 
               <button
                 type="button"
                 className="landingAuthSwitch"
-                onClick={() => setAuthMode((m) => (m === "signup" ? "login" : "signup"))}
+                onClick={() => {
+                  setAuthMode((m) => (m === "signup" ? "login" : "signup"));
+                  setAuthError("");
+                  setAuthSuccess("");
+                }}
                 disabled={authSubmitting}
               >
                 {authMode === "signup"
                   ? "Already have an account? Sign in"
+                  : authMode === "reset"
+                  ? "Back to sign in"
                   : "New here? Create an account"}
               </button>
             </form>
