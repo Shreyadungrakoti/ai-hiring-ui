@@ -142,7 +142,7 @@ export default function Candidates() {
   }, [candidates, sortBy]);
 
   const getScoreColor = (score) => {
-    if (score >= 9) return "#fbbf24"; // Bright Yellow for top candidates (9+)
+    if (score >= 9) return "#7c3aed"; // Purple for top candidates (9+)
     if (score >= 8) return "#10b981"; // Green for 8
     if (score >= 7) return "#3b82f6"; // Blue for 7
     return "#6b7280"; // Gray for below 7

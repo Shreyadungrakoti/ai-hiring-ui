@@ -1029,8 +1029,18 @@ html[data-theme="light"] body{
   border: 1px solid var(--border) !important;
 }
 
+body[data-theme="light"] .tableWrap {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
 .table{
   background: var(--card2) !important;
+}
+
+body[data-theme="light"] .table {
+  background: #ffffff !important;
 }
 
 .table th{
@@ -1038,9 +1048,24 @@ html[data-theme="light"] body{
   color: var(--muted) !important;
 }
 
+body[data-theme="light"] .table th {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
 .table th, .table td{
   border-bottom: 1px solid var(--border) !important;
   color: var(--text) !important;
+}
+
+body[data-theme="light"] .table td {
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body[data-theme="light"] .table tr:hover {
+  background: #f8fafc !important;
 }
 
 .hr{
@@ -1071,17 +1096,57 @@ html[data-theme="light"] body{
 
 /* Buttons */
 .btn{
-  background: var(--card2) !important;
-  border: 1px solid var(--border) !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
   color: var(--text) !important;
+  transition: all 0.2s ease !important;
 }
 .btn:hover{
-  background: rgba(127,127,127,0.08) !important;
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Primary button enhancements for light mode */
+body[data-theme="light"] .btnPrimary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+  border-color: #7c3aed !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.15) !important;
+}
+
+body[data-theme="light"] .btnPrimary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  border-color: #6d28d9 !important;
+  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.25) !important;
+}
+
+/* Enhanced inputs for light mode */
+body[data-theme="light"] .input,
+body[data-theme="light"] .textarea,
+body[data-theme="light"] .select {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  transition: all 0.2s ease !important;
+}
+
+body[data-theme="light"] .input:focus,
+body[data-theme="light"] .textarea:focus,
+body[data-theme="light"] .select:focus {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
+  outline: none !important;
 }
 
 /* ===== Critical fixes for your compact sidebar (AI / + / borders invisible) ===== */
 .sidebar.sidebarCompact{
   border-right: 1px solid var(--border) !important;
+}
+
+/* Enhanced sidebar for light mode - LinkedIn style */
+body[data-theme="light"] .sidebar.sidebarCompact {
+  background: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04) !important;
 }
 
 /* Make AI and plus always readable (you had hard-coded white earlier) */
@@ -1093,8 +1158,49 @@ html[data-theme="light"] body{
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.04) 0%, rgba(168, 85, 247, 0.04) 100%) !important;
 }
 
+/* Enhanced sidebar buttons for light mode */
+body[data-theme="light"] .sbIconBtn {
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+  background: #f8fafc !important;
+}
+
+body[data-theme="light"] .sbIconBtn:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%) !important;
+  border-color: rgba(124, 58, 237, 0.20) !important;
+  color: #0f172a !important;
+}
+
+body[data-theme="light"] .sbIconBtnActive {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(168, 85, 247, 0.10) 100%) !important;
+  border-color: #7c3aed !important;
+  color: #7c3aed !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
+}
+
+body[data-theme="light"] .sbIconLabel {
+  color: #64748b !important;
+}
+
+body[data-theme="light"] .sbIconBtnActive .sbIconLabel {
+  color: #7c3aed !important;
+  font-weight: 700 !important;
+}
+
 .sbPlusBtn {
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08) !important;
+}
+
+body[data-theme="light"] .sbPlusBtn {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+  border: 1px solid #7c3aed !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
+}
+
+body[data-theme="light"] .sbPlusBtn:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25) !important;
 }
 
 .sbPlusBtn:hover {
@@ -1121,6 +1227,40 @@ html[data-theme="light"] body{
 
 .sbEmail{
   color: var(--muted2) !important;
+}
+
+body[data-theme="light"] .sbEmail {
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+/* Topbar enhancements for light mode */
+body[data-theme="light"] .topbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+body[data-theme="light"] .topbarInner {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Pills/Status badges in light mode */
+body[data-theme="light"] .pill {
+  font-weight: 600 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Search bar in light mode */
+body[data-theme="light"] .search {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body[data-theme="light"] .search:focus-within {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
 }
 
 /* KBD */
@@ -3454,28 +3594,33 @@ html[data-theme="light"] .d2ChartBar{
 }
 /* Light mode overrides */
 body[data-theme="light"] {
-  --bg: #f8f9fb;
+  --bg: #f3f6f9;
   --panel: #ffffff;
-  --card: rgba(0, 0, 0, 0.03);
-  --card2: rgba(0, 0, 0, 0.05);
-  --border: rgba(0, 0, 0, 0.08);
-  --text: #1a1a1a;
-  --muted: #6b7280;
-  --muted2: #9ca3af;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  background: #f8f9fb;
+  --card: #ffffff;
+  --card2: #f8fafc;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #475569;
+  --muted2: #64748b;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  background: #f3f6f9;
+}
+
+/* Enhanced card shadows for light mode */
+body[data-theme="light"] .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Modal overlays in light mode */
 body[data-theme="light"] .modal-content {
   background: #ffffff;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 body[data-theme="light"] .landingAuthModal {
   background: #ffffff !important;
-  border: 2px solid rgba(124, 58, 237, 0.15);
+  border: 1px solid #e2e8f0;
 }
 
 /* Candidate Analysis Styles */
@@ -3636,4 +3781,17 @@ body[data-theme="light"] .landingAuthModal {
   background: var(--card);
   border-radius: 12px;
   border-left: 4px solid #7c3aed;
+}
+
+/* Candidate Link Icon - contrasting color */
+.candidateLinkIcon {
+  color: #3b82f6 !important;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.candidateLinkIcon:hover {
+  opacity: 1;
+  color: #2563eb !important;
+  transform: translateX(2px);
 }
