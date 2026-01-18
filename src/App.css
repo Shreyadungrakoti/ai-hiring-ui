@@ -3397,25 +3397,21 @@ html[data-theme="light"] .d2ChartBar{
 body[data-theme="light"] {
   --bg: #f8f9fb;
   --panel: #ffffff;
-  --card: rgba(124, 58, 237, 0.04);
-  --card2: rgba(124, 58, 237, 0.08);
-  --border: rgba(124, 58, 237, 0.12);
+  --card: rgba(0, 0, 0, 0.03);
+  --card2: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.08);
   --text: #1a1a1a;
   --muted: #6b7280;
   --muted2: #9ca3af;
-  --shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
-}
-
-body[data-theme="light"] {
-  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #e0e7ff 50%, #ede9fe 75%, #f3e8ff 100%);
-  background-attachment: fixed;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #f8f9fb;
 }
 
 /* Modal overlays in light mode */
 body[data-theme="light"] .modal-content {
   background: #ffffff;
-  border: 2px solid rgba(124, 58, 237, 0.15);
-  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 body[data-theme="light"] .landingAuthModal {
