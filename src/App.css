@@ -3783,27 +3783,27 @@ body[data-theme="light"] .landingAuthModal {
   border-left: 4px solid #7c3aed;
 }
 
-/* Candidate Link Icon - navy blue like Google */
+/* Candidate Link Icon - LinkedIn dark navy blue */
 .candidateLinkIcon {
-  color: #1a73e8 !important;
+  color: #0A66C2 !important;
   opacity: 1;
   transition: all 0.2s;
 }
 
 .candidateLinkIcon:hover {
   opacity: 1;
-  color: #174ea6 !important;
+  color: #004182 !important;
   transform: translateX(2px);
 }
 
-/* Send InMail Button - Navy Blue */
+/* Send InMail Button - LinkedIn Navy Blue */
 .btnInMail {
-  background: #1a73e8 !important;
-  border-color: #1a73e8 !important;
+  background: #0A66C2 !important;
+  border-color: #0A66C2 !important;
   color: #ffffff !important;
 }
 
 .btnInMail:hover {
-  background: #174ea6 !important;
-  border-color: #174ea6 !important;
+  background: #004182 !important;
+  border-color: #004182 !important;
 }
