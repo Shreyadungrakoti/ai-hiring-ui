@@ -30,7 +30,7 @@ export default function Settings() {
 
         <div className="stack">
           <div className="small muted">
-            Important: do not store LinkedIn passwords in the browser.
+            Important: do not store platform credentials in the browser.
             Backend should store them securely (encrypted) and only expose “connected” status.
           </div>
 
@@ -38,7 +38,7 @@ export default function Settings() {
             <div className="row space">
               <div className="row" style={{ gap: 10 }}>
                 <Lock size={16} />
-                <div style={{ fontWeight: 900 }}>LinkedIn</div>
+                <div style={{ fontWeight: 900 }}>Job Platforms</div>
               </div>
               <span className="pill">Not connected</span>
             </div>
@@ -47,11 +47,11 @@ export default function Settings() {
 
             <div className="stack">
               <div>
-                <div className="small">LinkedIn email</div>
+                <div className="small">Platform email</div>
                 <input className="input" value={linkedinEmail} onChange={(e) => setLinkedinEmail(e.target.value)} placeholder="email@domain.com" />
               </div>
               <div>
-                <div className="small">LinkedIn password</div>
+                <div className="small">Platform password</div>
                 <input className="input" type="password" value={linkedinPass} onChange={(e) => setLinkedinPass(e.target.value)} placeholder="••••••••" />
               </div>
 

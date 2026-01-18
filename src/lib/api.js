@@ -238,7 +238,7 @@ export const api = {
       log_tail: [
         "Parse JD: OK",
         "Generated search URLs: OK",
-        "Logging into LinkedIn...",
+        "Logging into job platforms...",
         "Scraped 9/20 profiles...",
       ],
     };

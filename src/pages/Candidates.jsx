@@ -8,7 +8,7 @@ const mockCandidates = [
     name: "Jane Doe",
     score: 8.6,
     project: "Data Scientist",
-    linkedin: "https://linkedin.com/in/janedoe",
+    linkedin: "https://platform.com/in/janedoe",
     inmail_sent: false,
     created_at: "2026-01-12T10:30:00Z",
   },

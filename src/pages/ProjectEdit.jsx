@@ -111,13 +111,13 @@ export default function ProjectEdit() {
               />
             </div>
             <div style={{ flex: 1 }}>
-              <div className="small">LinkedIn Project URL</div>
+              <div className="small">Job Platform Project URL</div>
               <div style={{ display: "flex", gap: 8, alignItems: "flex-end" }}>
                 <input
                   className="input"
                   value={linkedinUrl}
                   onChange={(e) => setLinkedinUrl(e.target.value)}
-                  placeholder="https://linkedin.com/projects/..."
+                  placeholder="https://platform.com/projects/..."
                   style={{ flex: 1 }}
                 />
                 {linkedinUrl && (
@@ -126,7 +126,7 @@ export default function ProjectEdit() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="btn"
-                    title="Open LinkedIn project"
+                    title="Open project on platform"
                   >
                     <ExternalLink size={16} />
                   </a>
@@ -156,7 +156,7 @@ export default function ProjectEdit() {
           <div>
             <div className="small">Search method</div>
             <select className="select" value={searchMethod} onChange={(e) => setSearchMethod(e.target.value)}>
-              <option value="linkedin">LinkedIn</option>
+              <option value="linkedin">Job Platforms (Multi-source)</option>
               <option value="naukari">Naukari</option>
               <option value="both">Both</option>
             </select>

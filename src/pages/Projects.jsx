@@ -108,7 +108,7 @@ export default function Projects() {
                           href={p.linkedin_url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          title="Open LinkedIn Project"
+                          title="Open Project on Platform"
                           style={{ 
                             display: "flex", 
                             alignItems: "center", 

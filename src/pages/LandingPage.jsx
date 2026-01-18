@@ -196,7 +196,7 @@ export default function LandingPage() {
           <div className="landingNavLinks">
             <a href="#features" className="landingNavLink">Features</a>
             <a href="#how-it-works" className="landingNavLink">How It Works</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/dashboard"); }} className="landingNavLink">Dashboard</a>
+            <a href="#demo" className="landingNavLink">Demo</a>
             <a href="#contact" className="landingNavLink">Contact</a>
             
             {isAuthed ? (
@@ -439,7 +439,7 @@ export default function LandingPage() {
       <StatsCarousel />
 
       {/* Demo Video Section */}
-      <section className="landingDemo">
+      <section className="landingDemo" id="demo">
         <div className="landingDemoContent">
           <div className="landingDemoPlaceholder">
             <div className="landingDemoIcon">
@@ -488,7 +488,7 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Users size={32} />
               </div>
-              <h3 className="landingFeatureTitle">LinkedIn Integration</h3>
+              <h3 className="landingFeatureTitle">Multi-Platform Integration</h3>
               <p className="landingFeatureText">
                 Tap into millions of profiles instantly.
               </p>
@@ -669,7 +669,7 @@ export default function LandingPage() {
               <h4 className="landingFooterHeading">Product</h4>
               <ul className="landingFooterLinks">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/dashboard"); }}>Dashboard</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/projects"); }}>Projects</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/candidates"); }}>Candidates</a></li>
                 <li><a href="#" onClick={(e) => e.preventDefault()}>Pricing</a></li>

@@ -84,7 +84,7 @@ export default function NewProject() {
           <div>
             <div className="small">Search method</div>
             <select className="select" value={searchMethod} onChange={(e) => setSearchMethod(e.target.value)}>
-              <option value="linkedin">LinkedIn</option>
+              <option value="linkedin">Job Platforms (Multi-source)</option>
               <option value="naukari">Naukari</option>
               <option value="both">Both</option>
             </select>
