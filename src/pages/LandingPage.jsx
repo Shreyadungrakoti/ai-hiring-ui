@@ -236,7 +236,13 @@ export default function LandingPage() {
                       </button>
                     )}
 
-                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                    <button 
+                      className="landingMeItem" 
+                      onClick={() => {
+                        setMeDropdownOpen(false);
+                        nav("/website-settings");
+                      }}
+                    >
                       <Settings size={18} />
                       <span>Settings</span>
                     </button>

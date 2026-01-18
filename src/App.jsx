@@ -9,6 +9,7 @@ import ProjectEdit from "./pages/ProjectEdit.jsx";
 import RunDetail from "./pages/RunDetail.jsx";
 import Candidates from "./pages/Candidates.jsx";
 import Settings from "./pages/Settings.jsx";
+import WebsiteSettings from "./pages/WebsiteSettings.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import AppShell from "./shell/AppShell.jsx";
 import ProtectedRoute from "./shell/ProtectedRoute.jsx";
@@ -18,6 +19,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/website-settings" element={<WebsiteSettings />} />
       
       <Route 
         path="/create-portal" 
