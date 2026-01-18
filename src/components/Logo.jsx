@@ -14,7 +14,7 @@ export default function Logo({ size = 44 }) {
       <rect x="25" y="20" width="50" height="60" rx="4" fill="white" />
       
       {/* Document lines */}
-      <line x1="32" y1="30" x2="60" y2="30" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="32" y1="30" x2="60" y2="30" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
       <line x1="32" y1="40" x2="68" y2="40" stroke="#d1d5db" strokeWidth="2" strokeLinecap="round" />
       <line x1="32" y1="48" x2="65" y2="48" stroke="#d1d5db" strokeWidth="2" strokeLinecap="round" />
       <line x1="32" y1="56" x2="62" y2="56" stroke="#d1d5db" strokeWidth="2" strokeLinecap="round" />
@@ -37,10 +37,9 @@ export default function Logo({ size = 44 }) {
       {/* Gradient definition */}
       <defs>
         <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100">
-          <stop offset="0%" stopColor="#0ea5e9" />
-          <stop offset="40%" stopColor="#3b82f6" />
-          <stop offset="70%" stopColor="#6366f1" />
-          <stop offset="100%" stopColor="#8b5cf6" />
+          <stop offset="0%" stopColor="#7c3aed" />
+          <stop offset="50%" stopColor="#a855f7" />
+          <stop offset="100%" stopColor="#c084fc" />
         </linearGradient>
       </defs>
     </svg>

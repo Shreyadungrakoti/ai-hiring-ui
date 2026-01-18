@@ -1801,7 +1801,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .btnLarge.btnPrimary {
-  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
   color: #ffffff !important;
   border: none !important;
 }
@@ -1870,11 +1870,27 @@ html[data-theme="light"] .d2ChartBar{
   margin: 0 auto;
   padding: 60px 32px;
   background: transparent;
+  position: relative;
+}
+
+.landingFeatures::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .landingFeaturesContent {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .landingSectionHeader {
@@ -1904,45 +1920,111 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFeatureCard {
-  background: rgba(255, 255, 255, 0.8) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.9) 100%) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(124, 58, 237, 0.15) !important;
-  border-radius: 20px !important;
-  padding: 40px !important;
+  border: 2px solid rgba(124, 58, 237, 0.1) !important;
+  border-radius: 24px !important;
+  padding: 44px !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
-  min-height: 220px;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.landingFeatureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.landingFeatureCard:hover::before {
+  opacity: 0.3;
 }
 
 .landingFeatureCard:hover {
-  transform: translateY(-12px) !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(124, 58, 237, 0.25) !important;
+}
   border-color: rgba(124, 58, 237, 0.5) !important;
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.2) !important;
   background: rgba(255, 255, 255, 0.95) !important;
 }
 
 .landingFeatureIcon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
   background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   color: #7c3aed;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+  transition: all 0.3s ease;
+}
+
+.landingFeatureCard:hover .landingFeatureIcon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+}
+
+/* Different colors for each feature icon */
+.landingFeatureCard:nth-child(1) .landingFeatureIcon {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.landingFeatureCard:nth-child(2) .landingFeatureIcon {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #7c3aed;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+.landingFeatureCard:nth-child(3) .landingFeatureIcon {
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+  color: #6366f1;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+.landingFeatureCard:nth-child(4) .landingFeatureIcon {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #16a34a;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
+}
+
+.landingFeatureCard:nth-child(5) .landingFeatureIcon {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #ca8a04;
+  box-shadow: 0 8px 20px rgba(202, 138, 4, 0.25);
+}
+
+.landingFeatureCard:nth-child(6) .landingFeatureIcon {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  color: #db2777;
+  box-shadow: 0 8px 20px rgba(219, 39, 119, 0.25);
+}
   flex-shrink: 0;
 }
 
 .landingFeatureTitle {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0;
   color: #1a1a1a;
+  letter-spacing: -0.01em;
 }
 
 .landingFeatureText {
@@ -1992,6 +2074,25 @@ html[data-theme="light"] .d2ChartBar{
   margin: 0 auto;
   padding: 60px 32px;
   background: transparent;
+  position: relative;
+}
+
+.landingContact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landingContactContent {
+  position: relative;
+  z-index: 1;
 }
 
 .landingContactContent {
@@ -2000,13 +2101,25 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(124, 58, 237, 0.15) !important;
-  border-radius: 16px !important;
-  padding: 48px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%) !important;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(124, 58, 237, 0.2) !important;
+  border-radius: 24px !important;
+  padding: 56px !important;
   margin-top: 40px !important;
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.landingContactForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #7c3aed, #a855f7, #ec4899);
 }
 
 .landingContactForm form {
@@ -2016,10 +2129,10 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm .btn {
-  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
   color: #ffffff !important;
   border: none !important;
-  padding: 16px 32px !important;
+  padding: 18px 40px !important;
   font-size: 17px !important;
   font-weight: 600 !important;
   border-radius: 12px !important;
@@ -2063,11 +2176,14 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingContactForm .input,
 .landingContactForm .textarea {
-  border: 2px solid rgba(124, 58, 237, 0.15) !important;
-  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid rgba(124, 58, 237, 0.2) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   color: #1a1a1a !important;
-  padding: 14px 18px !important;
-  border-radius: 10px !important;
+  padding: 16px 20px !important;
+  border-radius: 12px !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+}
   font-size: 16px !important;
   font-family: inherit !important;
   width: 100% !important;
@@ -2083,8 +2199,9 @@ html[data-theme="light"] .d2ChartBar{
 .landingContactForm .textarea:focus {
   outline: none !important;
   border-color: #7c3aed !important;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15) !important;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15), 0 4px 12px rgba(124, 58, 237, 0.1) !important;
   background: rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px) !important;
 }
 
 .landingContactForm .textarea {
