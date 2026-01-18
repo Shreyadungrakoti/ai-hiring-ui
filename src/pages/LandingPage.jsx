@@ -107,8 +107,8 @@ export default function LandingPage() {
       // Logged in but no portal → go to create portal
       nav("/create-portal");
     } else {
-      // Has portal → go to dashboard
-      nav("/portal/dashboard");
+      // Has portal → go to platform selection first
+      nav("/platform-selection");
     }
   };
 
@@ -228,7 +228,7 @@ export default function LandingPage() {
                         className="landingMeItem"
                         onClick={() => {
                           setMeDropdownOpen(false);
-                          nav("/portal/dashboard");
+                          nav("/platform-selection");
                         }}
                       >
                         <Target size={18} />

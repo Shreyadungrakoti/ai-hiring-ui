@@ -3634,6 +3634,293 @@ html[data-theme="light"] .d2ChartBar{
   color: #7c3aed;
 }
 
+/* ===== Platform Selection Page ===== */
+.platformSelectionPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #e0e7ff 50%, #ede9fe 75%, #f3e8ff 100%);
+}
+
+body[data-theme="dark"] .platformSelectionPage {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1e293b 100%);
+}
+
+.platformSelectionContainer {
+  max-width: 900px;
+  width: 100%;
+}
+
+.platformSelectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.platformSelectionHeaderIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  color: #ffffff;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+}
+
+.platformSelectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #0f172a;
+}
+
+body[data-theme="dark"] .platformSelectionTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.platformSelectionSubtitle {
+  font-size: 18px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+body[data-theme="dark"] .platformSelectionSubtitle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.platformSelectionGrid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.platformCard {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+body[data-theme="dark"] .platformCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.platformCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #7c3aed;
+}
+
+body[data-theme="dark"] .platformCard:hover {
+  border-color: #a855f7;
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.3);
+}
+
+.platformCardSelected {
+  border-color: #7c3aed;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+}
+
+.platformCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.platformCardIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.platformCardHeaderText {
+  flex: 1;
+}
+
+.platformCardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}
+
+body[data-theme="dark"] .platformCardTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.platformCardDescription {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+body[data-theme="dark"] .platformCardDescription {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.platformCardFeatures {
+  margin-bottom: 24px;
+}
+
+.platformCardFeaturesTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+body[data-theme="dark"] .platformCardFeaturesTitle {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.platformCardFeaturesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platformCardFeatureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+body[data-theme="dark"] .platformCardFeatureItem {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.platformCardSecurity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+body[data-theme="dark"] .platformCardSecurity {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.platformCardButton {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.platformCardButton:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.platformCardButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.platformCardButtonSpinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.platformSelectionFooter {
+  text-align: center;
+}
+
+.platformSelectionFooter .btn {
+  background: transparent !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #64748b !important;
+  padding: 12px 24px !important;
+  font-size: 15px !important;
+}
+
+body[data-theme="dark"] .platformSelectionFooter .btn {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.platformSelectionFooter .btn:hover:not(:disabled) {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+  color: #475569 !important;
+}
+
+body[data-theme="dark"] .platformSelectionFooter .btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .platformSelectionTitle {
+    font-size: 28px;
+  }
+
+  .platformSelectionSubtitle {
+    font-size: 16px;
+  }
+
+  .platformCard {
+    padding: 24px;
+  }
+
+  .platformCardHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .websiteSettingsContainer {
