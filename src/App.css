@@ -1446,13 +1446,19 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.landingLogo:hover {
+  opacity: 0.8;
 }
 
 .landingLogo svg {
-  color: #7c3aed;
+  flex-shrink: 0;
 }
 
 .landingNavLinks {

@@ -5,6 +5,7 @@ import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, Chevro
 import HeroIllustration from "../components/HeroIllustration.jsx";
 import StatsCarousel from "../components/StatsCarousel.jsx";
 import ProductShowcase from "../components/ProductShowcase.jsx";
+import Logo from "../components/Logo.jsx";
 
 export default function LandingPage() {
   const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword, logout } = useAuth();
@@ -189,7 +190,7 @@ export default function LandingPage() {
       <nav className="landingNav">
         <div className="landingNavContent">
           <div className="landingLogo">
-            <Sparkles size={28} />
+            <Logo size={44} />
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
