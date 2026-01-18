@@ -1417,7 +1417,8 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingPage {
   min-height: 100vh;
-  background: #ffffff;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 25%, #e9d5ff 50%, #ddd6fe 100%);
+  background-attachment: fixed;
   color: #1a1a1a;
 }
 
@@ -1426,9 +1427,10 @@ html[data-theme="light"] .d2ChartBar{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  box-shadow: 0 1px 3px rgba(124, 58, 237, 0.05);
 }
 
 .landingNavContent {
@@ -1698,13 +1700,13 @@ html[data-theme="light"] .d2ChartBar{
 .landingHero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 120px 32px 100px;
 }
 
 .landingHeroContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -1719,23 +1721,28 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingHeroTitle {
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 20px 0;
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
   color: #1a1a1a;
+  letter-spacing: -0.02em;
 }
 
 .landingGradientText {
-  color: #7c3aed;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .landingHeroSubtitle {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #6b7280;
-  margin: 0 0 32px 0;
-  max-width: 500px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 36px 0;
+  max-width: 540px;
+  font-weight: 400;
 }
 
 .landingHeroCTA {
@@ -1746,26 +1753,28 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .btnLarge {
-  padding: 14px 28px;
-  font-size: 16px;
+  padding: 16px 32px;
+  font-size: 17px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-radius: 8px;
+  gap: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
 }
 
 .btnLarge.btnPrimary {
-  background: #7c3aed !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
   color: #ffffff !important;
   border: none !important;
 }
 
 .btnLarge.btnPrimary:hover {
-  background: #6d28d9 !important;
-  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
 }
 
 .btnLarge:not(.btnPrimary) {
@@ -1824,8 +1833,8 @@ html[data-theme="light"] .d2ChartBar{
 .landingFeatures {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
-  background: #f9fafb;
+  padding: 100px 32px;
+  background: transparent;
 }
 
 .landingFeaturesContent {
@@ -1835,64 +1844,70 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingSectionHeader {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 }
 
 .landingSectionTitle {
-  font-size: 42px;
-  font-weight: 700;
-  margin: 0 0 16px 0;
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
   color: #1a1a1a;
+  letter-spacing: -0.02em;
 }
 
 .landingSectionSubtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #6b7280;
   margin: 0;
+  font-weight: 400;
 }
 
 .landingFeaturesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 32px;
 }
 
 .landingFeatureCard {
-  background: #ffffff !important;
-  border: 2px solid #e5e7eb !important;
-  border-radius: 12px !important;
-  padding: 28px !important;
-  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 36px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
 }
 
 .landingFeatureCard:hover {
-  border-color: #7c3aed !important;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-8px) !important;
+  border-color: rgba(124, 58, 237, 0.4) !important;
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
 }
 
 .landingFeatureIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: #f3e8ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #7c3aed;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
 }
 
 .landingFeatureTitle {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
   color: #1a1a1a;
 }
 
 .landingFeatureText {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   color: #6b7280;
   margin: 0;
 }
@@ -1901,38 +1916,42 @@ html[data-theme="light"] .d2ChartBar{
 .landingCTA {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 100px 32px;
 }
 
 .landingCTAContent {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  background: #f9fafb !important;
-  border: 2px solid #e5e7eb !important;
-  border-radius: 12px !important;
-  padding: 56px 48px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  border-radius: 24px !important;
+  padding: 64px 48px !important;
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
 }
 
 .landingCTATitle {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0 0 16px 0;
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
   color: #1a1a1a;
+  letter-spacing: -0.02em;
 }
 
 .landingCTASubtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #6b7280;
-  margin: 0 0 28px 0;
+  margin: 0 0 36px 0;
+  font-weight: 400;
 }
 
 /* Contact Us Section */
 .landingContact {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
-  background: #f9fafb;
+  padding: 100px 32px;
+  background: transparent;
 }
 
 .landingContactContent {
@@ -1941,38 +1960,42 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm {
-  background: #ffffff !important;
-  border: 2px solid #e5e7eb !important;
-  border-radius: 12px !important;
-  padding: 40px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 48px !important;
   margin-top: 40px !important;
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
 }
 
 .landingContactForm form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .landingContactForm .btn {
-  background: #7c3aed !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
   color: #ffffff !important;
   border: none !important;
-  padding: 14px 28px !important;
-  font-size: 16px !important;
+  padding: 16px 32px !important;
+  font-size: 17px !important;
   font-weight: 600 !important;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
   cursor: pointer !important;
-  transition: all 0.2s !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
 }
 
 .landingContactForm .btn:hover:not(:disabled) {
-  background: #6d28d9 !important;
-  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
 }
 
 .landingContactForm .btn:disabled {
@@ -2000,15 +2023,15 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingContactForm .input,
 .landingContactForm .textarea {
-  border: 2px solid #d1d5db !important;
-  background: #ffffff !important;
+  border: 2px solid rgba(124, 58, 237, 0.15) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
   color: #1a1a1a !important;
-  padding: 12px 16px !important;
-  border-radius: 8px !important;
-  font-size: 15px !important;
+  padding: 14px 18px !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
   font-family: inherit !important;
   width: 100% !important;
-  transition: all 0.2s !important;
+  transition: all 0.3s !important;
 }
 
 .landingContactForm .input::placeholder,
@@ -2020,12 +2043,13 @@ html[data-theme="light"] .d2ChartBar{
 .landingContactForm .textarea:focus {
   outline: none !important;
   border-color: #7c3aed !important;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1) !important;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15) !important;
+  background: rgba(255, 255, 255, 1) !important;
 }
 
 .landingContactForm .textarea {
   resize: vertical !important;
-  min-height: 120px !important;
+  min-height: 140px !important;
 }
 
 .landingFormSuccess {
@@ -2060,9 +2084,10 @@ html[data-theme="light"] .d2ChartBar{
 
 /* Footer */
 .landingFooter {
-  border-top: 1px solid #e5e7eb;
-  padding: 32px;
-  background: #ffffff;
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .landingFooterContent {
