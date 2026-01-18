@@ -1,6 +1,6 @@
 export default function ProductShowcase() {
   return (
-    <section className="landingProductShowcase">
+    <section className="landingProductShowcase" id="how-it-works">
       <div className="landingProductContent">
         <div className="landingSectionHeader">
           <h2 className="landingSectionTitle">How It Works</h2>

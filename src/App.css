@@ -1457,8 +1457,21 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingNavLinks {
   display: flex;
-  gap: 12px;
+  gap: 32px;
   align-items: center;
+}
+
+.landingNavLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: 8px 4px;
+}
+
+.landingNavLink:hover {
+  color: #7c3aed;
 }
 
 .landingLoginBtn {
@@ -1712,7 +1725,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingHero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 140px 32px 120px;
+  padding: 100px 32px 60px;
 }
 
 .landingHeroContent {
@@ -1807,7 +1820,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingDemo {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 60px 32px;
+  padding: 40px 32px;
 }
 
 .landingDemoContent {
@@ -1849,7 +1862,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingFeatures {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 60px 32px;
   background: transparent;
 }
 
@@ -1937,7 +1950,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingCTA {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 60px 32px;
 }
 
 .landingCTAContent {
@@ -1971,7 +1984,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingContact {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 60px 32px;
   background: transparent;
 }
 
@@ -2551,7 +2564,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingStats {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 50px 32px;
   background: transparent;
 }
 
@@ -2636,7 +2649,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingProductShowcase {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 60px 32px;
   background: transparent;
 }
 

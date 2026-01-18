@@ -193,6 +193,11 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
+            <a href="#features" className="landingNavLink">Features</a>
+            <a href="#how-it-works" className="landingNavLink">How It Works</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/dashboard"); }} className="landingNavLink">Dashboard</a>
+            <a href="#contact" className="landingNavLink">Contact</a>
+            
             {isAuthed ? (
               <div className="landingMeDropdown" ref={meDropdownRef}>
                 <button
@@ -429,6 +434,9 @@ export default function LandingPage() {
       {/* Product Showcase - moved before demo */}
       <ProductShowcase />
 
+      {/* Stats Carousel */}
+      <StatsCarousel />
+
       {/* Demo Video Section */}
       <section className="landingDemo">
         <div className="landingDemoContent">
@@ -443,9 +451,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Stats Carousel */}
-      <StatsCarousel />
 
       {/* Features Section */}
       <section className="landingFeatures" id="features">
