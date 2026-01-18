@@ -394,19 +394,40 @@ export default function LandingPage() {
         <div className="landingHeroContent">
           <div className="landingHeroText">
             <h1 className="landingHeroTitle">
-              Transform Your Hiring with
-              <span className="landingGradientText"> AI-Powered</span> Recruitment
+              Hire Smarter.
+              <br/>
+              <span className="landingGradientText">Not Harder.</span>
             </h1>
             <p className="landingHeroSubtitle">
-              Find, screen, and shortlist top talent automatically. Our AI analyzes thousands of profiles 
-              to match you with the perfect candidates in minutes, not weeks.
+              AI-powered recruitment that finds perfect candidates in minutes.
             </p>
+            <button
+              onClick={() => {
+                if (isAuthed) {
+                  if (auth.hasPortal) {
+                    nav("/portal/dashboard");
+                  } else {
+                    nav("/create-portal");
+                  }
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+              className="btnLarge btnPrimary landingHeroCTA"
+            >
+              <Sparkles size={20} />
+              Get Started Free
+            </button>
           </div>
           <div className="landingHeroIllustration">
             <HeroIllustration />
           </div>
         </div>
       </section>
+
+      {/* Product Showcase - moved before demo */}
+      <ProductShowcase />
 
       {/* Demo Video Section */}
       <section className="landingDemo">
@@ -418,7 +439,7 @@ export default function LandingPage() {
                 <polygon points="10 8 16 12 10 16 10 8"/>
               </svg>
             </div>
-            <p className="landingDemoText">Demo Video Coming Soon</p>
+            <p className="landingDemoText">See AI Hiring in Action</p>
           </div>
         </div>
       </section>
@@ -430,9 +451,9 @@ export default function LandingPage() {
       <section className="landingFeatures" id="features">
         <div className="landingFeaturesContent">
           <div className="landingSectionHeader">
-            <h2 className="landingSectionTitle">Why Choose AI Hiring?</h2>
+            <h2 className="landingSectionTitle">Why AI Hiring?</h2>
             <p className="landingSectionSubtitle">
-              Streamline your recruitment process with cutting-edge AI technology
+              Powerful features for modern recruiters
             </p>
           </div>
 
@@ -441,9 +462,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Zap size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Lightning Fast</h3>
+              <h3 className="landingFeatureTitle">10x Faster Screening</h3>
               <p className="landingFeatureText">
-                Screen thousands of candidates in minutes. Our AI processes profiles 100x faster than manual review.
+                Screen thousands in minutes, not weeks.
               </p>
             </div>
 
@@ -451,9 +472,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Target size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Precision Matching</h3>
+              <h3 className="landingFeatureTitle">95% Match Accuracy</h3>
               <p className="landingFeatureText">
-                Advanced algorithms match candidates to your job requirements with 95%+ accuracy.
+                AI finds candidates you'd actually hire.
               </p>
             </div>
 
@@ -461,9 +482,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Users size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Multi-Platform Search</h3>
+              <h3 className="landingFeatureTitle">LinkedIn Integration</h3>
               <p className="landingFeatureText">
-                Automatically search LinkedIn, Naukri, and other platforms to find the best talent everywhere.
+                Tap into millions of profiles instantly.
               </p>
             </div>
 
@@ -471,9 +492,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Shield size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Bias-Free Screening</h3>
+              <h3 className="landingFeatureTitle">Bias-Free Hiring</h3>
               <p className="landingFeatureText">
-                AI-driven evaluation ensures fair, unbiased candidate assessment based purely on qualifications.
+                Focus on skills, not demographics.
               </p>
             </div>
 
@@ -481,9 +502,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <TrendingUp size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Real-Time Analytics</h3>
+              <h3 className="landingFeatureTitle">Real-Time Insights</h3>
               <p className="landingFeatureText">
-                Track your hiring pipeline with comprehensive dashboards and actionable insights.
+                Track every candidate, every metric.
               </p>
             </div>
 
@@ -493,7 +514,7 @@ export default function LandingPage() {
               </div>
               <h3 className="landingFeatureTitle">Smart Automation</h3>
               <p className="landingFeatureText">
-                From screening to outreach, automate repetitive tasks and focus on what matters.
+                From screening to outreach, fully automated.
               </p>
             </div>
           </div>
@@ -503,15 +524,32 @@ export default function LandingPage() {
       {/* CTA Section */}
       <section className="landingCTA">
         <div className="landingCTAContent">
-          <h2 className="landingCTATitle">Ready to revolutionize your hiring?</h2>
+          <h2 className="landingCTATitle">Start Hiring Smarter Today</h2>
           <p className="landingCTASubtitle">
-            Join companies that are already finding better candidates, faster.
+            Join the AI revolution in recruitment.
           </p>
+          <button
+            onClick={() => {
+              if (isAuthed) {
+                if (auth.hasPortal) {
+                  nav("/portal/dashboard");
+                } else {
+                  nav("/create-portal");
+                }
+              } else {
+                setAuthMode("signup");
+                setAuthOpen(true);
+              }
+            }}
+            className="btnLarge btnPrimary"
+          >
+            <Sparkles size={20} />
+            Get Started Free
+          </button>
         </div>
       </section>
 
-      {/* Product Showcase */}
-      <ProductShowcase />
+      {/* Product Showcase - removed duplicate */}
 
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">

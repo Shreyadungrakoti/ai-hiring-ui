@@ -1712,7 +1712,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingHero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 120px 32px 100px;
+  padding: 140px 32px 120px;
 }
 
 .landingHeroContent {
@@ -1733,12 +1733,16 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingHeroTitle {
-  font-size: 68px;
+  font-size: 72px;
   font-weight: 800;
   line-height: 1.1;
   margin: 0 0 24px 0;
   color: #1a1a1a;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+}
+
+.landingHeroCTA {
+  margin-top: 40px;
 }
 
 .landingGradientText {
@@ -1749,11 +1753,11 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingHeroSubtitle {
-  font-size: 20px;
-  line-height: 1.7;
-  color: #4b5563;
-  margin: 0 0 36px 0;
-  max-width: 540px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+  max-width: 480px;
   font-weight: 400;
 }
 
@@ -1884,42 +1888,47 @@ html[data-theme="light"] .d2ChartBar{
   background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(124, 58, 237, 0.15) !important;
-  border-radius: 16px !important;
-  padding: 36px !important;
+  border-radius: 20px !important;
+  padding: 40px !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .landingFeatureCard:hover {
-  transform: translateY(-8px) !important;
-  border-color: rgba(124, 58, 237, 0.4) !important;
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15) !important;
+  transform: translateY(-12px) !important;
+  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 16px 48px rgba(124, 58, 237, 0.2) !important;
   background: rgba(255, 255, 255, 0.95) !important;
 }
 
 .landingFeatureIcon {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   color: #7c3aed;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  flex-shrink: 0;
 }
 
 .landingFeatureTitle {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  margin: 0 0 12px 0;
+  margin: 0;
   color: #1a1a1a;
 }
 
 .landingFeatureText {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   color: #6b7280;
   margin: 0;
 }

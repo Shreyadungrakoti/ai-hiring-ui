@@ -50,7 +50,7 @@ export default function ProductShowcase() {
               <div className="landingShowcaseNumber">01</div>
               <h3 className="landingShowcaseTitle">Create Project</h3>
               <p className="landingShowcaseText">
-                Simply paste your job description. Our AI understands requirements and sets up your project instantly.
+                Paste job description. Done.
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function ProductShowcase() {
               <div className="landingShowcaseNumber">02</div>
               <h3 className="landingShowcaseTitle">AI Screens Candidates</h3>
               <p className="landingShowcaseText">
-                Our AI analyzes thousands of LinkedIn profiles, matching skills, experience, and cultural fit automatically.
+                Thousands screened. Minutes, not months.
               </p>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function ProductShowcase() {
               <div className="landingShowcaseNumber">03</div>
               <h3 className="landingShowcaseTitle">Review Top Matches</h3>
               <p className="landingShowcaseText">
-                Get a ranked list of best-fit candidates with match scores. Focus your time on the best talent.
+                Best candidates, ranked and ready.
               </p>
             </div>
           </div>
