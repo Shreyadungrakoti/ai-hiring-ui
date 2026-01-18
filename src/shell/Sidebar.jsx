@@ -1,4 +1,5 @@
 import { LayoutDashboard, FolderKanban, Users, Settings, LogOut, Plus } from "lucide-react";
+import { useState } from "react";
 import { useAuth } from "../state/auth.jsx";
 
 const nav = [
@@ -10,6 +11,13 @@ const nav = [
 
 export default function Sidebar({ pathname, onNav }) {
   const { auth, logout } = useAuth();
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+
+  const handleLogout = () => {
+    logout();
+    // Redirect to landing page with signup modal open
+    onNav("/?showAuth=signup");
+  };
 
   return (
     <aside className="sidebar sidebarCompact">
@@ -49,15 +57,36 @@ export default function Sidebar({ pathname, onNav }) {
 
         <button
           className="sbIconBtn"
-          onClick={() => {
-            logout();
-            onNav("/");
-          }}
+          onClick={() => setShowLogoutConfirm(true)}
           title="Logout"
         >
           <LogOut size={22} />
           <span className="sbIconLabel">Logout</span>
         </button>
+
+        {/* Logout Confirmation Modal */}
+        {showLogoutConfirm && (
+          <div className="modal-overlay" onClick={() => setShowLogoutConfirm(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="h2">Confirm Logout</div>
+              <div className="hr" />
+              <p style={{ margin: "16px 0" }}>
+                Are you sure you want to logout? You'll need to sign in again to access your portal.
+              </p>
+              <div className="row" style={{ justifyContent: "flex-end", gap: 8 }}>
+                <button className="btn" onClick={() => setShowLogoutConfirm(false)}>
+                  Cancel
+                </button>
+                <button 
+                  className="btn btnPrimary" 
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </aside>
   );

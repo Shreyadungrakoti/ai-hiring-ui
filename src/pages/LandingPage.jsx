@@ -1,11 +1,12 @@
-import { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useMemo, useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X } from "lucide-react";
 
 export default function LandingPage() {
   const { auth, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const nav = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const isAuthed = !!auth?.user;
 
@@ -14,6 +15,17 @@ export default function LandingPage() {
   const [authForm, setAuthForm] = useState({ fullName: "", email: "", password: "" });
   const [authSubmitting, setAuthSubmitting] = useState(false);
   const [authError, setAuthError] = useState("");
+
+  // Auto-open auth modal if redirected from logout
+  useEffect(() => {
+    const showAuth = searchParams.get("showAuth");
+    if (showAuth === "signup") {
+      setAuthMode("signup");
+      setAuthOpen(true);
+      // Clean URL
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
 
   const authTitle = useMemo(
     () => (authMode === "signup" ? "Create your account" : "Welcome back"),
