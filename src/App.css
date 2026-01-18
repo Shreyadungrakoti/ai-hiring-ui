@@ -2332,13 +2332,19 @@ html[data-theme="light"] .d2ChartBar{
   padding: 20px 10px 60px;
 }
 
+.testimonialsSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
 .testimonialCard {
   background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(59, 130, 246, 0.2) !important;
   border-radius: 20px !important;
   padding: 36px !important;
-  height: auto;
+  width: 100%;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2417,12 +2423,22 @@ html[data-theme="light"] .d2ChartBar{
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
   transition: all 0.3s;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.testimonialsSwiper .swiper-button-prev {
+  left: 0px;
+}
+
+.testimonialsSwiper .swiper-button-next {
+  right: 0px;
 }
 
 .testimonialsSwiper .swiper-button-prev:hover,
 .testimonialsSwiper .swiper-button-next:hover {
   background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .testimonialsSwiper .swiper-button-prev:after,
@@ -2472,6 +2488,11 @@ html[data-theme="light"] .d2ChartBar{
   padding: 20px 10px;
 }
 
+.statsSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
 .statCard {
   background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(10px);
@@ -2481,10 +2502,12 @@ html[data-theme="light"] .d2ChartBar{
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
-  height: 100%;
+  width: 100%;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
