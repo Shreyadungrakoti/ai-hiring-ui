@@ -770,7 +770,7 @@ kbd{
 .sbIconBtnActive{
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
   border-color: rgba(124, 58, 237, 0.30);
-  color: #a78bfa;
+  color: #5b9cf5;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 
@@ -865,7 +865,7 @@ kbd{
   cursor: pointer;
   border: 1px solid rgba(124, 58, 237, 0.25);
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
-  color: #a78bfa;
+  color: #5b9cf5;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
@@ -1140,8 +1140,8 @@ body[data-theme="dark"] .btnPrimary {
 }
 
 body[data-theme="dark"] .btnPrimary:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
-  border-color: #6d28d9 !important;
+  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
+  border-color: #5b9cf5 !important;
 }
 
 /* Dark mode modal styling */
@@ -1180,8 +1180,8 @@ body[data-theme="light"] .btnPrimary {
 }
 
 body[data-theme="light"] .btnPrimary:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
-  border-color: #6d28d9 !important;
+  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
+  border-color: #5b9cf5 !important;
   box-shadow: 0 4px 8px rgba(124, 58, 237, 0.25) !important;
 }
 
@@ -1264,7 +1264,7 @@ body[data-theme="light"] .sbPlusBtn {
 }
 
 body[data-theme="light"] .sbPlusBtn:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25) !important;
 }
 
@@ -1791,7 +1791,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%) !important;
+  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
 }
@@ -2525,7 +2525,7 @@ html[data-theme="light"] .d2ChartBar{
   height: 80px;
   margin: 0 auto 20px;
   border-radius: 50%;
-  background: #f3e8ff;
+  background: #e0f2fe;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2905,7 +2905,7 @@ html[data-theme="light"] .d2ChartBar{
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5b9cf5 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2955,7 +2955,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .testimonialsSwiper .swiper-button-prev:hover,
 .testimonialsSwiper .swiper-button-next:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -2981,7 +2981,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .testimonialsSwiper .swiper-pagination-bullet-active {
-  background: linear-gradient(135deg, #5b9cf5 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
   width: 28px;
   border-radius: 5px;
 }
@@ -3039,7 +3039,7 @@ html[data-theme="light"] .d2ChartBar{
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3050,7 +3050,7 @@ html[data-theme="light"] .d2ChartBar{
 .statValue {
   font-size: 40px;
   font-weight: 800;
-  background: linear-gradient(135deg, #5b9cf5 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3128,7 +3128,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingShowcaseNumber {
   font-size: 48px;
   font-weight: 800;
-  background: linear-gradient(135deg, #0ea5e9 0%, #5b9cf5 50%, #6366f1 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #5b9cf5 50%, #5b9cf5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3425,7 +3425,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .websiteSettingsPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #e0e7ff 50%, #ede9fe 75%, #f3e8ff 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #dbeafe 50%, #dbeafe 75%, #e0f2fe 100%);
   background-attachment: fixed;
   color: #1a1a1a;
 }
@@ -3689,7 +3689,7 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #0a0e1a 0%, #1a1046 25%, #0f1729 50%, #1e1b4b 75%, #0f172a 100%);
+  background: linear-gradient(135deg, #0a0e1a 0%, #16181d 25%, #0f1729 50%, #1a1d24 75%, #0f172a 100%);
   position: relative;
   overflow: hidden;
 }
@@ -3719,7 +3719,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 body[data-theme="light"] .platformSelectionPage {
-  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #e0e7ff 50%, #ede9fe 75%, #f3e8ff 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 25%, #dbeafe 50%, #dbeafe 75%, #e0f2fe 100%);
 }
 
 body[data-theme="light"] .platformSelectionPage::before {
