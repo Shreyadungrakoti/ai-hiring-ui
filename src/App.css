@@ -5488,12 +5488,12 @@ body[data-theme="light"] .landingAuthModal {
 .featuresPage {
   background: #0d1117;
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 0;
 }
 
 .featuresHero {
   background: #0a0e14;
-  padding: 100px 20px 80px;
+  padding: 160px 20px 80px;
   text-align: center;
 }
 
