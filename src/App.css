@@ -2000,9 +2000,15 @@ html[data-theme="light"] .d2ChartBar{
 
 /* Hero Section */
 .landingHero {
+  width: 100%;
+  background: #0d1117;
+  padding: 120px 0 80px;
+}
+
+.landingHero > * {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 120px 80px 80px;
+  padding: 0 80px;
 }
 
 .landingHeroContent {
@@ -2185,14 +2191,15 @@ html[data-theme="light"] .d2ChartBar{
 
 /* Demo Video Section */
 .landingDemo {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 160px 80px;
+  width: 100%;
+  background: #0a0e14;
+  padding: 160px 0;
 }
 
 .landingDemoContent {
-  max-width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .landingDemoPlaceholder {
@@ -2227,10 +2234,9 @@ html[data-theme="light"] .d2ChartBar{
 
 /* Features Section */
 .landingFeatures {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 160px 80px;
-  background: transparent;
+  width: 100%;
+  background: #10151c;
+  padding: 160px 0;
   position: relative;
 }
 
@@ -2239,8 +2245,9 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFeaturesContent {
-  max-width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 80px;
   position: relative;
   z-index: 1;
 }
@@ -2440,9 +2447,9 @@ html[data-theme="light"] .d2ChartBar{
 
 /* CTA Section */
 .landingCTA {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 32px;
+  width: 100%;
+  background: #0d1117;
+  padding: 120px 0;
 }
 
 .landingCTAContent {
