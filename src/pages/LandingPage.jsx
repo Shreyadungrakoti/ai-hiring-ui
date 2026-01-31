@@ -236,15 +236,11 @@ export default function LandingPage() {
               New Project
             </a>
             <a 
-              href="#features" 
+              href="/features" 
               className="landingNavLink"
               onClick={(e) => {
                 e.preventDefault();
-                // Scroll to features section on landing page
-                const featuresSection = document.getElementById('features');
-                if (featuresSection) {
-                  featuresSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                nav("/features");
               }}
             >
               Features
@@ -739,81 +735,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="landingFeatures" id="features">
-        <div className="landingFeaturesContent">
-          <div className="landingSectionHeader">
-            <h2 className="landingSectionTitle">Features</h2>
-            <p className="landingSectionSubtitle">
-              Powerful tools to streamline your hiring process
-            </p>
-          </div>
-
-          {/* Features Grid */}
-          <div className="landingFeaturesGrid">
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <Zap size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">AI-Powered Screening</h3>
-              <p className="landingFeatureText">
-                Automatically screen and rank candidates based on job requirements using advanced AI algorithms.
-              </p>
-            </div>
-
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <Target size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">Smart Matching</h3>
-              <p className="landingFeatureText">
-                Find the best-fit candidates with our intelligent matching system that considers skills, experience, and culture fit.
-              </p>
-            </div>
-
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <Users size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">Multi-Platform Integration</h3>
-              <p className="landingFeatureText">
-                Connect with LinkedIn, Indeed, and other platforms to access millions of candidate profiles instantly.
-              </p>
-            </div>
-
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <Shield size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">Bias-Free Hiring</h3>
-              <p className="landingFeatureText">
-                Ensure fair and objective candidate evaluation with our bias-detection and mitigation technology.
-              </p>
-            </div>
-
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <TrendingUp size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">Real-Time Analytics</h3>
-              <p className="landingFeatureText">
-                Track hiring metrics, candidate pipeline, and team performance with comprehensive analytics dashboards.
-              </p>
-            </div>
-
-            <div className="landingFeatureCard">
-              <div className="landingFeatureIcon">
-                <Sparkles size={32} />
-              </div>
-              <h3 className="landingFeatureTitle">Automated Workflow</h3>
-              <p className="landingFeatureText">
-                Streamline every step from job posting to offer with intelligent automation and custom workflows.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">
         <div className="landingContactContent">
@@ -925,7 +846,7 @@ export default function LandingPage() {
             <div className="landingFooterColumn">
               <h4 className="landingFooterHeading">Product</h4>
               <ul className="landingFooterLinks">
-                <li><a href="#features">Features</a></li>
+                <li><a href="/features" onClick={(e) => { e.preventDefault(); nav("/features"); }}>Features</a></li>
                 <li><a href="#demo">Demo</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/projects"); }}>Projects</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); nav("/portal/candidates"); }}>Candidates</a></li>

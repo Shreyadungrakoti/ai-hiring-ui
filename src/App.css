@@ -5482,3 +5482,85 @@ body[data-theme="light"] .landingAuthModal {
   }
 }
 
+/* Features Page Styles */
+.featuresPage {
+  background: #0d1117;
+  min-height: 100vh;
+}
+
+.featuresHero {
+  background: #0a0e14;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.featuresHeroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featuresHeroTitle {
+  font-size: 56px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 20px 0;
+  letter-spacing: -0.03em;
+}
+
+.featuresHeroSubtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.featuresCTA {
+  background: #10151c;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.featuresCTAContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.featuresCTATitle {
+  font-size: 40px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.featuresCTASubtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 32px 0;
+}
+
+.featuresCTAButton {
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(74, 127, 224, 0.3);
+}
+
+.featuresCTAButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(74, 127, 224, 0.4);
+}
+
+.featuresCTAButton:active {
+  transform: translateY(0);
+}
+
