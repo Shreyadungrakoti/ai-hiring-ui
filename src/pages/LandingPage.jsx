@@ -504,7 +504,7 @@ export default function LandingPage() {
         <div className="landingHeroContent landingHeroContentCentered">
           <div className="landingHeroText">
             <h1 className="landingHeroTitle">
-              Hire faster with AI you <span className="landingGradientText">can trust.</span>
+              Hire faster with AI<br />you can trust.
             </h1>
             <p className="landingHeroSubtitle">
               End-to-end automation from JD to shortlist.
