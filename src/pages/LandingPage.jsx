@@ -507,24 +507,13 @@ export default function LandingPage() {
               )}
             </div>
 
-            <button
-              onClick={() => {
-                if (isAuthed) {
-                  if (auth.hasPortal) {
-                    nav("/portal/dashboard");
-                  } else {
-                    nav("/create-portal");
-                  }
-                } else {
-                  setAuthMode("signup");
-                  setAuthOpen(true);
-                }
-              }}
-              className="btnLarge btnPrimary landingHeroCTA"
-            >
-              <Sparkles size={20} />
-              Get Started Free
-            </button>
+            
+            {/* Preview Box */}
+            <div className="landingPreviewBox">
+              <div className="landingPreviewContent">
+                <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

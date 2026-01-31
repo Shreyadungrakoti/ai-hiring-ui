@@ -4375,6 +4375,36 @@ body[data-theme="light"] .landingAuthModal {
   to { transform: rotate(360deg); }
 }
 
+/* Preview Box */
+.landingPreviewBox {
+  width: 100%;
+  max-width: 700px;
+  margin: 32px 0;
+}
+
+.landingPreviewContent {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  min-height: calc(52px * 6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.landingPreviewContent:hover {
+  border-color: rgba(82, 139, 242, 0.20);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.landingPreviewText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  text-align: center;
+}
+
 .landingChatMessages {
   margin-top: 20px;
   display: flex;
