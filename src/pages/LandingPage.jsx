@@ -594,7 +594,10 @@ export default function LandingPage() {
       {/* Demo Video Section */}
       <section className="landingDemo" id="demo">
         <div className="landingDemoContent">
-          <h2 className="landingSectionTitle" style={{ textAlign: 'center', marginBottom: '32px' }}>AI Hiring in Action</h2>
+          <h2 className="landingSectionTitle" style={{ textAlign: 'center', marginBottom: '8px' }}>AI Hiring in Action</h2>
+          <p className="landingSectionSubtitle" style={{ textAlign: 'center', marginBottom: '32px' }}>
+            Watch how our AI transforms your hiring process
+          </p>
           <div className="landingDemoPlaceholder">
             <div className="landingDemoIcon">
               <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
