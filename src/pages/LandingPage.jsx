@@ -678,7 +678,12 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Workflow Section */}
+      <section className="landingWorkflow">
+        <div className="landingWorkflowContent">
           {/* Workflow Section */}
           <div className="landingWorkflowSection">
             <h3 className="landingWorkflowTitle">How It Works</h3>
@@ -726,36 +731,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="landingCTA">
-        <div className="landingCTAContent">
-          <h2 className="landingCTATitle">Start Hiring Smarter Today</h2>
-          <p className="landingCTASubtitle">
-            Join the AI revolution in recruitment.
-          </p>
-          <button
-            onClick={() => {
-              if (isAuthed) {
-                if (auth.hasPortal) {
-                  nav("/portal/dashboard");
-                } else {
-                  nav("/create-portal");
-                }
-              } else {
-                setAuthMode("signup");
-                setAuthOpen(true);
-              }
-            }}
-            className="btnLarge btnPrimary"
-          >
-            <Sparkles size={20} />
-            Get Started Free
-          </button>
-        </div>
-      </section>
-
-      {/* Product Showcase - removed duplicate */}
 
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">

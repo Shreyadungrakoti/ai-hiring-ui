@@ -2367,9 +2367,21 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 400;
 }
 
-/* Workflow Section */
+/* Workflow Section Wrapper */
+.landingWorkflow {
+  width: 100%;
+  background: #0d1117;
+  padding: 160px 0;
+}
+
+.landingWorkflowContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
 .landingWorkflowSection {
-  margin-top: 160px;
+  margin-top: 0;
   padding-top: 0;
   border-top: none;
 }
