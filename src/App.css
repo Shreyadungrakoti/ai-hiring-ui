@@ -4718,6 +4718,47 @@ body[data-theme="light"] .landingAuthModal {
   border-color: #004182 !important;
 }
 
+.btnCall {
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btnCall:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 127, 224, 0.4);
+}
+
+.btnCall:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.candidatePhoneInput {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 400;
+  width: 140px;
+  transition: all 0.2s ease;
+}
+
+.candidatePhoneInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.candidatePhoneInput:focus {
+  outline: none;
+  border-color: #4A7FE0;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 3px rgba(74, 127, 224, 0.1);
+}
+
 /* Landing Page Chatbot Styles */
 .landingChatContainer {
   width: 100%;

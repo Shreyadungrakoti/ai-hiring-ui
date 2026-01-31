@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ExternalLink, ArrowUpDown, X, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, ArrowUpDown, X, ChevronDown, ChevronUp, Phone } from "lucide-react";
 
 // Mock data - replace with API call later
 const mockCandidates = [
@@ -123,6 +123,8 @@ export default function Candidates() {
   const [candidates] = useState(mockCandidates);
   const [sortBy, setSortBy] = useState("rank");
   const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [phoneNumbers, setPhoneNumbers] = useState({});
+  const [calledCandidates, setCalledCandidates] = useState({});
 
   const sortedCandidates = useMemo(() => {
     const sorted = [...candidates];
@@ -153,6 +155,26 @@ export default function Candidates() {
       setSelectedCandidate(null);
     } else {
       setSelectedCandidate(candidate);
+    }
+  };
+
+  const handlePhoneChange = (candidateId, value) => {
+    setPhoneNumbers(prev => ({
+      ...prev,
+      [candidateId]: value
+    }));
+  };
+
+  const handleCall = (candidateId) => {
+    const phoneNumber = phoneNumbers[candidateId];
+    if (phoneNumber && phoneNumber.trim()) {
+      // Mark as called
+      setCalledCandidates(prev => ({
+        ...prev,
+        [candidateId]: true
+      }));
+      // In a real app, this would initiate a call through an API
+      console.log(`Calling ${phoneNumber} for candidate ${candidateId}`);
     }
   };
 
@@ -208,6 +230,7 @@ export default function Candidates() {
                 <th style={{ verticalAlign: "middle" }}>Score</th>
                 <th style={{ verticalAlign: "middle" }}>Project</th>
                 <th className="right" style={{ verticalAlign: "middle" }}>InMail option</th>
+                <th className="right" style={{ verticalAlign: "middle" }}>Contact</th>
               </tr>
             </thead>
             <tbody>
@@ -268,11 +291,41 @@ export default function Candidates() {
                         </button>
                       )}
                     </td>
+                    <td className="right" style={{ verticalAlign: "middle" }}>
+                      {calledCandidates[c.id] ? (
+                        <span className="pill" style={{ 
+                          background: "linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%)", 
+                          color: "#ffffff", 
+                          border: "none",
+                          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
+                        }}>
+                          Called
+                        </span>
+                      ) : (
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, justifyContent: "flex-end" }}>
+                          <input
+                            type="tel"
+                            placeholder="Phone number"
+                            value={phoneNumbers[c.id] || ""}
+                            onChange={(e) => handlePhoneChange(c.id, e.target.value)}
+                            className="candidatePhoneInput"
+                          />
+                          <button 
+                            className="btn btnSmall btnCall"
+                            onClick={() => handleCall(c.id)}
+                            disabled={!phoneNumbers[c.id] || !phoneNumbers[c.id].trim()}
+                          >
+                            <Phone size={14} />
+                            Call
+                          </button>
+                        </div>
+                      )}
+                    </td>
                   </tr>
                   
                   {selectedCandidate?.id === c.id && (
                     <tr className="candidateAnalysisRow">
-                      <td colSpan={4}>
+                      <td colSpan={5}>
                         <div className="candidateAnalysis">
                           <div className="candidateAnalysisHeader">
                             <h3 className="candidateAnalysisTitle">AI Analysis for {c.name}</h3>
@@ -325,7 +378,7 @@ export default function Candidates() {
               
               {sortedCandidates.length === 0 && (
                 <tr>
-                  <td colSpan={4}>
+                  <td colSpan={5}>
                     <div className="emptyState">
                       <p>No candidates yet.</p>
                     </div>
