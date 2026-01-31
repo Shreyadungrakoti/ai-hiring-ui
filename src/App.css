@@ -1705,6 +1705,7 @@ html[data-theme="light"] .d2ChartBar{
   cursor: pointer;
   transition: all 0.2s;
   flex-shrink: 0;
+  margin-left: 24px;
 }
 
 .landingLogo:hover {
