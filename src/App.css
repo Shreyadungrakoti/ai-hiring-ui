@@ -2272,15 +2272,25 @@ html[data-theme="light"] .d2ChartBar{
 /* Main Content Area with Side Panel */
 .landingHeroMainContent {
   display: flex;
-  gap: 24px;
+  gap: 0;
   align-items: stretch;
   width: 100%;
   margin: 40px 0;
+  justify-content: center;
 }
 
 .landingHeroLeftContent {
   flex: 1;
+  max-width: 700px;
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.landingCallAssistantBox {
+  width: 100%;
+  margin-top: 16px;
+}
   flex-direction: column;
   gap: 40px;
 }
