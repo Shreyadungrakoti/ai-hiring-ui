@@ -31,13 +31,13 @@ export default function HeroIllustration() {
       
       {/* Human - Body */}
       <ellipse cx="480" cy="450" rx="50" ry="15" fill="#6b7280" opacity="0.3" />
-      <rect x="455" y="350" width="50" height="100" fill="#3b82f6" rx="8" />
+      <rect x="455" y="350" width="50" height="100" fill="#4A7FE0" rx="8" />
       
       {/* Human - Arms */}
-      <rect x="425" y="365" width="30" height="12" fill="#3b82f6" rx="6" transform="rotate(-20 440 371)" />
+      <rect x="425" y="365" width="30" height="12" fill="#4A7FE0" rx="6" transform="rotate(-20 440 371)" />
       <circle cx="420" cy="375" r="8" fill="#fde4cf" />
       
-      <rect x="505" y="365" width="30" height="12" fill="#3b82f6" rx="6" transform="rotate(20 520 371)" />
+      <rect x="505" y="365" width="30" height="12" fill="#4A7FE0" rx="6" transform="rotate(20 520 371)" />
       <circle cx="530" cy="375" r="8" fill="#fde4cf" />
       
       {/* Human - Head */}
@@ -118,7 +118,7 @@ export default function HeroIllustration() {
         <animate attributeName="cy" values="220;200;220" dur="3s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
       </circle>
-      <circle cx="550" cy="250" r="3" fill="#3b82f6" opacity="0.5">
+      <circle cx="550" cy="250" r="3" fill="#4A7FE0" opacity="0.5">
         <animate attributeName="cy" values="250;235;250" dur="2.5s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite" />
       </circle>

@@ -49,7 +49,7 @@ export default function Projects() {
   const getStatusPill = (status) => {
     const colors = {
       active: { bg: "#10b981", text: "Active" },
-      completed: { bg: "#3b82f6", text: "Completed" },
+      completed: { bg: "#4A7FE0", text: "Completed" },
       paused: { bg: "#f59e0b", text: "Paused" },
     };
     const style = colors[status] || colors.active;

@@ -212,7 +212,7 @@ export default function Dashboard() {
                 const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
                 return (
                   <div key={i} className="d2VerticalBarCol">
-                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "#3b82f6" }}>
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "#4A7FE0" }}>
                       <span className="d2VerticalBarValue">{v}</span>
                     </div>
                     <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
