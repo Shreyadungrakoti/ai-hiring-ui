@@ -520,7 +520,7 @@ export default function LandingPage() {
                     <input
                       type="text"
                       className="landingChatInput"
-                      placeholder="Describe the role you're hiring for... (e.g., 'Senior React Developer with 5+ years experience')"
+                      placeholder="describe the role"
                       value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
                       disabled={isProcessing}
