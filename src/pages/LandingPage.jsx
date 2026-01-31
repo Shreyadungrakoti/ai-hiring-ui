@@ -641,20 +641,27 @@ export default function LandingPage() {
               {/* Right Side - Slim Box */}
               <div className="landingSideBox">
                 <div className="landingSideBoxContent">
-                  <h4 className="sideBoxTitle">AI Call Assistant</h4>
-                  <p className="sideBoxDescription">Let AI call any candidate on your behalf</p>
+                  <div className="sideBoxHeader">
+                    <h4 className="sideBoxTitle">AI Call Assistant</h4>
+                    <p className="sideBoxDescription">Automate candidate outreach with AI</p>
+                  </div>
                   
                   <div className="sideBoxForm">
                     <div className="sideBoxFormGroup">
-                      <label className="sideBoxLabel">Select Candidate</label>
-                      <select className="sideBoxSelect">
-                        <option value="">Choose candidate...</option>
-                        <option value="c1">John Smith (9.2)</option>
-                        <option value="c2">Bob Williams (8.9)</option>
-                        <option value="c3">Jane Doe (8.6)</option>
-                        <option value="c4">Alice Johnson (7.8)</option>
-                        <option value="c5">Carol Martinez (7.5)</option>
-                      </select>
+                      <label className="sideBoxLabel">Candidate</label>
+                      <input 
+                        type="text" 
+                        className="sideBoxInput sideBoxSearchInput" 
+                        placeholder="Search candidate..."
+                        list="candidateList"
+                      />
+                      <datalist id="candidateList">
+                        <option value="John Smith (9.2)" />
+                        <option value="Bob Williams (8.9)" />
+                        <option value="Jane Doe (8.6)" />
+                        <option value="Alice Johnson (7.8)" />
+                        <option value="Carol Martinez (7.5)" />
+                      </datalist>
                     </div>
 
                     <div className="sideBoxFormGroup">
@@ -667,26 +674,36 @@ export default function LandingPage() {
                     </div>
 
                     <div className="sideBoxFormGroup">
-                      <label className="sideBoxLabel">Call Purpose</label>
+                      <label className="sideBoxLabel">Purpose</label>
                       <select className="sideBoxSelect">
-                        <option value="">Select purpose...</option>
+                        <option value="">Select...</option>
                         <option value="screening">Initial Screening</option>
                         <option value="technical">Technical Interview</option>
-                        <option value="followup">Follow-up Call</option>
+                        <option value="followup">Follow-up</option>
                         <option value="offer">Job Offer</option>
                       </select>
                     </div>
 
-                    <button className="sideBoxCallButton">
+                    <div className="sideBoxDivider"></div>
+
+                    <button className="sideBoxCallButton sideBoxCallButtonPrimary">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                       </svg>
                       Start AI Call
                     </button>
 
+                    <button className="sideBoxCallButton sideBoxCallButtonDemo">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                      </svg>
+                      Try Demo Call
+                    </button>
+
                     <div className="sideBoxStatus">
                       <div className="sideBoxStatusDot"></div>
-                      <span className="sideBoxStatusText">AI Agent Ready</span>
+                      <span className="sideBoxStatusText">AI Ready</span>
                     </div>
                   </div>
                 </div>

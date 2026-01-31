@@ -2303,36 +2303,39 @@ html[data-theme="light"] .d2ChartBar{
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.sideBoxHeader {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 20px;
+}
+
 .sideBoxTitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0;
-  text-align: center;
+  margin: 0 0 6px 0;
 }
 
 .sideBoxDescription {
-  font-size: 12px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
-  text-align: center;
   line-height: 1.4;
 }
 
 .sideBoxForm {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 14px;
 }
 
 .sideBoxFormGroup {
@@ -2342,22 +2345,22 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .sideBoxLabel {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .sideBoxInput,
 .sideBoxSelect {
   width: 100%;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 9px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   transition: all 0.2s ease;
   box-sizing: border-box;
@@ -2365,73 +2368,107 @@ html[data-theme="light"] .d2ChartBar{
 
 .sideBoxInput::placeholder {
   color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.sideBoxSearchInput {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Cpath d='M21 21L16.65 16.65' stroke='rgba(255,255,255,0.3)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 34px;
 }
 
 .sideBoxSelect {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 36px;
+  background-position: right 10px center;
+  padding-right: 30px;
 }
 
 .sideBoxSelect option {
   background: #0d1117;
   color: rgba(255, 255, 255, 0.9);
+  padding: 8px;
 }
 
 .sideBoxInput:focus,
 .sideBoxSelect:focus {
   outline: none;
-  border-color: #4A7FE0;
+  border-color: rgba(74, 127, 224, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(74, 127, 224, 0.08);
+}
+
+.sideBoxDivider {
+  height: 1px;
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(74, 127, 224, 0.1);
+  margin: 6px 0;
 }
 
 .sideBoxCallButton {
   width: 100%;
-  padding: 12px 16px;
-  background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%);
+  padding: 10px 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(74, 127, 224, 0.3);
-  margin-top: 8px;
 }
 
-.sideBoxCallButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 127, 224, 0.4);
+.sideBoxCallButtonPrimary {
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%);
+  box-shadow: 0 3px 10px rgba(74, 127, 224, 0.3);
+}
+
+.sideBoxCallButtonPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(74, 127, 224, 0.4);
+}
+
+.sideBoxCallButtonDemo {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sideBoxCallButtonDemo:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .sideBoxCallButton:active {
   transform: translateY(0);
 }
 
+.sideBoxCallButton svg {
+  flex-shrink: 0;
+}
+
 .sideBoxStatus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding-top: 8px;
+  gap: 7px;
+  padding-top: 14px;
+  margin-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .sideBoxStatusDot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -2441,15 +2478,17 @@ html[data-theme="light"] .d2ChartBar{
     transform: scale(1);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(0.95);
+    opacity: 0.6;
+    transform: scale(0.9);
   }
 }
 
 .sideBoxStatusText {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 
