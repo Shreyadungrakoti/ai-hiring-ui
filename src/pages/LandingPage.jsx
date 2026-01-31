@@ -22,6 +22,10 @@ export default function LandingPage() {
   const [meDropdownOpen, setMeDropdownOpen] = useState(false);
   const meDropdownRef = useRef(null);
 
+  // Demo call popup state
+  const [demoCallOpen, setDemoCallOpen] = useState(false);
+  const [demoCallForm, setDemoCallForm] = useState({ name: "", phone: "", purpose: "" });
+
   // Auto-open auth modal if redirected from logout
   useEffect(() => {
     const showAuth = searchParams.get("showAuth");
@@ -648,19 +652,19 @@ export default function LandingPage() {
                   
                   <div className="sideBoxForm">
                     <div className="sideBoxFormGroup">
-                      <label className="sideBoxLabel">Candidate</label>
+                      <label className="sideBoxLabel">Candidate Name</label>
                       <input 
                         type="text" 
                         className="sideBoxInput sideBoxSearchInput" 
-                        placeholder="Search candidate..."
+                        placeholder="Enter or search..."
                         list="candidateList"
                       />
                       <datalist id="candidateList">
-                        <option value="John Smith (9.2)" />
-                        <option value="Bob Williams (8.9)" />
-                        <option value="Jane Doe (8.6)" />
-                        <option value="Alice Johnson (7.8)" />
-                        <option value="Carol Martinez (7.5)" />
+                        <option value="John Smith" />
+                        <option value="Bob Williams" />
+                        <option value="Jane Doe" />
+                        <option value="Alice Johnson" />
+                        <option value="Carol Martinez" />
                       </datalist>
                     </div>
 
@@ -693,7 +697,10 @@ export default function LandingPage() {
                       Start AI Call
                     </button>
 
-                    <button className="sideBoxCallButton sideBoxCallButtonDemo">
+                    <button 
+                      className="sideBoxCallButton sideBoxCallButtonDemo"
+                      onClick={() => setDemoCallOpen(true)}
+                    >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polygon points="10 8 16 12 10 16 10 8"></polygon>
@@ -973,6 +980,90 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Demo Call Popup */}
+      {demoCallOpen && (
+        <div className="modalOverlay" onClick={() => setDemoCallOpen(false)}>
+          <div className="demoCallModal" onClick={(e) => e.stopPropagation()}>
+            <div className="demoCallHeader">
+              <h3 className="demoCallTitle">Demo Call</h3>
+              <button 
+                className="demoCallClose"
+                onClick={() => setDemoCallOpen(false)}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <p className="demoCallDescription">
+              Test our AI calling agent with a demo call. No real call will be made.
+            </p>
+
+            <div className="demoCallForm">
+              <div className="demoCallFormGroup">
+                <label className="demoCallLabel">Name</label>
+                <input
+                  type="text"
+                  className="demoCallInput"
+                  placeholder="Enter candidate name"
+                  value={demoCallForm.name}
+                  onChange={(e) => setDemoCallForm({ ...demoCallForm, name: e.target.value })}
+                />
+              </div>
+
+              <div className="demoCallFormGroup">
+                <label className="demoCallLabel">Phone Number</label>
+                <input
+                  type="tel"
+                  className="demoCallInput"
+                  placeholder="+1 (555) 000-0000"
+                  value={demoCallForm.phone}
+                  onChange={(e) => setDemoCallForm({ ...demoCallForm, phone: e.target.value })}
+                />
+              </div>
+
+              <div className="demoCallFormGroup">
+                <label className="demoCallLabel">Purpose</label>
+                <select 
+                  className="demoCallSelect"
+                  value={demoCallForm.purpose}
+                  onChange={(e) => setDemoCallForm({ ...demoCallForm, purpose: e.target.value })}
+                >
+                  <option value="">Select purpose...</option>
+                  <option value="screening">Initial Screening</option>
+                  <option value="technical">Technical Interview</option>
+                  <option value="followup">Follow-up Call</option>
+                  <option value="offer">Job Offer</option>
+                </select>
+              </div>
+
+              <div className="demoCallActions">
+                <button 
+                  className="btn btnSecondary"
+                  onClick={() => setDemoCallOpen(false)}
+                >
+                  Cancel
+                </button>
+                <button 
+                  className="btn btnPrimary demoCallStartBtn"
+                  onClick={() => {
+                    console.log('Starting demo call:', demoCallForm);
+                    // Handle demo call logic here
+                    setDemoCallOpen(false);
+                    setDemoCallForm({ name: "", phone: "", purpose: "" });
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                  Start Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

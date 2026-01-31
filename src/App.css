@@ -2491,6 +2491,165 @@ html[data-theme="light"] .d2ChartBar{
   letter-spacing: 0.5px;
 }
 
+/* Demo Call Modal */
+.demoCallModal {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.demoCallHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demoCallTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+.demoCallClose {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.demoCallClose:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.demoCallDescription {
+  padding: 0 28px;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demoCallForm {
+  padding: 0 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demoCallFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.demoCallLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.demoCallInput,
+.demoCallSelect {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.demoCallInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.demoCallSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.demoCallSelect option {
+  background: #0d1117;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+}
+
+.demoCallInput:focus,
+.demoCallSelect:focus {
+  outline: none;
+  border-color: #4A7FE0;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(74, 127, 224, 0.1);
+}
+
+.demoCallActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.demoCallActions .btn {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.demoCallActions .btnSecondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.demoCallActions .btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.demoCallActions .btnPrimary {
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(74, 127, 224, 0.3);
+}
+
+.demoCallActions .btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74, 127, 224, 0.4);
+}
+
+.demoCallActions .btnPrimary:active {
+  transform: translateY(0);
+}
+
 
 .landingHeroContentCentered .landingHeroCTA {
   margin-left: auto;
