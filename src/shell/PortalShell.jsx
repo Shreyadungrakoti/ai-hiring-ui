@@ -123,17 +123,6 @@ export default function PortalShell() {
 
               {meDropdownOpen && (
                 <div className="landingMeMenu">
-                  <button
-                    className="landingMeItem"
-                    onClick={() => {
-                      setMeDropdownOpen(false);
-                      nav("/portal/dashboard");
-                    }}
-                  >
-                    <Target size={18} />
-                    <span>Dashboard</span>
-                  </button>
-
                   <button 
                     className="landingMeItem" 
                     onClick={() => {

@@ -320,17 +320,6 @@ export default function LandingPage() {
 
                   {meDropdownOpen && (
                     <div className="landingMeMenu">
-                      <button
-                        className="landingMeItem"
-                        onClick={() => {
-                          setMeDropdownOpen(false);
-                          nav("/portal/dashboard");
-                        }}
-                      >
-                        <Target size={18} />
-                        <span>Dashboard</span>
-                      </button>
-
                       <button 
                         className="landingMeItem" 
                         onClick={() => {
@@ -339,26 +328,26 @@ export default function LandingPage() {
                         }}
                       >
                         <Settings size={18} />
-                      <span>Settings</span>
-                    </button>
+                        <span>Settings</span>
+                      </button>
 
-                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
-                      <HelpCircle size={18} />
-                      <span>Help</span>
-                    </button>
+                      <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                        <HelpCircle size={18} />
+                        <span>Help</span>
+                      </button>
 
-                    <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
-                      <Globe size={18} />
-                      <span>Language</span>
-                    </button>
+                      <button className="landingMeItem" onClick={() => setMeDropdownOpen(false)}>
+                        <Globe size={18} />
+                        <span>Language</span>
+                      </button>
 
-                    <div className="landingMeDivider" />
+                      <div className="landingMeDivider" />
 
-                    <button className="landingMeItem" onClick={handleSignOut}>
-                      <LogOut size={18} />
-                      <span>Sign Out</span>
-                    </button>
-                  </div>
+                      <button className="landingMeItem" onClick={handleSignOut}>
+                        <LogOut size={18} />
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
                 )}
               </div>
               </>
