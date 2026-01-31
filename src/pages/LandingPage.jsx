@@ -713,7 +713,7 @@ export default function LandingPage() {
                       className="input"
                       value={contactForm.fullName}
                       onChange={handleContactChange}
-                      placeholder="John Doe"
+                      placeholder="Your name"
                       required
                     />
                   </div>
@@ -726,7 +726,7 @@ export default function LandingPage() {
                       className="input"
                       value={contactForm.email}
                       onChange={handleContactChange}
-                      placeholder="john@company.com"
+                      placeholder="Your email"
                       required
                     />
                   </div>
@@ -739,7 +739,7 @@ export default function LandingPage() {
                       className="input"
                       value={contactForm.phone}
                       onChange={handleContactChange}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="Your phone number"
                       required
                     />
                   </div>
@@ -752,7 +752,7 @@ export default function LandingPage() {
                     className="textarea"
                     value={contactForm.note}
                     onChange={handleContactChange}
-                    placeholder="Tell us about your hiring needs..."
+                    placeholder="Your message"
                     rows="5"
                     required
                   />
