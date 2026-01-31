@@ -2291,9 +2291,6 @@ html[data-theme="light"] .d2ChartBar{
   width: 100%;
   margin-top: 16px;
 }
-  flex-direction: column;
-  gap: 40px;
-}
 
 .landingHeroLeftContent .landingChatContainer {
   margin: 0;
