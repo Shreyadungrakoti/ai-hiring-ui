@@ -2294,7 +2294,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingSideBox {
-  width: 240px;
+  width: 280px;
   flex-shrink: 0;
   display: flex;
 }
@@ -2303,7 +2303,7 @@ html[data-theme="light"] .d2ChartBar{
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
   transition: all 0.2s ease;
   display: flex;
@@ -2313,9 +2313,9 @@ html[data-theme="light"] .d2ChartBar{
 
 .sideBoxHeader {
   text-align: center;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .sideBoxTitle {
@@ -2336,13 +2336,13 @@ html[data-theme="light"] .d2ChartBar{
 .sideBoxForm {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .sideBoxFormGroup {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .sideBoxLabel {
@@ -2356,7 +2356,7 @@ html[data-theme="light"] .d2ChartBar{
 .sideBoxInput,
 .sideBoxSelect {
   width: 100%;
-  padding: 8px 9px;
+  padding: 10px 12px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
@@ -2375,9 +2375,9 @@ html[data-theme="light"] .d2ChartBar{
 .sideBoxSearchInput {
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Cpath d='M21 21L16.65 16.65' stroke='rgba(255,255,255,0.3)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 9px center;
+  background-position: right 12px center;
   background-size: 12px 12px;
-  padding-right: 30px;
+  padding-right: 34px;
 }
 
 .sideBoxSelect {
@@ -2385,9 +2385,9 @@ html[data-theme="light"] .d2ChartBar{
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 9px center;
+  background-position: right 12px center;
   background-size: 9px 5px;
-  padding-right: 28px;
+  padding-right: 34px;
 }
 
 .sideBoxSelect option {
@@ -2407,12 +2407,12 @@ html[data-theme="light"] .d2ChartBar{
 .sideBoxDivider {
   height: 1px;
   background: rgba(255, 255, 255, 0.06);
-  margin: 4px 0;
+  margin: 8px 0;
 }
 
 .sideBoxCallButton {
   width: 100%;
-  padding: 9px 12px;
+  padding: 11px 14px;
   border: none;
   border-radius: 6px;
   color: #ffffff;
@@ -2466,8 +2466,8 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding-top: 12px;
-  margin-top: 4px;
+  padding-top: 16px;
+  margin-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
