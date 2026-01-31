@@ -1,8 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage.jsx";
 import Login from "./pages/Login.jsx";
-import CreatePortal from "./pages/CreatePortal.jsx";
-import PlatformSelection from "./pages/PlatformSelection.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Projects from "./pages/Projects.jsx";
 import NewProject from "./pages/NewProject.jsx";
@@ -21,24 +19,6 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/website-settings" element={<WebsiteSettings />} />
-      
-      <Route 
-        path="/create-portal" 
-        element={
-          <ProtectedRoute>
-            <CreatePortal />
-          </ProtectedRoute>
-        } 
-      />
-
-      <Route 
-        path="/platform-selection" 
-        element={
-          <ProtectedRoute>
-            <PlatformSelection />
-          </ProtectedRoute>
-        } 
-      />
 
       <Route
         path="/portal"

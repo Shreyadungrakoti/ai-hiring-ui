@@ -132,12 +132,9 @@ export default function LandingPage() {
       setAuthSubmitting(false);
       setAuthMode("signup");
       setAuthOpen(true);
-    } else if (!auth.hasPortal) {
-      // Logged in but no portal → go to create portal
-      nav("/create-portal");
     } else {
-      // Has portal → go to platform selection first
-      nav("/platform-selection");
+      // Go directly to dashboard
+      nav("/portal/dashboard");
     }
   };
 
@@ -147,14 +144,9 @@ export default function LandingPage() {
     // Will redirect to landing with signup modal per sidebar logic
   };
 
-  const getPortalButtonText = () => {
-    if (!auth.hasPortal) return "Create Portal";
-    return "My Portal";
-  };
-
   const getCtaText = () => {
     if (!isAuthed) return "Get Started";
-    return getPortalButtonText();
+    return "Dashboard";
   };
 
   const closeAuth = () => {
@@ -223,10 +215,66 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            <a href="#dashboard" className="landingNavLink">Dashboard</a>
-            <a href="#projects" className="landingNavLink">Projects</a>
-            <a href="#candidates" className="landingNavLink">Candidates</a>
-            <a href="#settings" className="landingNavLink">Settings</a>
+            <a 
+              href="#dashboard" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                if (isAuthed) {
+                  nav("/portal/dashboard");
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+            >
+              Dashboard
+            </a>
+            <a 
+              href="#projects" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                if (isAuthed) {
+                  nav("/portal/projects");
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+            >
+              Projects
+            </a>
+            <a 
+              href="#candidates" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                if (isAuthed) {
+                  nav("/portal/candidates");
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+            >
+              Candidates
+            </a>
+            <a 
+              href="#settings" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                if (isAuthed) {
+                  nav("/portal/settings");
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+            >
+              Settings
+            </a>
           </div>
           <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>
             {isAuthed ? (
@@ -246,35 +294,22 @@ export default function LandingPage() {
 
                   {meDropdownOpen && (
                     <div className="landingMeMenu">
-                      {!auth.hasPortal ? (
-                        <button
-                          className="landingMeItem"
-                          onClick={() => {
-                            setMeDropdownOpen(false);
-                            nav("/create-portal");
-                          }}
-                        >
-                          <Sparkles size={18} />
-                          <span>Create Portal</span>
-                        </button>
-                      ) : (
-                        <button
-                          className="landingMeItem"
-                          onClick={() => {
-                            setMeDropdownOpen(false);
-                            nav("/platform-selection");
-                          }}
-                        >
-                          <Target size={18} />
-                          <span>My Portal</span>
-                        </button>
-                      )}
+                      <button
+                        className="landingMeItem"
+                        onClick={() => {
+                          setMeDropdownOpen(false);
+                          nav("/portal/dashboard");
+                        }}
+                      >
+                        <Target size={18} />
+                        <span>Dashboard</span>
+                      </button>
 
                       <button 
                         className="landingMeItem" 
                         onClick={() => {
                           setMeDropdownOpen(false);
-                          nav("/website-settings");
+                          nav("/portal/settings");
                         }}
                       >
                         <Settings size={18} />
