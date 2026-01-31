@@ -4313,6 +4313,7 @@ body[data-theme="light"] .landingAuthModal {
   width: 100%;
   max-width: 700px;
   margin: 40px 0;
+  box-sizing: border-box;
 }
 
 .landingChatForm {
@@ -4389,7 +4390,8 @@ body[data-theme="light"] .landingAuthModal {
 .landingPreviewBox {
   width: 100%;
   max-width: 700px;
-  margin: 32px 0;
+  margin: 40px 0;
+  box-sizing: border-box;
 }
 
 .landingPreviewContent {
