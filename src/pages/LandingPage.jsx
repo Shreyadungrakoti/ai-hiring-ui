@@ -223,11 +223,10 @@ export default function LandingPage() {
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
-            <a href="#features" className="landingNavLink">Features</a>
-            <a href="#how-it-works" className="landingNavLink">How It Works</a>
-            <a href="#demo" className="landingNavLink">Demo</a>
-            <a href="#pricing" className="landingNavLink">Pricing</a>
-            <a href="#contact" className="landingNavLink">Contact</a>
+            <a href="#dashboard" className="landingNavLink">Dashboard</a>
+            <a href="#projects" className="landingNavLink">Projects</a>
+            <a href="#candidates" className="landingNavLink">Candidates</a>
+            <a href="#settings" className="landingNavLink">Settings</a>
           </div>
           <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>
             {isAuthed ? (

@@ -1725,7 +1725,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingNavLink {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.80);
   text-decoration: none;
   transition: all 0.2s;
