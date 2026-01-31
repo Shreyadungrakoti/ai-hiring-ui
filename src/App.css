@@ -1801,17 +1801,15 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px;
-  background: transparent;
-  border: 2px solid #e5e7eb;
-  border-radius: 50%;
-  color: #1a1a1a;
-  font-size: 15px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  width: 44px;
-  height: 44px;
   justify-content: center;
 }
 
@@ -1824,9 +1822,8 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingMeBtn:hover {
-  background: #f3f4f6;
-  border-color: #528BF2;
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(82, 139, 242, 0.40);
 }
 
 .landingMeMenu {

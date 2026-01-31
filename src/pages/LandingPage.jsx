@@ -279,9 +279,6 @@ export default function LandingPage() {
           <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>
             {isAuthed ? (
               <>
-                <button className="landingGetStartedBtn" onClick={handlePortalClick}>
-                  {getCtaText()}
-                </button>
                 <div className="landingMeDropdown" ref={meDropdownRef}>
                   <button
                     className="landingMeBtn"
