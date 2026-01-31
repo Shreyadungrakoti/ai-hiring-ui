@@ -2294,7 +2294,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingSideBox {
-  width: 200px;
+  width: 240px;
   flex-shrink: 0;
   display: flex;
 }
