@@ -144,9 +144,9 @@ export default function Candidates() {
   }, [candidates, sortBy]);
 
   const getScoreColor = (score) => {
-    if (score >= 9) return "linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%)"; // Purple gradient for top candidates (9+)
-    if (score >= 8) return "linear-gradient(135deg, #6B5FE8 0%, #8B5FE8 100%)"; // Purple-blue gradient for 8
-    if (score >= 7) return "linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%)"; // Blue-purple gradient for 7
+    if (score >= 9) return "linear-gradient(135deg, #5F8EE8 0%, #6B9FF2 100%)"; // Blue gradient for top candidates (9+)
+    if (score >= 8) return "linear-gradient(135deg, #5084E8 0%, #5F8EE8 100%)"; // Blue gradient for 8
+    if (score >= 7) return "linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%)"; // Blue gradient for 7
     return "linear-gradient(135deg, #64748b 0%, #475569 100%)"; // Gray gradient for below 7
   };
 
@@ -278,7 +278,7 @@ export default function Candidates() {
                     <td className="right" style={{ verticalAlign: "middle" }}>
                       {c.inmail_sent ? (
                         <span className="pill" style={{ 
-                          background: "linear-gradient(135deg, #6B5FE8 0%, #8B5FE8 100%)", 
+                          background: "linear-gradient(135deg, #5F8EE8 0%, #6B9FF2 100%)", 
                           color: "#ffffff", 
                           border: "none",
                           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
@@ -294,7 +294,7 @@ export default function Candidates() {
                     <td className="right" style={{ verticalAlign: "middle" }}>
                       {calledCandidates[c.id] ? (
                         <span className="pill" style={{ 
-                          background: "linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%)", 
+                          background: "linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%)", 
                           color: "#ffffff", 
                           border: "none",
                           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
