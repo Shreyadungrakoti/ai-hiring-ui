@@ -214,7 +214,7 @@ export default function LandingPage() {
       <nav className="landingNav">
         <div className="landingNavContent">
           <div className="landingLogo" onClick={() => nav("/")} style={{ cursor: 'pointer' }}>
-            <Logo size={36} />
+            <Logo size={44} />
           </div>
           <div className="landingNavLinks" style={{ gap: '32px' }}>
             <a 
