@@ -1786,12 +1786,15 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 600 !important;
   border-radius: 6px !important;
   cursor: pointer !important;
-  transition: all 0.2s !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
 .landingGetStartedBtn:hover {
   background: rgba(255, 255, 255, 0.90) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Me Dropdown */
@@ -1811,8 +1814,9 @@ html[data-theme="light"] .d2ChartBar{
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .landingMeBtn span {
@@ -1826,6 +1830,8 @@ html[data-theme="light"] .d2ChartBar{
 .landingMeBtn:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(82, 139, 242, 0.40);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .landingMeMenu {
@@ -2536,9 +2542,16 @@ html[data-theme="light"] .d2ChartBar{
   border-radius: 24px !important;
   padding: 56px !important;
   margin-top: 40px !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landingContactForm:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 10px 30px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px) translateZ(0);
 }
 
 .landingContactForm::before {
