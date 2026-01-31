@@ -611,20 +611,21 @@ export default function LandingPage() {
       <section className="landingFeatures" id="features">
         <div className="landingFeaturesContent">
           <div className="landingSectionHeader">
-            <h2 className="landingSectionTitle">Why AI Hiring?</h2>
+            <h2 className="landingSectionTitle">Features</h2>
             <p className="landingSectionSubtitle">
-              Powerful features for modern recruiters
+              Powerful tools to streamline your hiring process
             </p>
           </div>
 
+          {/* Features Grid */}
           <div className="landingFeaturesGrid">
             <div className="landingFeatureCard">
               <div className="landingFeatureIcon">
                 <Zap size={32} />
               </div>
-              <h3 className="landingFeatureTitle">10x Faster Screening</h3>
+              <h3 className="landingFeatureTitle">AI-Powered Screening</h3>
               <p className="landingFeatureText">
-                Screen thousands in minutes, not weeks.
+                Automatically screen and rank candidates based on job requirements using advanced AI algorithms.
               </p>
             </div>
 
@@ -632,9 +633,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Target size={32} />
               </div>
-              <h3 className="landingFeatureTitle">95% Match Accuracy</h3>
+              <h3 className="landingFeatureTitle">Smart Matching</h3>
               <p className="landingFeatureText">
-                AI finds candidates you'd actually hire.
+                Find the best-fit candidates with our intelligent matching system that considers skills, experience, and culture fit.
               </p>
             </div>
 
@@ -644,7 +645,7 @@ export default function LandingPage() {
               </div>
               <h3 className="landingFeatureTitle">Multi-Platform Integration</h3>
               <p className="landingFeatureText">
-                Tap into millions of profiles instantly.
+                Connect with LinkedIn, Indeed, and other platforms to access millions of candidate profiles instantly.
               </p>
             </div>
 
@@ -654,7 +655,7 @@ export default function LandingPage() {
               </div>
               <h3 className="landingFeatureTitle">Bias-Free Hiring</h3>
               <p className="landingFeatureText">
-                Focus on skills, not demographics.
+                Ensure fair and objective candidate evaluation with our bias-detection and mitigation technology.
               </p>
             </div>
 
@@ -662,9 +663,9 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <TrendingUp size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Real-Time Insights</h3>
+              <h3 className="landingFeatureTitle">Real-Time Analytics</h3>
               <p className="landingFeatureText">
-                Track every candidate, every metric.
+                Track hiring metrics, candidate pipeline, and team performance with comprehensive analytics dashboards.
               </p>
             </div>
 
@@ -672,10 +673,56 @@ export default function LandingPage() {
               <div className="landingFeatureIcon">
                 <Sparkles size={32} />
               </div>
-              <h3 className="landingFeatureTitle">Smart Automation</h3>
+              <h3 className="landingFeatureTitle">Automated Workflow</h3>
               <p className="landingFeatureText">
-                From screening to outreach, fully automated.
+                Streamline every step from job posting to offer with intelligent automation and custom workflows.
               </p>
+            </div>
+          </div>
+
+          {/* Workflow Section */}
+          <div className="landingWorkflowSection">
+            <h3 className="landingWorkflowTitle">How It Works</h3>
+            <div className="landingWorkflowSteps">
+              <div className="landingWorkflowStep">
+                <div className="landingWorkflowNumber">1</div>
+                <div className="landingWorkflowContent">
+                  <h4 className="landingWorkflowStepTitle">Create Job Description</h4>
+                  <p className="landingWorkflowStepText">
+                    Simply describe the role you're hiring for or paste your existing JD. Our AI will optimize it for better candidate matching.
+                  </p>
+                </div>
+              </div>
+
+              <div className="landingWorkflowStep">
+                <div className="landingWorkflowNumber">2</div>
+                <div className="landingWorkflowContent">
+                  <h4 className="landingWorkflowStepTitle">AI Sources Candidates</h4>
+                  <p className="landingWorkflowStepText">
+                    Our platform automatically searches across multiple job boards and professional networks to find relevant candidates.
+                  </p>
+                </div>
+              </div>
+
+              <div className="landingWorkflowStep">
+                <div className="landingWorkflowNumber">3</div>
+                <div className="landingWorkflowContent">
+                  <h4 className="landingWorkflowStepTitle">Intelligent Screening</h4>
+                  <p className="landingWorkflowStepText">
+                    AI analyzes resumes, evaluates skills, and ranks candidates based on your specific requirements and preferences.
+                  </p>
+                </div>
+              </div>
+
+              <div className="landingWorkflowStep">
+                <div className="landingWorkflowNumber">4</div>
+                <div className="landingWorkflowContent">
+                  <h4 className="landingWorkflowStepTitle">Review & Hire</h4>
+                  <p className="landingWorkflowStepText">
+                    Get a curated shortlist of top candidates with detailed insights. Schedule interviews and make offers—all in one place.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
