@@ -1747,7 +1747,7 @@ html[data-theme="light"] .d2ChartBar{
   max-width: 1440px;
   margin: 0 auto;
   padding: 80px 40px;
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 60px);
 }
 
 .landingLoginBtn {
