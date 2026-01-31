@@ -2223,15 +2223,6 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 400;
   margin: 0;
 }
-  opacity: 0.5;
-}
-
-.landingDemoText {
-  font-size: 18px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.60);
-  margin: 0;
-}
 
 /* Features Section */
 .landingFeatures {
