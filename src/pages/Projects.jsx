@@ -48,9 +48,9 @@ export default function Projects() {
 
   const getStatusPill = (status) => {
     const colors = {
-      active: { bg: "#10b981", text: "Active" },
-      completed: { bg: "#4A7FE0", text: "Completed" },
-      paused: { bg: "#f59e0b", text: "Paused" },
+      active: { bg: "linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%)", text: "Active" },
+      completed: { bg: "linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%)", text: "Completed" },
+      paused: { bg: "linear-gradient(135deg, #5F8EE8 0%, #7C5FE8 100%)", text: "Paused" },
     };
     const style = colors[status] || colors.active;
     return (
@@ -58,9 +58,11 @@ export default function Projects() {
         background: style.bg, 
         color: "#ffffff", 
         padding: "6px 12px", 
-        borderRadius: "6px", 
+        borderRadius: "8px", 
         fontSize: "13px", 
-        fontWeight: 600 
+        fontWeight: 600,
+        border: "none",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
       }}>
         {style.text}
       </span>

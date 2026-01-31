@@ -142,10 +142,10 @@ export default function Candidates() {
   }, [candidates, sortBy]);
 
   const getScoreColor = (score) => {
-    if (score >= 9) return "#7c3aed"; // Purple for top candidates (9+)
-    if (score >= 8) return "#10b981"; // Green for 8
-    if (score >= 7) return "#4A7FE0"; // Blue for 7
-    return "#6b7280"; // Gray for below 7
+    if (score >= 9) return "linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%)"; // Purple gradient for top candidates (9+)
+    if (score >= 8) return "linear-gradient(135deg, #6B5FE8 0%, #8B5FE8 100%)"; // Purple-blue gradient for 8
+    if (score >= 7) return "linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%)"; // Blue-purple gradient for 7
+    return "linear-gradient(135deg, #64748b 0%, #475569 100%)"; // Gray gradient for below 7
   };
 
   const handleCandidateClick = (candidate) => {
@@ -254,7 +254,12 @@ export default function Candidates() {
                     <td style={{ verticalAlign: "middle" }}>{c.project}</td>
                     <td className="right" style={{ verticalAlign: "middle" }}>
                       {c.inmail_sent ? (
-                        <span className="pill" style={{ background: "#10b981", color: "#ffffff", border: "none" }}>
+                        <span className="pill" style={{ 
+                          background: "linear-gradient(135deg, #6B5FE8 0%, #8B5FE8 100%)", 
+                          color: "#ffffff", 
+                          border: "none",
+                          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
+                        }}>
                           Sent
                         </span>
                       ) : (

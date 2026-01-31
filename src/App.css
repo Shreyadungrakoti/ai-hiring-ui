@@ -87,10 +87,16 @@ button, input, textarea, select{ font:inherit; }
 }
 
 .card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius);
-  box-shadow: 0 10px 34px rgba(0,0,0,0.30);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .h1{ font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin:0; }
@@ -120,8 +126,8 @@ button, input, textarea, select{ font:inherit; }
 }
 
 .btn{
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
   color: var(--text);
   padding: 10px 12px;
   border-radius: 8px;
@@ -130,13 +136,23 @@ button, input, textarea, select{ font:inherit; }
   display:inline-flex;
   align-items:center;
   gap:10px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn:hover{ border-color: rgba(255,255,255,0.26); background: rgba(255,255,255,0.10); }
+.btn:hover{ 
+  border-color: rgba(255,255,255,0.20); 
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 .btnPrimary{
-  background: linear-gradient(135deg, rgba(110,231,255,0.26), rgba(167,139,250,0.22));
-  border-color: rgba(110,231,255,0.35);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.25) 0%, rgba(107, 95, 232, 0.25) 100%);
+  border-color: rgba(74, 127, 224, 0.4);
+  color: #6B9FF2;
 }
-.btnPrimary:hover{ border-color: rgba(110,231,255,0.55); }
+.btnPrimary:hover{ 
+  border-color: rgba(74, 127, 224, 0.6);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.35) 0%, rgba(107, 95, 232, 0.35) 100%);
+}
 .btnGhost{
   background: transparent;
 }
@@ -151,12 +167,13 @@ button, input, textarea, select{ font:inherit; }
   align-items:center;
   gap:8px;
   padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  background: var(--card2);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
   color: var(--text);
   font-size: 13px;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 .pillGood{ background: #4A7FE0; color: #ffffff; }
 .pillWarn{ background: #4A7FE0; color: #ffffff; }
@@ -171,20 +188,25 @@ button, input, textarea, select{ font:inherit; }
   width:100%;
   border-collapse: collapse;
   min-width: 760px;
-  background: rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
 }
 .table th, .table td{
   padding: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   text-align:left;
   vertical-align: top;
   font-size: 13px;
+  transition: all 0.2s ease;
 }
 .table th{
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
-  background: rgba(255,255,255,0.05);
+  background: rgba(74, 127, 224, 0.08);
+}
+.table tr:hover td{
+  background: rgba(74, 127, 224, 0.05);
 }
 .right{ text-align:right !important; }
 .cellMain{ font-weight: 900; margin-bottom:2px; }
@@ -4399,7 +4421,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .candidateAnalysisRow {
-  background: var(--card);
+  background: transparent;
 }
 
 .candidateAnalysisRow td {
@@ -4408,9 +4430,11 @@ body[data-theme="light"] .landingAuthModal {
 
 .candidateAnalysis {
   padding: 32px;
-  border-top: 2px solid var(--border);
-  background: var(--panel);
+  border-top: 2px solid rgba(74, 127, 224, 0.3);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.05) 0%, rgba(107, 95, 232, 0.05) 100%);
+  backdrop-filter: blur(10px);
   border-radius: 0 0 12px 12px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .candidateAnalysisHeader {
@@ -4428,18 +4452,19 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .candidateAnalysisClose {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--muted);
   cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
+  padding: 8px;
+  border-radius: 8px;
   transition: all 0.2s;
 }
 
 .candidateAnalysisClose:hover {
-  background: var(--card);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(74, 127, 224, 0.3);
+  color: #6B9FF2;
 }
 
 .candidateAnalysisScore {
@@ -4447,10 +4472,11 @@ body[data-theme="light"] .landingAuthModal {
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  background: var(--card);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.1) 0%, rgba(107, 95, 232, 0.1) 100%);
   border-radius: 12px;
   margin-bottom: 24px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(74, 127, 224, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .candidateAnalysisScoreLabel {
@@ -4499,11 +4525,11 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .candidateAnalysisListPositive li::before {
-  color: #4A7FE0;
+  color: #6B9FF2;
 }
 
 .candidateAnalysisListNeutral li::before {
-  color: #4A7FE0;
+  color: #8B7FE8;
 }
 
 .candidateAnalysisSummary {
@@ -4512,9 +4538,10 @@ body[data-theme="light"] .landingAuthModal {
   color: var(--text);
   font-size: 15px;
   padding: 16px 20px;
-  background: var(--card);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.08) 0%, rgba(107, 95, 232, 0.08) 100%);
   border-radius: 12px;
-  border-left: 4px solid #4A7FE0;
+  border-left: 4px solid #6B9FF2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Candidate Link Icon - LinkedIn dark navy blue */
