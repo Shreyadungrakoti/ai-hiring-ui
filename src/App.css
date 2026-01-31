@@ -1353,20 +1353,29 @@ kbd{
 }
 
 .d2Tile{
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.d2Tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: rgba(74, 127, 224, 0.3);
 }
 
 .d2TileTop{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; }
 .d2TileIcon{
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   display:grid; place-items:center;
-  border-radius: 8px;
-  background: var(--card2);
-  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.15) 0%, rgba(107, 95, 232, 0.15) 100%);
+  border: 1px solid rgba(74, 127, 224, 0.25);
+  color: #6B9FF2;
 }
 .d2TileMeta{ font-size: 12px; font-weight: 500; color: var(--muted2); }
 .d2TileLabel{ font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
@@ -1390,11 +1399,17 @@ html[data-theme="light"] .d2MiniBar{
 }
 
 .d2Panel{
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.d2Panel:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .d2PanelHeader{
@@ -1420,8 +1435,9 @@ html[data-theme="light"] .d2MiniBar{
   cursor:pointer;
 }
 .d2TabActive{
-  background: var(--card2);
-  color: var(--text);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.2) 0%, rgba(107, 95, 232, 0.2) 100%);
+  border-color: rgba(74, 127, 224, 0.4);
+  color: #6B9FF2;
 }
 
 .d2Chart{
@@ -1474,18 +1490,18 @@ html[data-theme="light"] .d2ChartBar{
   display:inline-flex;
   align-items:center;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  border: none;
-  background: var(--card2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text);
   text-transform: capitalize;
 }
-.d2Pill-good{ background: #4A7FE0; color: #ffffff; }
-.d2Pill-warn{ background: #4A7FE0; color: #ffffff; }
-.d2Pill-bad{ background: #94a3b8; color: #ffffff; }
-.d2Pill-neutral{ background: #6b7280; color: #ffffff; }
+.d2Pill-good{ background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%); color: #ffffff; border: none; }
+.d2Pill-warn{ background: linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%); color: #ffffff; border: none; }
+.d2Pill-bad{ background: rgba(148, 163, 184, 0.2); color: #94a3b8; border-color: rgba(148, 163, 184, 0.3); }
+.d2Pill-neutral{ background: rgba(107, 114, 128, 0.2); color: #9ca3af; border-color: rgba(107, 114, 128, 0.3); }
 
 .d2KeyVals{ 
   display:grid; 
@@ -1498,15 +1514,18 @@ html[data-theme="light"] .d2ChartBar{
 
 .d2Progress{ margin-top: 14px; display:flex; flex-direction:column; gap: 8px; }
 .d2ProgressTrack{
-  height: 10px;
+  height: 12px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
   overflow:hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .d2ProgressFill{
   height:100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  background: linear-gradient(90deg, #4A7FE0 0%, #7C5FE8 50%, #9D5FE8 100%);
+  box-shadow: 0 0 12px rgba(74, 127, 224, 0.5);
+  transition: width 0.3s ease;
 }
 
 .d2List{ display:flex; flex-direction:column; gap: 8px; }
@@ -1524,16 +1543,21 @@ html[data-theme="light"] .d2ChartBar{
   display:inline-flex;
   align-items:center;
   gap: 8px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  padding: 8px 12px;
-  border-radius: 6px;
+  border: 1px solid rgba(74, 127, 224, 0.3);
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.1) 0%, rgba(107, 95, 232, 0.1) 100%);
+  color: #6B9FF2;
+  padding: 8px 14px;
+  border-radius: 8px;
   cursor:pointer;
   font-weight: 600;
   font-size: 13px;
+  transition: all 0.2s ease;
 }
-.d2GhostBtn:hover{ background: var(--card2); }
+.d2GhostBtn:hover{ 
+  background: linear-gradient(135deg, rgba(74, 127, 224, 0.2) 0%, rgba(107, 95, 232, 0.2) 100%);
+  border-color: rgba(74, 127, 224, 0.5);
+  transform: translateY(-1px);
+}
 
 .d2VerticalCharts{
   display: flex;
@@ -1572,7 +1596,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 .d2VerticalBar{
   width: 100%;
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1580,11 +1604,34 @@ html[data-theme="light"] .d2ChartBar{
   color: white;
   font-size: 11px;
   font-weight: 700;
-  transition: height 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
+
+.d2VerticalBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.d2VerticalBar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
 .d2VerticalBarValue{
   color: white;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .d2VerticalBarLabel{
   font-size: 11px;
