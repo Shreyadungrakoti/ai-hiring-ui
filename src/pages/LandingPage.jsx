@@ -564,7 +564,76 @@ export default function LandingPage() {
                 {/* Preview Box */}
                 <div className="landingPreviewBox">
                   <div className="landingPreviewContent">
-                    <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+                    {/* Reasoning Section */}
+                    <div className="previewReasoning">
+                      <h4 className="previewReasoningTitle">AI Reasoning</h4>
+                      <p className="previewReasoningText">
+                        Analyzing candidate profiles based on job requirements: Senior Data Scientist with 7+ years experience, 
+                        strong ML background, and proven track record in production systems. Evaluating technical skills, 
+                        experience level, education, and cultural fit...
+                      </p>
+                    </div>
+
+                    {/* Candidates Results */}
+                    <div className="previewResults">
+                      <h4 className="previewResultsTitle">Top Candidates</h4>
+                      <div className="previewCandidatesList">
+                        <button 
+                          className="previewCandidateItem"
+                          onClick={() => nav("/portal/candidates")}
+                        >
+                          <div className="previewCandidateInfo">
+                            <span className="previewCandidateName">John Smith</span>
+                            <span className="previewCandidateExp">10 years experience</span>
+                          </div>
+                          <span className="previewCandidateScore">9.2</span>
+                        </button>
+
+                        <button 
+                          className="previewCandidateItem"
+                          onClick={() => nav("/portal/candidates")}
+                        >
+                          <div className="previewCandidateInfo">
+                            <span className="previewCandidateName">Bob Williams</span>
+                            <span className="previewCandidateExp">8 years experience</span>
+                          </div>
+                          <span className="previewCandidateScore">8.9</span>
+                        </button>
+
+                        <button 
+                          className="previewCandidateItem"
+                          onClick={() => nav("/portal/candidates")}
+                        >
+                          <div className="previewCandidateInfo">
+                            <span className="previewCandidateName">Jane Doe</span>
+                            <span className="previewCandidateExp">7 years experience</span>
+                          </div>
+                          <span className="previewCandidateScore">8.6</span>
+                        </button>
+
+                        <button 
+                          className="previewCandidateItem"
+                          onClick={() => nav("/portal/candidates")}
+                        >
+                          <div className="previewCandidateInfo">
+                            <span className="previewCandidateName">Alice Johnson</span>
+                            <span className="previewCandidateExp">5 years experience</span>
+                          </div>
+                          <span className="previewCandidateScore">7.8</span>
+                        </button>
+
+                        <button 
+                          className="previewCandidateItem"
+                          onClick={() => nav("/portal/candidates")}
+                        >
+                          <div className="previewCandidateInfo">
+                            <span className="previewCandidateName">Carol Martinez</span>
+                            <span className="previewCandidateExp">3 years experience</span>
+                          </div>
+                          <span className="previewCandidateScore">7.5</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
