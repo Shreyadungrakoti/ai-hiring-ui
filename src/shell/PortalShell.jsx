@@ -25,7 +25,7 @@ export default function PortalShell() {
   const handleSignOut = async () => {
     setMeDropdownOpen(false);
     await logout();
-    nav("/");
+    nav("/?showAuth=login");
   };
 
   return (

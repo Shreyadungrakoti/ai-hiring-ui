@@ -142,6 +142,11 @@ export default function LandingPage() {
     setMeDropdownOpen(false);
     await logout();
     nav("/");
+    // Show auth modal after logout
+    setTimeout(() => {
+      setAuthMode("login");
+      setAuthOpen(true);
+    }, 100);
   };
 
   const getCtaText = () => {
