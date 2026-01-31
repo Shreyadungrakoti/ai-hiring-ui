@@ -37,7 +37,33 @@ export default function PortalShell() {
             <Logo size={28} />
             <span>AI Hiring</span>
           </div>
-          <div className="landingNavLinks">
+          <div className="landingNavLinks" style={{ gap: '32px' }}>
+            <a 
+              href="#new-project" 
+              className={`landingNavLink ${location.pathname === "/portal/projects/new" ? "landingNavLinkActive" : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                nav("/portal/projects/new");
+              }}
+            >
+              New Project
+            </a>
+            <a 
+              href="#features" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                nav("/");
+                setTimeout(() => {
+                  const featuresSection = document.getElementById('features');
+                  if (featuresSection) {
+                    featuresSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+            >
+              Features
+            </a>
             <a 
               href="#dashboard" 
               className={`landingNavLink ${location.pathname === "/portal/dashboard" ? "landingNavLinkActive" : ""}`}
@@ -50,7 +76,7 @@ export default function PortalShell() {
             </a>
             <a 
               href="#projects" 
-              className={`landingNavLink ${location.pathname.includes("/portal/projects") ? "landingNavLinkActive" : ""}`}
+              className={`landingNavLink ${location.pathname.includes("/portal/projects") && location.pathname !== "/portal/projects/new" ? "landingNavLinkActive" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
                 nav("/portal/projects");
@@ -69,14 +95,20 @@ export default function PortalShell() {
               Candidates
             </a>
             <a 
-              href="#settings" 
-              className={`landingNavLink ${location.pathname === "/portal/settings" ? "landingNavLinkActive" : ""}`}
+              href="#contact" 
+              className="landingNavLink"
               onClick={(e) => {
                 e.preventDefault();
-                nav("/portal/settings");
+                nav("/");
+                setTimeout(() => {
+                  const footer = document.querySelector('.landingFooter');
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
               }}
             >
-              Settings
+              Contact
             </a>
           </div>
           <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>

@@ -214,7 +214,36 @@ export default function LandingPage() {
             <Logo size={28} />
             <span>AI Hiring</span>
           </div>
-          <div className="landingNavLinks">
+          <div className="landingNavLinks" style={{ gap: '32px' }}>
+            <a 
+              href="#new-project" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                if (isAuthed) {
+                  nav("/portal/projects/new");
+                } else {
+                  setAuthMode("signup");
+                  setAuthOpen(true);
+                }
+              }}
+            >
+              New Project
+            </a>
+            <a 
+              href="#features" 
+              className="landingNavLink"
+              onClick={(e) => {
+                e.preventDefault();
+                // Scroll to features section on landing page
+                const featuresSection = document.getElementById('features');
+                if (featuresSection) {
+                  featuresSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Features
+            </a>
             <a 
               href="#dashboard" 
               className="landingNavLink"
@@ -261,19 +290,18 @@ export default function LandingPage() {
               Candidates
             </a>
             <a 
-              href="#settings" 
+              href="#contact" 
               className="landingNavLink"
               onClick={(e) => {
                 e.preventDefault();
-                if (isAuthed) {
-                  nav("/portal/settings");
-                } else {
-                  setAuthMode("signup");
-                  setAuthOpen(true);
+                // Scroll to footer/contact section
+                const footer = document.querySelector('.landingFooter');
+                if (footer) {
+                  footer.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
             >
-              Settings
+              Contact
             </a>
           </div>
           <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>
