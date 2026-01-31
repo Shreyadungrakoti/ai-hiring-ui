@@ -88,7 +88,7 @@ export default function Dashboard() {
       <div className="d2Tiles">
         <div className="d2Tile">
           <div className="d2TileTop">
-            <div className="d2TileIcon"><FolderKanban size={18} /></div>
+            <div className="d2TileIcon"><FolderKanban size={20} /></div>
             <div className="d2TileMeta">ACTIVE</div>
           </div>
           <div className="d2TileLabel">Active projects</div>
@@ -97,7 +97,7 @@ export default function Dashboard() {
 
         <div className="d2Tile">
           <div className="d2TileTop">
-            <div className="d2TileIcon"><Activity size={18} /></div>
+            <div className="d2TileIcon"><Activity size={20} /></div>
             <div className="d2TileMeta">ALL TIME</div>
           </div>
           <div className="d2TileLabel">Total runs</div>
@@ -106,7 +106,7 @@ export default function Dashboard() {
 
         <div className="d2Tile">
           <div className="d2TileTop">
-            <div className="d2TileIcon"><Users size={18} /></div>
+            <div className="d2TileIcon"><Users size={20} /></div>
             <div className="d2TileMeta">{d.screened ? `${d.qualified}/${d.screened}` : "—"}</div>
           </div>
           <div className="d2TileLabel">Qualified rate</div>
@@ -115,7 +115,7 @@ export default function Dashboard() {
 
         <div className="d2Tile">
           <div className="d2TileTop">
-            <div className="d2TileIcon"><Clock size={18} /></div>
+            <div className="d2TileIcon"><Clock size={20} /></div>
             <div className="d2TileMeta">RECENT</div>
           </div>
           <div className="d2TileLabel">Avg run time</div>

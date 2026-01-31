@@ -1354,7 +1354,7 @@ kbd{
 .d2Wrap{ 
   display:flex; 
   flex-direction:column; 
-  gap: 16px;
+  gap: 40px;
 }
 
 .d2GridRow{
@@ -1371,37 +1371,41 @@ kbd{
 .d2Tiles{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .d2Tile{
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 12px 0;
+  box-shadow: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .d2Tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border-color: rgba(74, 127, 224, 0.3);
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
-.d2TileTop{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; }
+.d2TileTop{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px; }
 .d2TileIcon{
-  width: 40px; height: 40px;
-  display:grid; place-items:center;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(74, 127, 224, 0.15) 0%, rgba(107, 95, 232, 0.15) 100%);
-  border: 1px solid rgba(74, 127, 224, 0.25);
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+  background: none;
+  border: none;
   color: #6B9FF2;
+  padding: 0;
 }
-.d2TileMeta{ font-size: 12px; font-weight: 500; color: var(--muted2); }
-.d2TileLabel{ font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
-.d2TileValue{ font-size: 24px; font-weight: 700; color: var(--text); line-height: 1; }
+.d2TileMeta{ font-size: 11px; font-weight: 600; color: var(--muted2); letter-spacing: 0.5px; }
+.d2TileLabel{ font-size: 13px; font-weight: 400; color: var(--muted); margin-bottom: 4px; }
+.d2TileValue{ font-size: 28px; font-weight: 600; color: var(--text); line-height: 1; }
 
 .d2MiniBars{
   margin-top: 8px;
@@ -1421,17 +1425,17 @@ html[data-theme="light"] .d2MiniBar{
 }
 
 .d2Panel{
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+  padding: 16px 0;
+  box-shadow: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .d2Panel:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 
 .d2PanelHeader{
@@ -1439,11 +1443,13 @@ html[data-theme="light"] .d2MiniBar{
   justify-content:space-between;
   align-items:center;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.d2Title{ font-size: 16px; font-weight: 600; }
-.d2Sub{ font-size: 13px; font-weight: 500; color: var(--muted2); margin-top: 2px; }
+.d2Title{ font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+.d2Sub{ font-size: 13px; font-weight: 400; color: var(--muted2); margin-top: 2px; }
 
 .d2Tabs{ display:flex; gap: 8px; }
 .d2Tab{
@@ -1493,37 +1499,39 @@ html[data-theme="light"] .d2ChartBar{
   background: transparent;
 }
 .d2Table th, .d2Table td{
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
+  padding: 12px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   font-size: 13px;
 }
 .d2Table th{
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--muted);
-  background: var(--card2);
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-.d2Strong{ font-weight: 600; color: var(--text); }
-.d2Muted{ color: var(--muted2); font-weight: 500; font-size: 12px; }
+.d2Strong{ font-weight: 500; color: var(--text); }
+.d2Muted{ color: var(--muted2); font-weight: 400; font-size: 12px; }
 .right{ text-align:right !important; }
 .center{ text-align:center !important; }
 
 .d2Pill{
   display:inline-flex;
   align-items:center;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text);
   text-transform: capitalize;
 }
 .d2Pill-good{ background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%); color: #ffffff; border: none; }
 .d2Pill-warn{ background: linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%); color: #ffffff; border: none; }
-.d2Pill-bad{ background: rgba(148, 163, 184, 0.2); color: #94a3b8; border-color: rgba(148, 163, 184, 0.3); }
-.d2Pill-neutral{ background: rgba(107, 114, 128, 0.2); color: #9ca3af; border-color: rgba(107, 114, 128, 0.3); }
+.d2Pill-bad{ background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: none; }
+.d2Pill-neutral{ background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: none; }
 
 .d2KeyVals{ 
   display:grid; 
@@ -1536,30 +1544,32 @@ html[data-theme="light"] .d2ChartBar{
 
 .d2Progress{ margin-top: 14px; display:flex; flex-direction:column; gap: 8px; }
 .d2ProgressTrack{
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
   overflow:hidden;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 .d2ProgressFill{
   height:100%;
   background: linear-gradient(90deg, #4A7FE0 0%, #7C5FE8 50%, #9D5FE8 100%);
-  box-shadow: 0 0 12px rgba(74, 127, 224, 0.5);
+  box-shadow: none;
   transition: width 0.3s ease;
 }
 
 .d2List{ display:flex; flex-direction:column; gap: 8px; }
 .d2ListItem{
   text-align:left;
-  border: 1px solid var(--border);
+  border: none;
   background: transparent;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 0;
+  padding: 12px 0;
   cursor:pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.2s ease;
 }
-.d2ListItem:hover{ background: var(--card2); }
+.d2ListItem:hover{ background: transparent; padding-left: 8px; }
 
 .d2GhostBtn{
   display:inline-flex;
@@ -1583,8 +1593,8 @@ html[data-theme="light"] .d2ChartBar{
 
 .d2VerticalCharts{
   display: flex;
-  gap: 32px;
-  padding-top: 16px;
+  gap: 40px;
+  padding-top: 24px;
 }
 .d2VerticalChartGroup{
   flex: 1;
@@ -1618,7 +1628,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 .d2VerticalBar{
   width: 100%;
-  border-radius: 6px 6px 0 0;
+  border-radius: 2px 2px 0 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1628,32 +1638,25 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 20px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
 }
 
 .d2VerticalBar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
-  pointer-events: none;
+  display: none;
 }
 
 .d2VerticalBar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+  transform: none;
+  box-shadow: none;
 }
 
 .d2VerticalBarValue{
   color: white;
   position: relative;
   z-index: 1;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 .d2VerticalBarLabel{
   font-size: 11px;
