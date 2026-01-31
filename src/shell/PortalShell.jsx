@@ -35,7 +35,6 @@ export default function PortalShell() {
         <div className="landingNavContent">
           <div className="landingLogo" onClick={() => nav("/")} style={{ cursor: 'pointer' }}>
             <Logo size={28} />
-            <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks" style={{ gap: '32px' }}>
             <a 
