@@ -1,5 +1,5 @@
 :root{
-  --bg:#0a0e1a;
+  --bg:#0a0e12;
   --panel:#0d1117;
   --card:rgba(255,255,255,0.04);
   --card2:rgba(255,255,255,0.06);
@@ -7,8 +7,8 @@
   --text:rgba(255,255,255,0.95);
   --muted:rgba(255,255,255,0.60);
   --muted2:rgba(255,255,255,0.40);
-  --accent:#6ee7ff;
-  --accent2:#a78bfa;
+  --accent:#5ba3b8;
+  --accent2:#8b7ab8;
   --good:#34d399;
   --warn:#fbbf24;
   --bad:#fb7185;
@@ -24,12 +24,16 @@ body{
   margin:0;
   font-family: var(--font);
   color: var(--text);
-  background-color: #0a0e1a;
+  background-color: #0a0e12;
   background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 0 0;
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.02) 79px,
+      rgba(255,255,255,0.02) 80px
+    );
+  background-size: 80px 100%;
 }
 
 a{ color:inherit; text-decoration:none; }
@@ -1677,11 +1681,16 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingPage {
   min-height: 100vh;
-  background-color: #0a0e1a;
+  background-color: #0a0e12;
   background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(255,255,255,0.02) 79px,
+      rgba(255,255,255,0.02) 80px
+    );
+  background-size: 80px 100%;
   background-attachment: fixed;
   color: rgba(255,255,255,0.95);
 }
@@ -1691,7 +1700,7 @@ html[data-theme="light"] .d2ChartBar{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 14, 26, 0.90);
+  background: rgba(10, 14, 18, 0.90);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -1769,8 +1778,8 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn {
-  background: linear-gradient(135deg, #6ee7ff 0%, #a78bfa 100%) !important;
-  color: #0a0e1a !important;
+  background: linear-gradient(135deg, #5ba3b8 0%, #8b7ab8 100%) !important;
+  color: #0a0e12 !important;
   border: none !important;
   padding: 10px 24px !important;
   font-size: 15px !important;
@@ -1778,7 +1787,7 @@ html[data-theme="light"] .d2ChartBar{
   border-radius: 8px !important;
   cursor: pointer !important;
   transition: all 0.2s !important;
-  box-shadow: 0 4px 12px rgba(110, 231, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(91, 163, 184, 0.25);
 }
 
 .landingGetStartedBtn:hover {
@@ -1905,7 +1914,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingAuthHeader{ display: flex; flex-direction: column; gap: 10px; padding-right: 36px; }
 .landingAuthBrand{ display:flex; align-items:center; gap:10px; font-weight:700; color:rgba(255, 255, 255, 0.95); }
-.landingAuthBrand svg{ color:#6ee7ff; }
+.landingAuthBrand svg{ color:#5ba3b8; }
 .landingAuthTitle{ font-size: 36px; font-weight: 800; letter-spacing: -0.8px; color:rgba(255, 255, 255, 0.95); }
 
 .landingGoogleBtn{
@@ -1946,8 +1955,8 @@ html[data-theme="light"] .d2ChartBar{
 }
 .landingAuthInput:focus{
   outline: none;
-  border-color: #6ee7ff;
-  box-shadow: 0 0 0 4px rgba(110, 231, 255, 0.15);
+  border-color: #5ba3b8;
+  box-shadow: 0 0 0 4px rgba(91, 163, 184, 0.15);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -1974,8 +1983,8 @@ html[data-theme="light"] .d2ChartBar{
   height: 54px;
   border-radius: 14px;
   border: none;
-  background: linear-gradient(135deg, #6ee7ff 0%, #a78bfa 100%);
-  color: #0a0e1a;
+  background: linear-gradient(135deg, #5ba3b8 0%, #8b7ab8 100%);
+  color: #0a0e12;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
@@ -2041,7 +2050,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGradientText {
-  background: linear-gradient(135deg, #6ee7ff 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #5ba3b8 0%, #8b7ab8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2086,15 +2095,15 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .btnLarge.btnPrimary {
-  background: linear-gradient(135deg, #6ee7ff 0%, #a78bfa 100%) !important;
-  color: #0a0e1a !important;
+  background: linear-gradient(135deg, #5ba3b8 0%, #8b7ab8 100%) !important;
+  color: #0a0e12 !important;
   border: none !important;
 }
 
 .btnLarge.btnPrimary:hover {
-  background: linear-gradient(135deg, #5dd5ff 0%, #9670ea 100%) !important;
+  background: linear-gradient(135deg, #4a92a7 0%, #7a69a7 100%) !important;
   transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 8px 20px rgba(110, 231, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(91, 163, 184, 0.35);
 }
 
 .btnLarge:not(.btnPrimary) {
@@ -2133,12 +2142,12 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingDemoPlaceholder:hover {
-  border-color: #6ee7ff;
+  border-color: #5ba3b8;
   background: rgba(255, 255, 255, 0.06);
 }
 
 .landingDemoIcon {
-  color: #6ee7ff;
+  color: #5ba3b8;
   opacity: 0.5;
 }
 
@@ -2238,8 +2247,8 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingFeatureCard:hover {
   transform: translateY(-8px) scale(1.02) !important;
-  box-shadow: 0 20px 60px rgba(110, 231, 255, 0.20) !important;
-  border-color: rgba(110, 231, 255, 0.30) !important;
+  box-shadow: 0 20px 60px rgba(91, 163, 184, 0.20) !important;
+  border-color: rgba(91, 163, 184, 0.30) !important;
   background: rgba(255, 255, 255, 0.06) !important;
 }
 
@@ -2247,32 +2256,32 @@ html[data-theme="light"] .d2ChartBar{
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(110, 231, 255, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(91, 163, 184, 0.15) 0%, rgba(139, 122, 184, 0.15) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  color: #6ee7ff;
-  box-shadow: 0 8px 20px rgba(110, 231, 255, 0.25);
+  color: #5ba3b8;
+  box-shadow: 0 8px 20px rgba(91, 163, 184, 0.25);
   transition: all 0.3s ease;
 }
 
 .landingFeatureCard:hover .landingFeatureIcon {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 30px rgba(110, 231, 255, 0.35);
+  box-shadow: 0 12px 30px rgba(91, 163, 184, 0.35);
 }
 
 /* Different colors for each feature icon - Dark theme variants */
 .landingFeatureCard:nth-child(1) .landingFeatureIcon {
-  background: linear-gradient(135deg, rgba(110, 231, 255, 0.15) 0%, rgba(110, 231, 255, 0.10) 100%);
-  color: #6ee7ff;
-  box-shadow: 0 8px 20px rgba(110, 231, 255, 0.25);
+  background: linear-gradient(135deg, rgba(91, 163, 184, 0.15) 0%, rgba(91, 163, 184, 0.10) 100%);
+  color: #5ba3b8;
+  box-shadow: 0 8px 20px rgba(91, 163, 184, 0.25);
 }
 
 .landingFeatureCard:nth-child(2) .landingFeatureIcon {
-  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(167, 139, 250, 0.10) 100%);
-  color: #a78bfa;
-  box-shadow: 0 8px 20px rgba(167, 139, 250, 0.25);
+  background: linear-gradient(135deg, rgba(139, 122, 184, 0.15) 0%, rgba(139, 122, 184, 0.10) 100%);
+  color: #8b7ab8;
+  box-shadow: 0 8px 20px rgba(139, 122, 184, 0.25);
 }
 
 .landingFeatureCard:nth-child(3) .landingFeatureIcon {
@@ -2365,7 +2374,7 @@ html[data-theme="light"] .d2ChartBar{
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(110, 231, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(91, 163, 184, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -2399,7 +2408,7 @@ html[data-theme="light"] .d2ChartBar{
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #6ee7ff, #a78bfa, #f472b6, #34d399);
+  background: linear-gradient(90deg, #5ba3b8, #8b7ab8, #f472b6, #34d399);
 }
 
 .landingContactForm form {
@@ -2409,8 +2418,8 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm .btn {
-  background: linear-gradient(135deg, #6ee7ff 0%, #a78bfa 100%) !important;
-  color: #0a0e1a !important;
+  background: linear-gradient(135deg, #5ba3b8 0%, #8b7ab8 100%) !important;
+  color: #0a0e12 !important;
   border: none !important;
   padding: 18px 40px !important;
   font-size: 17px !important;
@@ -2422,13 +2431,13 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center !important;
   justify-content: center !important;
   gap: 10px !important;
-  box-shadow: 0 4px 12px rgba(110, 231, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(91, 163, 184, 0.25);
 }
 
 .landingContactForm .btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #5dd5ff 0%, #9670ea 100%) !important;
+  background: linear-gradient(135deg, #4a92a7 0%, #7a69a7 100%) !important;
   transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 8px 20px rgba(110, 231, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(91, 163, 184, 0.35);
 }
 
 .landingContactForm .btn:disabled {
@@ -2473,8 +2482,8 @@ html[data-theme="light"] .d2ChartBar{
 .landingContactForm .input:focus,
 .landingContactForm .textarea:focus {
   outline: none !important;
-  border-color: #6ee7ff !important;
-  box-shadow: 0 0 0 4px rgba(110, 231, 255, 0.15), 0 4px 12px rgba(110, 231, 255, 0.2) !important;
+  border-color: #5ba3b8 !important;
+  box-shadow: 0 0 0 4px rgba(91, 163, 184, 0.15), 0 4px 12px rgba(91, 163, 184, 0.2) !important;
   background: rgba(255, 255, 255, 0.08) !important;
   transform: translateY(-1px) !important;
 }
@@ -2551,7 +2560,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLogo svg {
-  color: #6ee7ff;
+  color: #5ba3b8;
 }
 
 .landingFooterDesc {
@@ -2590,7 +2599,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLinks a:hover {
-  color: #6ee7ff;
+  color: #5ba3b8;
   transform: translateX(3px);
   display: inline-block;
 }
@@ -2626,7 +2635,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLegal a:hover {
-  color: #6ee7ff;
+  color: #5ba3b8;
 }
 
 /* Create Portal Page */
@@ -4304,8 +4313,8 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatForm:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 8px 32px rgba(110, 231, 255, 0.25);
+  border-color: #5ba3b8;
+  box-shadow: 0 8px 32px rgba(91, 163, 184, 0.25);
 }
 
 .landingChatInput {
@@ -4324,7 +4333,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatSubmit {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: linear-gradient(135deg, #5ba3b8, #8b7ab8);
   border: none;
   border-radius: 12px;
   width: 48px;
@@ -4333,14 +4342,14 @@ body[data-theme="light"] .landingAuthModal {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--bg);
+  color: #0a0e12;
   transition: all 0.2s;
   flex-shrink: 0;
 }
 
 .landingChatSubmit:hover:not(:disabled) {
   transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(110, 231, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(91, 163, 184, 0.4);
 }
 
 .landingChatSubmit:disabled {
@@ -4425,8 +4434,8 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatUser .landingChatMessageContent p {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: var(--bg);
+  background: linear-gradient(135deg, #5ba3b8, #8b7ab8);
+  color: #0a0e12;
   padding: 12px 18px;
   border-radius: 16px 16px 4px 16px;
   margin: 0;
@@ -4451,13 +4460,13 @@ body[data-theme="light"] .landingAuthModal {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: linear-gradient(135deg, #5ba3b8, #8b7ab8);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--bg);
+  color: #0a0e12;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(110, 231, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(91, 163, 184, 0.3);
 }
 
 .landingChatTyping {
