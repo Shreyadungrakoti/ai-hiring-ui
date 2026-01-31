@@ -4326,6 +4326,8 @@ body[data-theme="light"] .landingAuthModal {
   border-radius: 12px;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .landingChatForm:focus-within {
@@ -4404,6 +4406,8 @@ body[data-theme="light"] .landingAuthModal {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .landingPreviewContent:hover {
