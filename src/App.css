@@ -1737,6 +1737,19 @@ html[data-theme="light"] .d2ChartBar{
   color: rgba(255, 255, 255, 1);
 }
 
+.landingNavLinkActive {
+  color: #528BF2 !important;
+  font-weight: 500;
+}
+
+/* Portal Content Wrapper */
+.portalContentWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  min-height: calc(100vh - 400px);
+}
+
 .landingLoginBtn {
   background: transparent;
   color: rgba(255, 255, 255, 0.95);

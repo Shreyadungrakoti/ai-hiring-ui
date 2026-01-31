@@ -10,7 +10,7 @@ import Candidates from "./pages/Candidates.jsx";
 import Settings from "./pages/Settings.jsx";
 import WebsiteSettings from "./pages/WebsiteSettings.jsx";
 import NotFound from "./pages/NotFound.jsx";
-import AppShell from "./shell/AppShell.jsx";
+import PortalShell from "./shell/PortalShell.jsx";
 import ProtectedRoute from "./shell/ProtectedRoute.jsx";
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
         path="/portal"
         element={
           <ProtectedRoute>
-            <AppShell />
+            <PortalShell />
           </ProtectedRoute>
         }
       >
