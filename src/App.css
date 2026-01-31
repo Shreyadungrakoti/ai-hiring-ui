@@ -2303,7 +2303,7 @@ html[data-theme="light"] .d2ChartBar{
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   width: 100%;
   transition: all 0.2s ease;
   display: flex;
@@ -2313,41 +2313,42 @@ html[data-theme="light"] .d2ChartBar{
 
 .sideBoxHeader {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .sideBoxTitle {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
 }
 
 .sideBoxDescription {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .sideBoxForm {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .sideBoxFormGroup {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .sideBoxLabel {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
@@ -2355,7 +2356,7 @@ html[data-theme="light"] .d2ChartBar{
 .sideBoxInput,
 .sideBoxSelect {
   width: 100%;
-  padding: 9px 10px;
+  padding: 8px 9px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
@@ -2368,23 +2369,25 @@ html[data-theme="light"] .d2ChartBar{
 
 .sideBoxInput::placeholder {
   color: rgba(255, 255, 255, 0.3);
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .sideBoxSearchInput {
-  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Cpath d='M21 21L16.65 16.65' stroke='rgba(255,255,255,0.3)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Cpath d='M21 21L16.65 16.65' stroke='rgba(255,255,255,0.3)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 34px;
+  background-position: right 9px center;
+  background-size: 12px 12px;
+  padding-right: 30px;
 }
 
 .sideBoxSelect {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 30px;
+  background-position: right 9px center;
+  background-size: 9px 5px;
+  padding-right: 28px;
 }
 
 .sideBoxSelect option {
@@ -2398,50 +2401,55 @@ html[data-theme="light"] .d2ChartBar{
   outline: none;
   border-color: rgba(74, 127, 224, 0.5);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 3px rgba(74, 127, 224, 0.08);
+  box-shadow: 0 0 0 2px rgba(74, 127, 224, 0.08);
 }
 
 .sideBoxDivider {
   height: 1px;
   background: rgba(255, 255, 255, 0.06);
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .sideBoxCallButton {
   width: 100%;
-  padding: 10px 14px;
+  padding: 9px 12px;
   border: none;
   border-radius: 6px;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   transition: all 0.2s ease;
+}
+
+.sideBoxCallButton svg {
+  width: 14px;
+  height: 14px;
 }
 
 .sideBoxCallButtonPrimary {
   background: linear-gradient(135deg, #4A7FE0 0%, #6B5FE8 100%);
-  box-shadow: 0 3px 10px rgba(74, 127, 224, 0.3);
+  box-shadow: 0 2px 8px rgba(74, 127, 224, 0.25);
 }
 
 .sideBoxCallButtonPrimary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(74, 127, 224, 0.4);
+  box-shadow: 0 4px 12px rgba(74, 127, 224, 0.35);
 }
 
 .sideBoxCallButtonDemo {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .sideBoxCallButtonDemo:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }
 
@@ -2457,18 +2465,18 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  padding-top: 14px;
-  margin-top: 6px;
+  gap: 6px;
+  padding-top: 12px;
+  margin-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .sideBoxStatusDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -2484,8 +2492,8 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .sideBoxStatusText {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
