@@ -520,7 +520,7 @@ export default function LandingPage() {
                     <input
                       type="text"
                       className="landingChatInput"
-                      placeholder="describe the role"
+                      placeholder="Describe the role..."
                       value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
                       disabled={isProcessing}
