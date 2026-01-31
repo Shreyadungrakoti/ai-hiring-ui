@@ -1999,9 +1999,9 @@ html[data-theme="light"] .d2ChartBar{
 
 /* Hero Section */
 .landingHero {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 120px 32px 80px;
+  padding: 120px 40px 80px;
 }
 
 .landingHeroContent {
@@ -2013,7 +2013,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingHeroContentCentered {
   grid-template-columns: 1fr;
-  max-width: 900px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
