@@ -7,7 +7,7 @@
   --text:rgba(255,255,255,0.95);
   --muted:rgba(255,255,255,0.60);
   --muted2:rgba(255,255,255,0.40);
-  --accent:#5b9cf5;
+  --accent:#5d9cff;
   --accent2:#4a8fe2;
   --good:#34d399;
   --warn:#fbbf24;
@@ -761,7 +761,7 @@ kbd{
 .sbIconBtnActive{
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
   border-color: rgba(124, 58, 237, 0.30);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 
@@ -856,7 +856,7 @@ kbd{
   cursor: pointer;
   border: 1px solid rgba(124, 58, 237, 0.25);
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
-  color: #5b9cf5;
+  color: #5d9cff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
@@ -1125,14 +1125,14 @@ body[data-theme="dark"] .btnGhost:hover {
 
 /* Dark mode primary button */
 body[data-theme="dark"] .btnPrimary {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
-  border-color: #5b9cf5 !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
+  border-color: #5d9cff !important;
   color: #ffffff !important;
 }
 
 body[data-theme="dark"] .btnPrimary:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
-  border-color: #5b9cf5 !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
+  border-color: #5d9cff !important;
 }
 
 /* Dark mode modal styling */
@@ -1164,15 +1164,15 @@ body[data-theme="dark"] kbd {
 
 /* Primary button enhancements for light mode */
 body[data-theme="light"] .btnPrimary {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
-  border-color: #5b9cf5 !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
+  border-color: #5d9cff !important;
   color: #ffffff !important;
   box-shadow: 0 2px 4px rgba(124, 58, 237, 0.15) !important;
 }
 
 body[data-theme="light"] .btnPrimary:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
-  border-color: #5b9cf5 !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
+  border-color: #5d9cff !important;
   box-shadow: 0 4px 8px rgba(124, 58, 237, 0.25) !important;
 }
 
@@ -1188,7 +1188,7 @@ body[data-theme="light"] .select {
 body[data-theme="light"] .input:focus,
 body[data-theme="light"] .textarea:focus,
 body[data-theme="light"] .select:focus {
-  border-color: #5b9cf5 !important;
+  border-color: #5d9cff !important;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
   outline: none !important;
 }
@@ -1229,8 +1229,8 @@ body[data-theme="light"] .sbIconBtn:hover {
 
 body[data-theme="light"] .sbIconBtnActive {
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(168, 85, 247, 0.10) 100%) !important;
-  border-color: #5b9cf5 !important;
-  color: #5b9cf5 !important;
+  border-color: #5d9cff !important;
+  color: #5d9cff !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
 }
 
@@ -1239,7 +1239,7 @@ body[data-theme="light"] .sbIconLabel {
 }
 
 body[data-theme="light"] .sbIconBtnActive .sbIconLabel {
-  color: #5b9cf5 !important;
+  color: #5d9cff !important;
   font-weight: 700 !important;
 }
 
@@ -1248,14 +1248,14 @@ body[data-theme="light"] .sbIconBtnActive .sbIconLabel {
 }
 
 body[data-theme="light"] .sbPlusBtn {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
-  border: 1px solid #5b9cf5 !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
+  border: 1px solid #5d9cff !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
 }
 
 body[data-theme="light"] .sbPlusBtn:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25) !important;
 }
 
@@ -1273,7 +1273,7 @@ body[data-theme="light"] .sbPlusBtn:hover {
 .sbIconBtnActive{
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%) !important;
   border-color: rgba(124, 58, 237, 0.30) !important;
-  color: #5b9cf5 !important;
+  color: #5d9cff !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
 }
 
@@ -1315,7 +1315,7 @@ body[data-theme="light"] .search {
 }
 
 body[data-theme="light"] .search:focus-within {
-  border-color: #5b9cf5 !important;
+  border-color: #5d9cff !important;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
 }
 
@@ -1383,10 +1383,10 @@ kbd{
   flex: 1;
   border-radius: 4px;
   border: none;
-  background: linear-gradient(180deg, #5b9cf5, #4a8fe2);
+  background: linear-gradient(180deg, #5d9cff, #4a8fe2);
 }
 html[data-theme="light"] .d2MiniBar{
-  background: linear-gradient(180deg, #5b9cf5, #4a8fe2);
+  background: linear-gradient(180deg, #5d9cff, #4a8fe2);
 }
 
 .d2Panel{
@@ -1436,10 +1436,10 @@ html[data-theme="light"] .d2MiniBar{
   width: 100%;
   border-radius: 6px;
   border: none;
-  background: linear-gradient(180deg, #5b9cf5, #4a8fe2);
+  background: linear-gradient(180deg, #5d9cff, #4a8fe2);
 }
 html[data-theme="light"] .d2ChartBar{
-  background: linear-gradient(180deg, #5b9cf5, #4a8fe2);
+  background: linear-gradient(180deg, #5d9cff, #4a8fe2);
 }
 .d2ChartLabel{ font-size: 12px; font-weight: 600; color: var(--muted2); }
 
@@ -1759,7 +1759,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn {
-  background: #5b9cf5 !important;
+  background: #5d9cff !important;
   color: #ffffff !important;
   border: none !important;
   padding: 10px 24px !important;
@@ -1772,7 +1772,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%) !important;
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
 }
@@ -1810,7 +1810,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingMeBtn:hover {
   background: #f3f4f6;
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   transform: scale(1.05);
 }
 
@@ -1895,7 +1895,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingAuthHeader{ display: flex; flex-direction: column; gap: 10px; padding-right: 36px; }
 .landingAuthBrand{ display:flex; align-items:center; gap:10px; font-weight:700; color:rgba(255, 255, 255, 0.95); }
-.landingAuthBrand svg{ color:#5b9cf5; }
+.landingAuthBrand svg{ color:#5d9cff; }
 .landingAuthTitle{ font-size: 36px; font-weight: 800; letter-spacing: -0.8px; color:rgba(255, 255, 255, 0.95); }
 
 .landingGoogleBtn{
@@ -1936,7 +1936,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 .landingAuthInput:focus{
   outline: none;
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
   background: rgba(255, 255, 255, 0.08);
 }
@@ -1964,7 +1964,7 @@ html[data-theme="light"] .d2ChartBar{
   height: 54px;
   border-radius: 14px;
   border: none;
-  background: #5b9cf5;
+  background: #5d9cff;
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
@@ -2056,7 +2056,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGradientText {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .landingHeroSubtitle {
@@ -2098,7 +2098,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .btnLarge.btnPrimary {
-  background: #5b9cf5 !important;
+  background: #5d9cff !important;
   color: #ffffff !important;
   border: none !important;
 }
@@ -2145,12 +2145,12 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingDemoPlaceholder:hover {
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   background: rgba(255, 255, 255, 0.06);
 }
 
 .landingDemoIcon {
-  color: #5b9cf5;
+  color: #5d9cff;
   opacity: 0.5;
 }
 
@@ -2264,7 +2264,7 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
   transition: all 0.3s ease;
 }
@@ -2277,37 +2277,37 @@ html[data-theme="light"] .d2ChartBar{
 /* Different colors for each feature icon - Blue theme only */
 .landingFeatureCard:nth-child(1) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .landingFeatureCard:nth-child(2) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .landingFeatureCard:nth-child(3) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .landingFeatureCard:nth-child(4) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .landingFeatureCard:nth-child(5) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .landingFeatureCard:nth-child(6) .landingFeatureIcon {
   background: rgba(59, 130, 246, 0.12);
-  color: #5b9cf5;
+  color: #5d9cff;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
@@ -2411,7 +2411,7 @@ html[data-theme="light"] .d2ChartBar{
   left: 0;
   right: 0;
   height: 4px;
-  background: #5b9cf5;
+  background: #5d9cff;
 }
 
 .landingContactForm form {
@@ -2421,7 +2421,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingContactForm .btn {
-  background: #5b9cf5 !important;
+  background: #5d9cff !important;
   color: #ffffff !important;
   border: none !important;
   padding: 18px 40px !important;
@@ -2485,7 +2485,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingContactForm .input:focus,
 .landingContactForm .textarea:focus {
   outline: none !important;
-  border-color: #5b9cf5 !important;
+  border-color: #5d9cff !important;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), 0 4px 12px rgba(59, 130, 246, 0.2) !important;
   background: rgba(255, 255, 255, 0.08) !important;
   transform: translateY(-1px) !important;
@@ -2510,7 +2510,7 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .landingSuccessTitle {
@@ -2563,7 +2563,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLogo svg {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .landingFooterDesc {
@@ -2602,7 +2602,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLinks a:hover {
-  color: #5b9cf5;
+  color: #5d9cff;
   transform: translateX(3px);
   display: inline-block;
 }
@@ -2638,7 +2638,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingFooterLegal a:hover {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 /* Create Portal Page */
@@ -2858,7 +2858,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .testimonialQuote {
-  color: #5b9cf5;
+  color: #5d9cff;
   opacity: 0.5;
 }
 
@@ -2886,7 +2886,7 @@ html[data-theme="light"] .d2ChartBar{
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #5d9cff 50%, #5d9cff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2936,14 +2936,14 @@ html[data-theme="light"] .d2ChartBar{
 
 .testimonialsSwiper .swiper-button-prev:hover,
 .testimonialsSwiper .swiper-button-next:hover {
-  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #5d9cff 50%, #5d9cff 100%);
   transform: translateY(-50%) scale(1.1);
 }
 
 .testimonialsSwiper .swiper-button-prev:after,
 .testimonialsSwiper .swiper-button-next:after {
   font-size: 20px;
-  color: #5b9cf5;
+  color: #5d9cff;
   font-weight: 900;
 }
 
@@ -2962,7 +2962,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .testimonialsSwiper .swiper-pagination-bullet-active {
-  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #5d9cff 50%, #5d9cff 100%);
   width: 28px;
   border-radius: 5px;
 }
@@ -3024,14 +3024,14 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5b9cf5;
+  color: #5d9cff;
   margin-bottom: 8px;
 }
 
 .statValue {
   font-size: 40px;
   font-weight: 800;
-  background: linear-gradient(135deg, #5b9cf5 0%, #5b9cf5 50%, #5b9cf5 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #5d9cff 50%, #5d9cff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3109,7 +3109,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingShowcaseNumber {
   font-size: 48px;
   font-weight: 800;
-  background: linear-gradient(135deg, #0ea5e9 0%, #5b9cf5 50%, #5b9cf5 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #5d9cff 50%, #5d9cff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3218,11 +3218,11 @@ html[data-theme="light"] .d2ChartBar{
 
 .settingsNavItemActive {
   background: var(--card2);
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .settingsNavItemActive svg {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .settingsContent {
@@ -3352,24 +3352,24 @@ html[data-theme="light"] .d2ChartBar{
 
 .settingsLanguageOption:hover {
   background: var(--card);
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
 }
 
 .settingsLanguageOptionActive {
   background: var(--card2);
-  border-color: #5b9cf5;
-  color: #5b9cf5;
+  border-color: #5d9cff;
+  color: #5d9cff;
 }
 
 .settingsLanguageOptionActive svg {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .settingsLanguageCheck {
   margin-left: auto;
   font-size: 18px;
   font-weight: 700;
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 /* Responsive */
@@ -3435,12 +3435,12 @@ html[data-theme="light"] .d2ChartBar{
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .websiteSettingsBack:hover {
   background: rgba(255, 255, 255, 1);
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   transform: translateX(-4px);
 }
 
@@ -3508,7 +3508,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .websiteSettingsCardLeft svg {
-  color: #5b9cf5;
+  color: #5d9cff;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -3535,7 +3535,7 @@ html[data-theme="light"] .d2ChartBar{
 .websiteSettingsBadge {
   font-size: 14px;
   font-weight: 600;
-  color: #5b9cf5;
+  color: #5d9cff;
   background: rgba(124, 58, 237, 0.1);
   padding: 6px 16px;
   border-radius: 20px;
@@ -3553,7 +3553,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .websiteSettingsToggleActive {
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%);
 }
 
 .websiteSettingsToggleThumb {
@@ -3650,17 +3650,17 @@ html[data-theme="light"] .d2ChartBar{
 
 .websiteSettingsLanguageActive {
   background: rgba(124, 58, 237, 0.1);
-  border-color: #5b9cf5;
-  color: #5b9cf5;
+  border-color: #5d9cff;
+  color: #5d9cff;
 }
 
 .websiteSettingsLanguageActive svg {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .websiteSettingsLanguageCheck {
   margin-left: auto;
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 /* ===== Platform Selection Page ===== */
@@ -3726,7 +3726,7 @@ body[data-theme="light"] .platformSelectionPage::before {
   width: 80px;
   height: 80px;
   border-radius: 24px;
-  background: linear-gradient(135deg, #5b9cf5 0%, #4a8fe2 100%);
+  background: linear-gradient(135deg, #5d9cff 0%, #4a8fe2 100%);
   color: #ffffff;
   margin-bottom: 24px;
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5), 0 0 80px rgba(124, 58, 237, 0.3);
@@ -3811,7 +3811,7 @@ body[data-theme="light"] .platformCard::before {
 .platformCard:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 60px rgba(124, 58, 237, 0.4), 0 0 100px rgba(124, 58, 237, 0.2);
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   background: rgba(124, 58, 237, 0.08);
 }
 
@@ -3821,7 +3821,7 @@ body[data-theme="light"] .platformCard:hover {
 }
 
 .platformCardSelected {
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.35);
   background: rgba(124, 58, 237, 0.1);
 }
@@ -3910,7 +3910,7 @@ body[data-theme="light"] .platformCardDescription {
 }
 
 body[data-theme="light"] .platformCardFeaturesTitle {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .platformCardFeaturesList {
@@ -4130,11 +4130,11 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .candidateNameLink:hover {
-  color: #5b9cf5;
+  color: #5d9cff;
 }
 
 .candidateProfileLink {
-  color: #5b9cf5;
+  color: #5d9cff;
   opacity: 0.7;
   transition: all 0.2s;
   display: inline-flex;
@@ -4268,7 +4268,7 @@ body[data-theme="light"] .landingAuthModal {
   padding: 16px 20px;
   background: var(--card);
   border-radius: 12px;
-  border-left: 4px solid #5b9cf5;
+  border-left: 4px solid #5d9cff;
 }
 
 /* Candidate Link Icon - LinkedIn dark navy blue */
@@ -4316,7 +4316,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatForm:focus-within {
-  border-color: #5b9cf5;
+  border-color: #5d9cff;
   box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
 }
 
@@ -4336,7 +4336,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatSubmit {
-  background: #5b9cf5;
+  background: #5d9cff;
   border: none;
   border-radius: 12px;
   width: 48px;
@@ -4437,7 +4437,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .landingChatUser .landingChatMessageContent p {
-  background: #5b9cf5;
+  background: #5d9cff;
   color: #ffffff;
   padding: 12px 18px;
   border-radius: 16px 16px 4px 16px;
@@ -4463,7 +4463,7 @@ body[data-theme="light"] .landingAuthModal {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #5b9cf5;
+  background: #5d9cff;
   display: flex;
   align-items: center;
   justify-content: center;
