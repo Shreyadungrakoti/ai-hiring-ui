@@ -2319,11 +2319,12 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .sideBoxTitle {
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 6px 0;
-  letter-spacing: -0.01em;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
 .sideBoxDescription {
