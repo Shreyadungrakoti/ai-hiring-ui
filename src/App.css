@@ -1,6 +1,6 @@
 :root{
-  --bg:#16181d;
-  --panel:#1a1d24;
+  --bg:#0a1628;
+  --panel:#0f1e33;
   --card:rgba(255,255,255,0.04);
   --card2:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.08);
@@ -24,16 +24,7 @@ body{
   margin:0;
   font-family: var(--font);
   color: var(--text);
-  background-color: #16181d;
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 79px,
-      rgba(255,255,255,0.03) 79px,
-      rgba(255,255,255,0.03) 80px
-    );
-  background-size: 80px 100%;
+  background-color: #0a1628;
 }
 
 a{ color:inherit; text-decoration:none; }
@@ -70,7 +61,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .modal-content{
-  background: #1a1d29;
+  background: #0f1e33;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 24px;
@@ -1146,7 +1137,7 @@ body[data-theme="dark"] .btnPrimary:hover {
 
 /* Dark mode modal styling */
 body[data-theme="dark"] .modal-content {
-  background: #1a1d29 !important;
+  background: #0f1e33 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
@@ -1643,7 +1634,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .modalContent{
-  background: #1a1d29;
+  background: #0f1e33;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
@@ -1681,7 +1672,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingPage {
   min-height: 100vh;
-  background-color: #16181d;
+  background-color: #0a1628;
   background-image: 
     repeating-linear-gradient(
       90deg,
@@ -3689,7 +3680,7 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #0a0e1a 0%, #16181d 25%, #0f1729 50%, #1a1d24 75%, #0f172a 100%);
+  background: linear-gradient(135deg, #0a0e1a 0%, #0a1628 25%, #0f1729 50%, #0f1e33 75%, #0f172a 100%);
   position: relative;
   overflow: hidden;
 }
