@@ -1700,7 +1700,7 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
   gap: 12px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
@@ -2047,10 +2047,10 @@ html[data-theme="light"] .d2ChartBar{
 .landingHeroTitle {
   font-size: 72px;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0 0 24px 0;
-  color: rgba(255, 255, 255, 0.95);
-  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.98);
+  letter-spacing: -0.04em;
 }
 
 .landingHeroCTA {
@@ -2064,7 +2064,7 @@ html[data-theme="light"] .d2ChartBar{
 .landingHeroSubtitle {
   font-size: 22px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.65);
   margin: 0 0 8px 0;
   max-width: 480px;
   font-weight: 400;
@@ -2201,8 +2201,8 @@ html[data-theme="light"] .d2ChartBar{
   font-size: 48px;
   font-weight: 800;
   margin: 0 0 20px 0;
-  color: rgba(255, 255, 255, 0.95);
-  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.98);
+  letter-spacing: -0.03em;
 }
 
 .landingSectionSubtitle {
