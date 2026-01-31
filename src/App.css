@@ -2294,11 +2294,15 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingHeroLeftContent .landingChatContainer {
-  margin: 0;
+  margin: 80px 0 40px 0;
 }
 
 .landingHeroLeftContent .landingPreviewBox {
-  margin: 0;
+  margin: 40px 0;
+}
+
+.landingHeroLeftContent .landingCallAssistantBox {
+  margin: 16px 0 0 0;
 }
 
 .landingSideBox {
