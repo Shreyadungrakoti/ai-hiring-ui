@@ -681,57 +681,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Workflow Section */}
-      <section className="landingWorkflow">
-        <div className="landingWorkflowContent">
-          {/* Workflow Section */}
-          <div className="landingWorkflowSection">
-            <h3 className="landingWorkflowTitle">How It Works</h3>
-            <div className="landingWorkflowSteps">
-              <div className="landingWorkflowStep">
-                <div className="landingWorkflowNumber">1</div>
-                <div className="landingWorkflowContent">
-                  <h4 className="landingWorkflowStepTitle">Create Job Description</h4>
-                  <p className="landingWorkflowStepText">
-                    Simply describe the role you're hiring for or paste your existing JD. Our AI will optimize it for better candidate matching.
-                  </p>
-                </div>
-              </div>
-
-              <div className="landingWorkflowStep">
-                <div className="landingWorkflowNumber">2</div>
-                <div className="landingWorkflowContent">
-                  <h4 className="landingWorkflowStepTitle">AI Sources Candidates</h4>
-                  <p className="landingWorkflowStepText">
-                    Our platform automatically searches across multiple job boards and professional networks to find relevant candidates.
-                  </p>
-                </div>
-              </div>
-
-              <div className="landingWorkflowStep">
-                <div className="landingWorkflowNumber">3</div>
-                <div className="landingWorkflowContent">
-                  <h4 className="landingWorkflowStepTitle">Intelligent Screening</h4>
-                  <p className="landingWorkflowStepText">
-                    AI analyzes resumes, evaluates skills, and ranks candidates based on your specific requirements and preferences.
-                  </p>
-                </div>
-              </div>
-
-              <div className="landingWorkflowStep">
-                <div className="landingWorkflowNumber">4</div>
-                <div className="landingWorkflowContent">
-                  <h4 className="landingWorkflowStepTitle">Review & Hire</h4>
-                  <p className="landingWorkflowStepText">
-                    Get a curated shortlist of top candidates with detailed insights. Schedule interviews and make offers—all in one place.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Us Section */}
       <section className="landingContact" id="contact">
         <div className="landingContactContent">
