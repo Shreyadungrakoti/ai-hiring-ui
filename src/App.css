@@ -1681,30 +1681,30 @@ html[data-theme="light"] .d2ChartBar{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(22, 24, 29, 0.90);
-  backdrop-filter: blur(10px);
+  background: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .landingNavContent {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 16px 32px;
+  padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
 .landingLogo {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 28px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .landingLogo:hover {
@@ -1719,19 +1719,22 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   gap: 32px;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .landingNavLink {
   font-size: 15px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.60);
+  color: rgba(255, 255, 255, 0.80);
   text-decoration: none;
   transition: all 0.2s;
   padding: 8px 4px;
+  white-space: nowrap;
 }
 
 .landingNavLink:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 1);
 }
 
 .landingLoginBtn {
@@ -1741,12 +1744,13 @@ html[data-theme="light"] .d2ChartBar{
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .landingLoginBtn:hover {
@@ -1759,22 +1763,20 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .landingGetStartedBtn {
-  background: #528BF2 !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
   border: none !important;
-  padding: 10px 24px !important;
+  padding: 10px 20px !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   cursor: pointer !important;
   transition: all 0.2s !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  white-space: nowrap;
 }
 
 .landingGetStartedBtn:hover {
-  background: linear-gradient(135deg, #528BF2 0%, #528BF2 100%) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+  background: rgba(255, 255, 255, 0.90) !important;
 }
 
 /* Me Dropdown */

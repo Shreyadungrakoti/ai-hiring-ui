@@ -219,60 +219,66 @@ export default function LandingPage() {
       <nav className="landingNav">
         <div className="landingNavContent">
           <div className="landingLogo">
-            <Logo size={44} />
+            <Logo size={32} />
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
             <a href="#features" className="landingNavLink">Features</a>
             <a href="#how-it-works" className="landingNavLink">How It Works</a>
             <a href="#demo" className="landingNavLink">Demo</a>
+            <a href="#pricing" className="landingNavLink">Pricing</a>
             <a href="#contact" className="landingNavLink">Contact</a>
-            
+          </div>
+          <div className="landingNavLinks" style={{ flex: '0', gap: '12px' }}>
             {isAuthed ? (
-              <div className="landingMeDropdown" ref={meDropdownRef}>
-                <button
-                  className="landingMeBtn"
-                  onClick={() => setMeDropdownOpen(!meDropdownOpen)}
-                >
-                  <User size={20} />
-                  <span>Me</span>
-                  <ChevronDown size={16} />
+              <>
+                <button className="landingGetStartedBtn" onClick={handlePortalClick}>
+                  {getCtaText()}
                 </button>
+                <div className="landingMeDropdown" ref={meDropdownRef}>
+                  <button
+                    className="landingMeBtn"
+                    onClick={() => setMeDropdownOpen(!meDropdownOpen)}
+                  >
+                    <User size={20} />
+                    <span>Me</span>
+                    <ChevronDown size={16} />
+                  </button>
 
-                {meDropdownOpen && (
-                  <div className="landingMeMenu">
-                    {!auth.hasPortal ? (
-                      <button
-                        className="landingMeItem"
+                  {meDropdownOpen && (
+                    <div className="landingMeMenu">
+                      {!auth.hasPortal ? (
+                        <button
+                          className="landingMeItem"
+                          onClick={() => {
+                            setMeDropdownOpen(false);
+                            nav("/create-portal");
+                          }}
+                        >
+                          <Sparkles size={18} />
+                          <span>Create Portal</span>
+                        </button>
+                      ) : (
+                        <button
+                          className="landingMeItem"
+                          onClick={() => {
+                            setMeDropdownOpen(false);
+                            nav("/platform-selection");
+                          }}
+                        >
+                          <Target size={18} />
+                          <span>My Portal</span>
+                        </button>
+                      )}
+
+                      <button 
+                        className="landingMeItem" 
                         onClick={() => {
                           setMeDropdownOpen(false);
-                          nav("/create-portal");
+                          nav("/website-settings");
                         }}
                       >
-                        <Sparkles size={18} />
-                        <span>Create Portal</span>
-                      </button>
-                    ) : (
-                      <button
-                        className="landingMeItem"
-                        onClick={() => {
-                          setMeDropdownOpen(false);
-                          nav("/platform-selection");
-                        }}
-                      >
-                        <Target size={18} />
-                        <span>My Portal</span>
-                      </button>
-                    )}
-
-                    <button 
-                      className="landingMeItem" 
-                      onClick={() => {
-                        setMeDropdownOpen(false);
-                        nav("/website-settings");
-                      }}
-                    >
-                      <Settings size={18} />
+                        <Settings size={18} />
                       <span>Settings</span>
                     </button>
 
@@ -295,14 +301,17 @@ export default function LandingPage() {
                   </div>
                 )}
               </div>
+              </>
             ) : (
-              <button className="landingLoginBtn" onClick={handleLoginClick}>
-                Login
-              </button>
+              <>
+                <button className="landingGetStartedBtn" onClick={handlePortalClick}>
+                  Sign up
+                </button>
+                <button className="landingLoginBtn" onClick={handleLoginClick}>
+                  Log in
+                </button>
+              </>
             )}
-            <button className="landingGetStartedBtn" onClick={handlePortalClick}>
-              {getCtaText()}
-            </button>
           </div>
         </div>
       </nav>
