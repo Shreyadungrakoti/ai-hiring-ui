@@ -1673,16 +1673,6 @@ html[data-theme="light"] .d2ChartBar{
 .landingPage {
   min-height: 100vh;
   background-color: #0d1117;
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 79px,
-      rgba(255,255,255,0.03) 79px,
-      rgba(255,255,255,0.03) 80px
-    );
-  background-size: 80px 100%;
-  background-attachment: fixed;
   color: rgba(255,255,255,0.95);
 }
 
