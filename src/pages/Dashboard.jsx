@@ -217,7 +217,7 @@ export default function Dashboard() {
                 const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
                 return (
                   <div key={i} className="d2VerticalBarCol">
-                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%)" }}>
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%)" }}>
                       <span className="d2VerticalBarValue">{v}</span>
                     </div>
                     <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
@@ -235,7 +235,7 @@ export default function Dashboard() {
                 const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
                 return (
                   <div key={i} className="d2VerticalBarCol">
-                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #5F8EE8 0%, #7C8FE8 100%)" }}>
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #5F8EE8 0%, #7C85E8 100%)" }}>
                       <span className="d2VerticalBarValue">{v}</span>
                     </div>
                     <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>
@@ -253,7 +253,7 @@ export default function Dashboard() {
                 const height = Math.max(10, Math.round(((Number(v) || 0) / maxBar) * 100));
                 return (
                   <div key={i} className="d2VerticalBarCol">
-                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #5F8EE8 0%, #6B9FF2 100%)" }}>
+                    <div className="d2VerticalBar" style={{ height: `${height}%`, background: "linear-gradient(135deg, #5F8EE8 0%, #7C8FE8 100%)" }}>
                       <span className="d2VerticalBarValue">{v}</span>
                     </div>
                     <div className="d2VerticalBarLabel">{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</div>

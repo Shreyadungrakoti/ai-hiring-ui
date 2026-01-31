@@ -48,9 +48,9 @@ export default function Projects() {
 
   const getStatusPill = (status) => {
     const colors = {
-      active: { bg: "linear-gradient(135deg, #5F8EE8 0%, #6B9FF2 100%)", text: "Active" },
-      completed: { bg: "linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%)", text: "Completed" },
-      paused: { bg: "linear-gradient(135deg, #5084E8 0%, #5F8EE8 100%)", text: "Paused" },
+      active: { bg: "linear-gradient(135deg, #5F8EE8 0%, #7C8FE8 100%)", text: "Active" },
+      completed: { bg: "linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%)", text: "Completed" },
+      paused: { bg: "linear-gradient(135deg, #5084E8 0%, #6B8FE8 100%)", text: "Paused" },
     };
     const style = colors[status] || colors.active;
     return (

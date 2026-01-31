@@ -1579,7 +1579,7 @@ html[data-theme="light"] .d2ChartBar{
   color: var(--text);
   text-transform: capitalize;
 }
-.d2Pill-good{ background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%); color: #ffffff; border: none; }
+.d2Pill-good{ background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%); color: #ffffff; border: none; }
 .d2Pill-warn{ background: linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%); color: #ffffff; border: none; }
 .d2Pill-bad{ background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: none; }
 .d2Pill-neutral{ background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: none; }
@@ -2445,7 +2445,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .sideBoxCallButtonPrimary {
-  background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%);
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%);
   box-shadow: 0 2px 8px rgba(74, 127, 224, 0.25);
 }
 
@@ -2656,7 +2656,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .demoCallActions .btnPrimary {
-  background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%);
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%);
   border: none;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(74, 127, 224, 0.3);
@@ -5073,7 +5073,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .btnCall {
-  background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%) !important;
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%) !important;
   border: none !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -5316,7 +5316,7 @@ body[data-theme="light"] .landingAuthModal {
 .previewCandidateScore {
   font-size: 18px;
   font-weight: 700;
-  background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%);
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -5546,7 +5546,7 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .featuresCTAButton {
-  background: linear-gradient(135deg, #4A7FE0 0%, #5F8EE8 100%);
+  background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%);
   border: none;
   border-radius: 8px;
   padding: 16px 40px;

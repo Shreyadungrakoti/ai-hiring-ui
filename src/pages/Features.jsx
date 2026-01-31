@@ -175,16 +175,6 @@ export default function Features() {
         </div>
       </nav>
 
-      {/* Header Section */}
-      <section className="featuresHero">
-        <div className="featuresHeroContent">
-          <h1 className="featuresHeroTitle">Features</h1>
-          <p className="featuresHeroSubtitle">
-            Powerful tools to streamline your hiring process
-          </p>
-        </div>
-      </section>
-
       {/* Features Grid Section */}
       <section className="landingFeatures">
         <div className="landingFeaturesContent">
