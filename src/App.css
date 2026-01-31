@@ -2035,6 +2035,10 @@ html[data-theme="light"] .d2ChartBar{
   max-width: 100%;
 }
 
+.landingHeroContentCentered .landingPreviewBox {
+  max-width: 100%;
+}
+
 .landingHeroContentCentered .landingHeroCTA {
   margin-left: auto;
   margin-right: auto;
