@@ -85,46 +85,49 @@ export default function Dashboard() {
   return (
     <div className="d2Wrap">
       {/* KPI tiles */}
-      <div className="d2Tiles">
-        <div className="d2Tile">
-          <div className="d2TileTop">
-            <div className="d2TileIcon"><FolderKanban size={20} /></div>
-            <div className="d2TileMeta">ACTIVE</div>
+      <section className="d2Section d2SectionKPI">
+        <div className="d2Tiles">
+          <div className="d2Tile">
+            <div className="d2TileTop">
+              <div className="d2TileIcon"><FolderKanban size={20} /></div>
+              <div className="d2TileMeta">ACTIVE</div>
+            </div>
+            <div className="d2TileLabel">Active projects</div>
+            <div className="d2TileValue">{d.activeProjects}</div>
           </div>
-          <div className="d2TileLabel">Active projects</div>
-          <div className="d2TileValue">{d.activeProjects}</div>
-        </div>
 
-        <div className="d2Tile">
-          <div className="d2TileTop">
-            <div className="d2TileIcon"><Activity size={20} /></div>
-            <div className="d2TileMeta">ALL TIME</div>
+          <div className="d2Tile">
+            <div className="d2TileTop">
+              <div className="d2TileIcon"><Activity size={20} /></div>
+              <div className="d2TileMeta">ALL TIME</div>
+            </div>
+            <div className="d2TileLabel">Total runs</div>
+            <div className="d2TileValue">{d.totalRuns}</div>
           </div>
-          <div className="d2TileLabel">Total runs</div>
-          <div className="d2TileValue">{d.totalRuns}</div>
-        </div>
 
-        <div className="d2Tile">
-          <div className="d2TileTop">
-            <div className="d2TileIcon"><Users size={20} /></div>
-            <div className="d2TileMeta">{d.screened ? `${d.qualified}/${d.screened}` : "—"}</div>
+          <div className="d2Tile">
+            <div className="d2TileTop">
+              <div className="d2TileIcon"><Users size={20} /></div>
+              <div className="d2TileMeta">{d.screened ? `${d.qualified}/${d.screened}` : "—"}</div>
+            </div>
+            <div className="d2TileLabel">Qualified rate</div>
+            <div className="d2TileValue">{d.qualifiedRate == null ? "—" : `${d.qualifiedRate}%`}</div>
           </div>
-          <div className="d2TileLabel">Qualified rate</div>
-          <div className="d2TileValue">{d.qualifiedRate == null ? "—" : `${d.qualifiedRate}%`}</div>
-        </div>
 
-        <div className="d2Tile">
-          <div className="d2TileTop">
-            <div className="d2TileIcon"><Clock size={20} /></div>
-            <div className="d2TileMeta">RECENT</div>
+          <div className="d2Tile">
+            <div className="d2TileTop">
+              <div className="d2TileIcon"><Clock size={20} /></div>
+              <div className="d2TileMeta">RECENT</div>
+            </div>
+            <div className="d2TileLabel">Avg run time</div>
+            <div className="d2TileValue">{d.avgDuration ? fmtDuration(d.avgDuration) : "—"}</div>
           </div>
-          <div className="d2TileLabel">Avg run time</div>
-          <div className="d2TileValue">{d.avgDuration ? fmtDuration(d.avgDuration) : "—"}</div>
         </div>
-      </div>
+      </section>
 
       {/* Running now - full width */}
-      <div className="d2Panel">
+      <section className="d2Section d2SectionRunning">
+        <div className="d2Panel">
         <div className="d2PanelHeader" style={{ marginBottom: 12 }}>
           <div className="d2Title">Running now</div>
           <StatusPill status={d.activeRun?.status || "idle"} />
@@ -191,10 +194,12 @@ export default function Dashboard() {
           <div className="d2Muted">No active run.</div>
         )}
       </div>
+      </section>
 
 
       {/* Analytics - Vertical bar charts */}
-      <div className="d2Panel">
+      <section className="d2Section d2SectionAnalytics">
+        <div className="d2Panel">
         <div className="d2PanelHeader">
           <div className="d2Title">Run activity</div>
           <div className="d2Tabs">
@@ -259,9 +264,11 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      </section>
 
       {/* Recent runs and Recent projects side by side */}
-      <div className="d2GridRow">
+      <section className="d2Section d2SectionRecent">
+        <div className="d2GridRow">
         <div className="d2Panel d2Span2">
           <div className="d2PanelHeader">
             <div className="d2Title">Recent runs</div>
@@ -315,6 +322,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      </section>
     </div>
   );
 }

@@ -1354,13 +1354,40 @@ kbd{
 .d2Wrap{ 
   display:flex; 
   flex-direction:column; 
-  gap: 40px;
+  gap: 0;
+}
+
+/* Dashboard Sections with Different Backgrounds */
+.d2Section {
+  width: 100%;
+  padding: 60px 80px;
+  position: relative;
+}
+
+.d2SectionKPI {
+  background: #0d1117;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.d2SectionRunning {
+  background: #10151c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.d2SectionAnalytics {
+  background: #0a0e14;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.d2SectionRecent {
+  background: #10151c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .d2GridRow{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 24px;
   align-items:start;
 }
 
@@ -1372,23 +1399,23 @@ kbd{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 48px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0;
+  border-bottom: none;
 }
 
 .d2Tile{
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 12px 0;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .d2Tile:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-color: rgba(74, 127, 224, 0.2);
 }
 
 .d2TileTop{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px; }
@@ -1425,17 +1452,17 @@ html[data-theme="light"] .d2MiniBar{
 }
 
 .d2Panel{
-  background: transparent;
-  backdrop-filter: none;
-  border: none;
-  border-radius: 0;
-  padding: 16px 0;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .d2Panel:hover {
-  box-shadow: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 .d2PanelHeader{
@@ -1444,8 +1471,8 @@ html[data-theme="light"] .d2MiniBar{
   align-items:center;
   gap: 12px;
   margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .d2Title{ font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
@@ -1453,19 +1480,27 @@ html[data-theme="light"] .d2MiniBar{
 
 .d2Tabs{ display:flex; gap: 8px; }
 .d2Tab{
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.08);
   background: transparent;
   color: var(--muted);
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 13px;
   cursor:pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .d2TabActive{
   background: linear-gradient(135deg, rgba(74, 127, 224, 0.2) 0%, rgba(107, 95, 232, 0.2) 100%);
   border-color: rgba(74, 127, 224, 0.4);
   color: #6B9FF2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.d2Tab:hover:not(.d2TabActive){
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .d2Chart{
@@ -1584,11 +1619,13 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 600;
   font-size: 13px;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .d2GhostBtn:hover{ 
   background: linear-gradient(135deg, rgba(74, 127, 224, 0.2) 0%, rgba(107, 95, 232, 0.2) 100%);
   border-color: rgba(74, 127, 224, 0.5);
   transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .d2VerticalCharts{
@@ -1628,7 +1665,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 .d2VerticalBar{
   width: 100%;
-  border-radius: 2px 2px 0 0;
+  border-radius: 4px 4px 0 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1638,7 +1675,7 @@ html[data-theme="light"] .d2ChartBar{
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 20px;
-  box-shadow: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -1648,15 +1685,15 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .d2VerticalBar:hover {
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .d2VerticalBarValue{
   color: white;
   position: relative;
   z-index: 1;
-  text-shadow: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .d2VerticalBarLabel{
   font-size: 11px;
