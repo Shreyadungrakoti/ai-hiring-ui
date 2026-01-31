@@ -83,8 +83,9 @@ export default function Projects() {
             </button>
           </div>
 
-          <div className="tableWrap">
-            <table className="table">
+          <div className="tableContainer">
+            <div className="tableWrap">
+              <table className="table">
             <thead>
               <tr>
                 <th>Project name</th>
@@ -170,6 +171,7 @@ export default function Projects() {
               ) : null}
             </tbody>
           </table>
+        </div>
         </div>
       </div>
       </section>

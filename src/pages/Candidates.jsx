@@ -163,7 +163,7 @@ export default function Candidates() {
           <div className="portalHeader">
             <div>
               <h1 className="portalTitle">Candidates</h1>
-              <p className="portalSubtitle">{sortedCandidates.length} candidates found</p>
+              <p className="portalSubtitle">{sortedCandidates.length} qualified candidates found</p>
             </div>
             
             <div className="row" style={{ gap: 8 }}>
@@ -187,7 +187,7 @@ export default function Candidates() {
                 onClick={() => setSortBy("alphabet")}
               >
                 <ArrowUpDown size={14} />
-                Alphabet
+                Name
               </button>
               <button 
                 className={`btn btnSmall ${sortBy === "project" ? "btnPrimary" : ""}`}
@@ -199,7 +199,8 @@ export default function Candidates() {
             </div>
           </div>
 
-          <div className="tableWrap">
+          <div className="tableContainer">
+            <div className="tableWrap">
           <table className="table">
             <thead>
               <tr>
@@ -333,6 +334,7 @@ export default function Candidates() {
               )}
             </tbody>
           </table>
+        </div>
         </div>
       </div>
     </div>
