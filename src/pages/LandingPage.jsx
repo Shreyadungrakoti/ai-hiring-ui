@@ -2,8 +2,6 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
-import StatsCarousel from "../components/StatsCarousel.jsx";
-import ProductShowcase from "../components/ProductShowcase.jsx";
 import Logo from "../components/Logo.jsx";
 
 export default function LandingPage() {
@@ -593,12 +591,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Product Showcase - moved before demo */}
-      <ProductShowcase />
-
-      {/* Stats Carousel */}
-      <StatsCarousel />
 
       {/* Demo Video Section */}
       <section className="landingDemo" id="demo">
