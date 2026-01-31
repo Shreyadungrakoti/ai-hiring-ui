@@ -141,7 +141,7 @@ export default function LandingPage() {
   const handleSignOut = async () => {
     setMeDropdownOpen(false);
     await logout();
-    // Will redirect to landing with signup modal per sidebar logic
+    nav("/");
   };
 
   const getCtaText = () => {
@@ -220,12 +220,11 @@ export default function LandingPage() {
               className="landingNavLink"
               onClick={(e) => {
                 e.preventDefault();
-                if (isAuthed) {
-                  nav("/portal/projects/new");
-                } else {
+                if (!isAuthed) {
                   setAuthMode("signup");
                   setAuthOpen(true);
                 }
+                // If authenticated, just stay on landing page - no navigation
               }}
             >
               New Project

@@ -25,7 +25,7 @@ export default function PortalShell() {
   const handleSignOut = async () => {
     setMeDropdownOpen(false);
     await logout();
-    nav("/?showAuth=signup");
+    nav("/");
   };
 
   return (
@@ -43,7 +43,7 @@ export default function PortalShell() {
               className={`landingNavLink ${location.pathname === "/portal/projects/new" ? "landingNavLinkActive" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
-                nav("/portal/projects/new");
+                nav("/");
               }}
             >
               New Project
