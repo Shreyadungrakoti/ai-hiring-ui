@@ -73,18 +73,18 @@ export default function Projects() {
     <>
       <section className="portalSection portalSectionMain">
         <div className="portalSectionContent">
-          <div className="card" style={{ padding: 16 }}>
-            <div className="row space">
-              <div className="h2">Recruiting projects</div>
-              <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
-                Create project
-              </button>
+          <div className="portalHeader">
+            <div>
+              <h1 className="portalTitle">Projects</h1>
+              <p className="portalSubtitle">Manage your recruiting projects and track progress</p>
             </div>
+            <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
+              Create project
+            </button>
+          </div>
 
-            <div className="hr" />
-
-            <div className="tableWrap">
-              <table className="table">
+          <div className="tableWrap">
+            <table className="table">
             <thead>
               <tr>
                 <th>Project name</th>
@@ -162,8 +162,8 @@ export default function Projects() {
               {projects.length === 0 ? (
                 <tr>
                   <td colSpan={5}>
-                    <div className="small muted" style={{ padding: 12 }}>
-                      No projects yet. Create one to get started.
+                    <div className="emptyState">
+                      <p>No projects yet. Create one to get started.</p>
                     </div>
                   </td>
                 </tr>
@@ -171,7 +171,6 @@ export default function Projects() {
             </tbody>
           </table>
         </div>
-      </div>
       </div>
       </section>
 

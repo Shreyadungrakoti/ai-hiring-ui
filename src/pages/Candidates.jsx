@@ -160,49 +160,46 @@ export default function Candidates() {
     <section className="portalSection portalSectionMain">
       <div className="portalSectionContent">
         <div className="candidatesPage">
-          <div className="card" style={{ padding: 16 }}>
-        <div className="row space" style={{ marginBottom: 16 }}>
-          <div>
-            <div className="h2">Candidates</div>
-            <div className="small muted">{sortedCandidates.length} candidates found</div>
+          <div className="portalHeader">
+            <div>
+              <h1 className="portalTitle">Candidates</h1>
+              <p className="portalSubtitle">{sortedCandidates.length} candidates found</p>
+            </div>
+            
+            <div className="row" style={{ gap: 8 }}>
+              <span className="sortLabel">Sort by:</span>
+              <button 
+                className={`btn btnSmall ${sortBy === "rank" ? "btnPrimary" : ""}`}
+                onClick={() => setSortBy("rank")}
+              >
+                <ArrowUpDown size={14} />
+                Rank
+              </button>
+              <button 
+                className={`btn btnSmall ${sortBy === "time" ? "btnPrimary" : ""}`}
+                onClick={() => setSortBy("time")}
+              >
+                <ArrowUpDown size={14} />
+                Time
+              </button>
+              <button 
+                className={`btn btnSmall ${sortBy === "alphabet" ? "btnPrimary" : ""}`}
+                onClick={() => setSortBy("alphabet")}
+              >
+                <ArrowUpDown size={14} />
+                Alphabet
+              </button>
+              <button 
+                className={`btn btnSmall ${sortBy === "project" ? "btnPrimary" : ""}`}
+                onClick={() => setSortBy("project")}
+              >
+                <ArrowUpDown size={14} />
+                Project
+              </button>
+            </div>
           </div>
-          
-          <div className="row" style={{ gap: 8 }}>
-            <span className="small muted">Sort by:</span>
-            <button 
-              className={`btn btnSmall ${sortBy === "rank" ? "btnPrimary" : ""}`}
-              onClick={() => setSortBy("rank")}
-            >
-              <ArrowUpDown size={14} />
-              Rank
-            </button>
-            <button 
-              className={`btn btnSmall ${sortBy === "time" ? "btnPrimary" : ""}`}
-              onClick={() => setSortBy("time")}
-            >
-              <ArrowUpDown size={14} />
-              Time
-            </button>
-            <button 
-              className={`btn btnSmall ${sortBy === "alphabet" ? "btnPrimary" : ""}`}
-              onClick={() => setSortBy("alphabet")}
-            >
-              <ArrowUpDown size={14} />
-              Alphabet
-            </button>
-            <button 
-              className={`btn btnSmall ${sortBy === "project" ? "btnPrimary" : ""}`}
-              onClick={() => setSortBy("project")}
-            >
-              <ArrowUpDown size={14} />
-              Project
-            </button>
-          </div>
-        </div>
 
-        <div className="hr" />
-
-        <div className="tableWrap">
+          <div className="tableWrap">
           <table className="table">
             <thead>
               <tr>
@@ -328,8 +325,8 @@ export default function Candidates() {
               {sortedCandidates.length === 0 && (
                 <tr>
                   <td colSpan={4}>
-                    <div className="small muted" style={{ padding: 12 }}>
-                      No candidates yet.
+                    <div className="emptyState">
+                      <p>No candidates yet.</p>
                     </div>
                   </td>
                 </tr>
@@ -338,7 +335,6 @@ export default function Candidates() {
           </table>
         </div>
       </div>
-    </div>
     </div>
     </section>
   );
