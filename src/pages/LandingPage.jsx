@@ -436,12 +436,13 @@ export default function LandingPage() {
         <div className="landingHeroContent">
           <div className="landingHeroText">
             <h1 className="landingHeroTitle">
-              Hire Smarter.
-              <br/>
-              <span className="landingGradientText">Not Harder.</span>
+              Hire faster with AI you <span className="landingGradientText">can trust.</span>
             </h1>
             <p className="landingHeroSubtitle">
-              AI-powered recruitment that finds perfect candidates in minutes.
+              End-to-end automation from JD to shortlist.
+            </p>
+            <p className="landingHeroSubtext">
+              Built for speed, engineered for quality.
             </p>
             
             {/* AI Chat Input */}
