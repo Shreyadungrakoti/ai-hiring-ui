@@ -219,7 +219,7 @@ export default function LandingPage() {
       <nav className="landingNav">
         <div className="landingNavContent">
           <div className="landingLogo">
-            <Logo size={32} />
+            <Logo size={28} />
             <span>AI Hiring</span>
           </div>
           <div className="landingNavLinks">
@@ -229,7 +229,7 @@ export default function LandingPage() {
             <a href="#pricing" className="landingNavLink">Pricing</a>
             <a href="#contact" className="landingNavLink">Contact</a>
           </div>
-          <div className="landingNavLinks" style={{ flex: '0', gap: '12px' }}>
+          <div className="landingNavLinks" style={{ flex: '0', gap: '8px' }}>
             {isAuthed ? (
               <>
                 <button className="landingGetStartedBtn" onClick={handlePortalClick}>

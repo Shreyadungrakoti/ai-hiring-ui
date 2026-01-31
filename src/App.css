@@ -1682,25 +1682,25 @@ html[data-theme="light"] .d2ChartBar{
   top: 0;
   z-index: 50;
   background: #000000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .landingNavContent {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px 40px;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
 }
 
 .landingLogo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 18px;
-  font-weight: 700;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
@@ -1717,14 +1717,14 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingNavLinks {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
   flex: 1;
   justify-content: center;
 }
 
 .landingNavLink {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.80);
   text-decoration: none;
@@ -1741,8 +1741,8 @@ html[data-theme="light"] .d2ChartBar{
   background: transparent;
   color: rgba(255, 255, 255, 0.95);
   border: none;
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
   font-weight: 500;
   border-radius: 6px;
   cursor: pointer;
@@ -1766,8 +1766,8 @@ html[data-theme="light"] .d2ChartBar{
   background: #ffffff !important;
   color: #000000 !important;
   border: none !important;
-  padding: 10px 20px !important;
-  font-size: 15px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   border-radius: 6px !important;
   cursor: pointer !important;
