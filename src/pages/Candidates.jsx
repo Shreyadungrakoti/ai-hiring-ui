@@ -157,8 +157,10 @@ export default function Candidates() {
   };
 
   return (
-    <div className="candidatesPage">
-      <div className="card" style={{ padding: 16 }}>
+    <section className="portalSection portalSectionMain">
+      <div className="portalSectionContent">
+        <div className="candidatesPage">
+          <div className="card" style={{ padding: 16 }}>
         <div className="row space" style={{ marginBottom: 16 }}>
           <div>
             <div className="h2">Candidates</div>
@@ -337,5 +339,7 @@ export default function Candidates() {
         </div>
       </div>
     </div>
+    </div>
+    </section>
   );
 }

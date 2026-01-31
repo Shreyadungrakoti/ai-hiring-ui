@@ -71,18 +71,20 @@ export default function Projects() {
 
   return (
     <>
-      <div className="card" style={{ padding: 16 }}>
-        <div className="row space">
-          <div className="h2">Recruiting projects</div>
-          <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
-            Create project
-          </button>
-        </div>
+      <section className="portalSection portalSectionMain">
+        <div className="portalSectionContent">
+          <div className="card" style={{ padding: 16 }}>
+            <div className="row space">
+              <div className="h2">Recruiting projects</div>
+              <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
+                Create project
+              </button>
+            </div>
 
-        <div className="hr" />
+            <div className="hr" />
 
-        <div className="tableWrap">
-          <table className="table">
+            <div className="tableWrap">
+              <table className="table">
             <thead>
               <tr>
                 <th>Project name</th>
@@ -170,6 +172,8 @@ export default function Projects() {
           </table>
         </div>
       </div>
+      </div>
+      </section>
 
       {/* Run Again Confirmation Modal */}
       {runAgainProject && (
