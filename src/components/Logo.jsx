@@ -7,9 +7,6 @@ export default function Logo({ size = 44 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Background with vibrant subtle blue gradient */}
-      <rect width="100" height="100" rx="16" fill="url(#logoGrad)" />
-      
       {/* Resume/Document */}
       <rect x="25" y="20" width="50" height="60" rx="4" fill="white" />
       
@@ -33,15 +30,6 @@ export default function Logo({ size = 44 }) {
         strokeLinejoin="round"
         fill="none"
       />
-      
-      {/* Vibrant subtle blue gradient definition */}
-      <defs>
-        <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100">
-          <stop offset="0%" stopColor="#528BF2" />
-          <stop offset="50%" stopColor="#4179E0" />
-          <stop offset="100%" stopColor="#3567CC" />
-        </linearGradient>
-      </defs>
     </svg>
   );
 }
