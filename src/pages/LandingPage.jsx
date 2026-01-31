@@ -56,6 +56,11 @@ export default function LandingPage() {
     [authMode]
   );
 
+  // Chatbot input state
+  const [chatInput, setChatInput] = useState("");
+  const [chatMessages, setChatMessages] = useState([]);
+  const [isProcessing, setIsProcessing] = useState(false);
+
   // Contact form state
   const [contactForm, setContactForm] = useState({
     fullName: "",
@@ -69,6 +74,31 @@ export default function LandingPage() {
   const handleContactChange = (e) => {
     const { name, value } = e.target;
     setContactForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleChatSubmit = async (e) => {
+    e.preventDefault();
+    if (!chatInput.trim()) return;
+
+    const userMessage = chatInput.trim();
+    setChatInput("");
+    setIsProcessing(true);
+
+    // Add user message to chat
+    setChatMessages(prev => [...prev, { type: "user", text: userMessage }]);
+
+    // Simulate AI processing
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // Add AI response
+    const aiResponse = `Thanks for your interest! Our AI can help you find the perfect candidates for: "${userMessage}". ${
+      isAuthed 
+        ? "Click 'Get Started' to create your first project." 
+        : "Sign up now to start using our AI-powered hiring platform!"
+    }`;
+    
+    setChatMessages(prev => [...prev, { type: "ai", text: aiResponse }]);
+    setIsProcessing(false);
   };
 
   const handleContactSubmit = async (e) => {
@@ -413,6 +443,64 @@ export default function LandingPage() {
             <p className="landingHeroSubtitle">
               AI-powered recruitment that finds perfect candidates in minutes.
             </p>
+            
+            {/* AI Chat Input */}
+            <div className="landingChatContainer">
+              <form onSubmit={handleChatSubmit} className="landingChatForm">
+                <input
+                  type="text"
+                  className="landingChatInput"
+                  placeholder="Describe the role you're hiring for... (e.g., 'Senior React Developer with 5+ years experience')"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  disabled={isProcessing}
+                />
+                <button 
+                  type="submit" 
+                  className="landingChatSubmit"
+                  disabled={isProcessing || !chatInput.trim()}
+                >
+                  {isProcessing ? (
+                    <div className="landingChatSpinner" />
+                  ) : (
+                    <Send size={20} />
+                  )}
+                </button>
+              </form>
+
+              {/* Chat Messages */}
+              {chatMessages.length > 0 && (
+                <div className="landingChatMessages">
+                  {chatMessages.map((msg, idx) => (
+                    <div key={idx} className={`landingChatMessage ${msg.type === "user" ? "landingChatUser" : "landingChatAI"}`}>
+                      <div className="landingChatMessageContent">
+                        {msg.type === "ai" && (
+                          <div className="landingChatAvatar">
+                            <Sparkles size={16} />
+                          </div>
+                        )}
+                        <p>{msg.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                  {isProcessing && (
+                    <div className="landingChatMessage landingChatAI">
+                      <div className="landingChatMessageContent">
+                        <div className="landingChatAvatar">
+                          <Sparkles size={16} />
+                        </div>
+                        <div className="landingChatTyping">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
             <button
               onClick={() => {
                 if (isAuthed) {
