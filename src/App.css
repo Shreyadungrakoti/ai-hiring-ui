@@ -1683,6 +1683,7 @@ html[data-theme="light"] .d2ChartBar{
   z-index: 50;
   background: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .landingNavContent {
@@ -2086,11 +2087,13 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .landingSideBoxContent:hover {
   border-color: rgba(82, 139, 242, 0.20);
   background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .landingHeroContentCentered .landingHeroCTA {
@@ -2213,11 +2216,13 @@ html[data-theme="light"] .d2ChartBar{
   justify-content: center;
   gap: 20px;
   transition: all 0.2s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .landingDemoPlaceholder:hover {
   border-color: rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .landingDemoIcon {
@@ -2285,6 +2290,7 @@ html[data-theme="light"] .d2ChartBar{
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .landingFeatureCard {
@@ -4491,14 +4497,14 @@ body[data-theme="light"] .landingAuthModal {
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 12px;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   width: 100%;
 }
 
 .landingChatForm:focus-within {
   border-color: #528BF2;
-  box-shadow: 0 8px 32px rgba(82, 139, 242, 0.15);
+  box-shadow: 0 8px 32px rgba(82, 139, 242, 0.25), 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .landingChatInput {
@@ -4574,11 +4580,13 @@ body[data-theme="light"] .landingAuthModal {
   transition: all 0.2s ease;
   box-sizing: border-box;
   width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .landingPreviewContent:hover {
   border-color: rgba(82, 139, 242, 0.20);
   background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .landingPreviewText {
