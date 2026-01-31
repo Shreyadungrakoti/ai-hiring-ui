@@ -572,10 +572,13 @@ export default function LandingPage() {
                 </div>
 
                 
-                {/* Preview Box */}
-                <div className="landingPreviewBox">
-                  <div className="landingPreviewContent">
-                    <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+                {/* Preview Box with Heading */}
+                <div style={{ marginTop: '40px' }}>
+                  <h2 className="landingSectionTitle" style={{ marginBottom: '8px' }}>AI Hiring in Action</h2>
+                  <div className="landingPreviewBox">
+                    <div className="landingPreviewContent">
+                      <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+                    </div>
                   </div>
                 </div>
               </div>
