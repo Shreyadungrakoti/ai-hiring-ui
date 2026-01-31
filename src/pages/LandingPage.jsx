@@ -210,7 +210,7 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="landingNav">
         <div className="landingNavContent">
-          <div className="landingLogo">
+          <div className="landingLogo" onClick={() => nav("/")} style={{ cursor: 'pointer' }}>
             <Logo size={28} />
             <span>AI Hiring</span>
           </div>
