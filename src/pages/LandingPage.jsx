@@ -513,68 +513,81 @@ export default function LandingPage() {
               End-to-end automation from JD to shortlist.
             </p>
             
-            {/* AI Chat Input */}
-            <div className="landingChatContainer">
-              <form onSubmit={handleChatSubmit} className="landingChatForm">
-                <input
-                  type="text"
-                  className="landingChatInput"
-                  placeholder="Describe the role you're hiring for... (e.g., 'Senior React Developer with 5+ years experience')"
-                  value={chatInput}
-                  onChange={(e) => setChatInput(e.target.value)}
-                  disabled={isProcessing}
-                />
-                <button 
-                  type="submit" 
-                  className="landingChatSubmit"
-                  disabled={isProcessing || !chatInput.trim()}
-                >
-                  {isProcessing ? (
-                    <div className="landingChatSpinner" />
-                  ) : (
-                    <Send size={20} />
-                  )}
-                </button>
-              </form>
+            {/* Main Content with Side Panel */}
+            <div className="landingHeroMainContent">
+              {/* Left Side - Chat and Preview */}
+              <div className="landingHeroLeftContent">
+                {/* AI Chat Input */}
+                <div className="landingChatContainer">
+                  <form onSubmit={handleChatSubmit} className="landingChatForm">
+                    <input
+                      type="text"
+                      className="landingChatInput"
+                      placeholder="Describe the role you're hiring for... (e.g., 'Senior React Developer with 5+ years experience')"
+                      value={chatInput}
+                      onChange={(e) => setChatInput(e.target.value)}
+                      disabled={isProcessing}
+                    />
+                    <button 
+                      type="submit" 
+                      className="landingChatSubmit"
+                      disabled={isProcessing || !chatInput.trim()}
+                    >
+                      {isProcessing ? (
+                        <div className="landingChatSpinner" />
+                      ) : (
+                        <Send size={20} />
+                      )}
+                    </button>
+                  </form>
 
-              {/* Chat Messages */}
-              {chatMessages.length > 0 && (
-                <div className="landingChatMessages">
-                  {chatMessages.map((msg, idx) => (
-                    <div key={idx} className={`landingChatMessage ${msg.type === "user" ? "landingChatUser" : "landingChatAI"}`}>
-                      <div className="landingChatMessageContent">
-                        {msg.type === "ai" && (
-                          <div className="landingChatAvatar">
-                            <Sparkles size={16} />
+                  {/* Chat Messages */}
+                  {chatMessages.length > 0 && (
+                    <div className="landingChatMessages">
+                      {chatMessages.map((msg, idx) => (
+                        <div key={idx} className={`landingChatMessage ${msg.type === "user" ? "landingChatUser" : "landingChatAI"}`}>
+                          <div className="landingChatMessageContent">
+                            {msg.type === "ai" && (
+                              <div className="landingChatAvatar">
+                                <Sparkles size={16} />
+                              </div>
+                            )}
+                            <p>{msg.text}</p>
                           </div>
-                        )}
-                        <p>{msg.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                  {isProcessing && (
-                    <div className="landingChatMessage landingChatAI">
-                      <div className="landingChatMessageContent">
-                        <div className="landingChatAvatar">
-                          <Sparkles size={16} />
                         </div>
-                        <div className="landingChatTyping">
-                          <span></span>
-                          <span></span>
-                          <span></span>
+                      ))}
+                      {isProcessing && (
+                        <div className="landingChatMessage landingChatAI">
+                          <div className="landingChatMessageContent">
+                            <div className="landingChatAvatar">
+                              <Sparkles size={16} />
+                            </div>
+                            <div className="landingChatTyping">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   )}
                 </div>
-              )}
-            </div>
 
-            
-            {/* Preview Box */}
-            <div className="landingPreviewBox">
-              <div className="landingPreviewContent">
-                <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+                
+                {/* Preview Box */}
+                <div className="landingPreviewBox">
+                  <div className="landingPreviewContent">
+                    <p className="landingPreviewText">Preview: Your hiring workflow visualized here</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Slim Box */}
+              <div className="landingSideBox">
+                <div className="landingSideBoxContent">
+                  {/* Add content here */}
+                </div>
               </div>
             </div>
           </div>
