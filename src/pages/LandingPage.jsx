@@ -2,7 +2,6 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../state/auth.jsx";
 import { Users, Zap, Target, Shield, TrendingUp, Sparkles, Send, X, User, ChevronDown, Settings, HelpCircle, Globe, LogOut } from "lucide-react";
-import HeroIllustration from "../components/HeroIllustration.jsx";
 import StatsCarousel from "../components/StatsCarousel.jsx";
 import ProductShowcase from "../components/ProductShowcase.jsx";
 import Logo from "../components/Logo.jsx";
@@ -433,7 +432,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="landingHero">
-        <div className="landingHeroContent">
+        <div className="landingHeroContent landingHeroContentCentered">
           <div className="landingHeroText">
             <h1 className="landingHeroTitle">
               Hire faster with AI you <span className="landingGradientText">can trust.</span>
@@ -520,9 +519,6 @@ export default function LandingPage() {
               <Sparkles size={20} />
               Get Started Free
             </button>
-          </div>
-          <div className="landingHeroIllustration">
-            <HeroIllustration />
           </div>
         </div>
       </section>

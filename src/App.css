@@ -1134,8 +1134,8 @@ body[data-theme="dark"] .btnGhost:hover {
 
 /* Dark mode primary button */
 body[data-theme="dark"] .btnPrimary {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
-  border-color: #7c3aed !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  border-color: #3b82f6 !important;
   color: #ffffff !important;
 }
 
@@ -1173,8 +1173,8 @@ body[data-theme="dark"] kbd {
 
 /* Primary button enhancements for light mode */
 body[data-theme="light"] .btnPrimary {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
-  border-color: #7c3aed !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  border-color: #3b82f6 !important;
   color: #ffffff !important;
   box-shadow: 0 2px 4px rgba(124, 58, 237, 0.15) !important;
 }
@@ -1197,7 +1197,7 @@ body[data-theme="light"] .select {
 body[data-theme="light"] .input:focus,
 body[data-theme="light"] .textarea:focus,
 body[data-theme="light"] .select:focus {
-  border-color: #7c3aed !important;
+  border-color: #3b82f6 !important;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
   outline: none !important;
 }
@@ -1238,8 +1238,8 @@ body[data-theme="light"] .sbIconBtn:hover {
 
 body[data-theme="light"] .sbIconBtnActive {
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(168, 85, 247, 0.10) 100%) !important;
-  border-color: #7c3aed !important;
-  color: #7c3aed !important;
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
 }
 
@@ -1248,7 +1248,7 @@ body[data-theme="light"] .sbIconLabel {
 }
 
 body[data-theme="light"] .sbIconBtnActive .sbIconLabel {
-  color: #7c3aed !important;
+  color: #3b82f6 !important;
   font-weight: 700 !important;
 }
 
@@ -1257,8 +1257,8 @@ body[data-theme="light"] .sbIconBtnActive .sbIconLabel {
 }
 
 body[data-theme="light"] .sbPlusBtn {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
-  border: 1px solid #7c3aed !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  border: 1px solid #3b82f6 !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
 }
@@ -1282,7 +1282,7 @@ body[data-theme="light"] .sbPlusBtn:hover {
 .sbIconBtnActive{
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%) !important;
   border-color: rgba(124, 58, 237, 0.30) !important;
-  color: #7c3aed !important;
+  color: #3b82f6 !important;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15) !important;
 }
 
@@ -1324,7 +1324,7 @@ body[data-theme="light"] .search {
 }
 
 body[data-theme="light"] .search:focus-within {
-  border-color: #7c3aed !important;
+  border-color: #3b82f6 !important;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
 }
 
@@ -1829,7 +1829,7 @@ html[data-theme="light"] .d2ChartBar{
 
 .landingMeBtn:hover {
   background: #f3f4f6;
-  border-color: #7c3aed;
+  border-color: #3b82f6;
   transform: scale(1.05);
 }
 
@@ -2018,8 +2018,33 @@ html[data-theme="light"] .d2ChartBar{
   align-items: center;
 }
 
+.landingHeroContentCentered {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .landingHeroText {
   text-align: left;
+}
+
+.landingHeroContentCentered .landingHeroText {
+  text-align: center;
+}
+
+.landingHeroContentCentered .landingHeroTitle,
+.landingHeroContentCentered .landingHeroSubtitle,
+.landingHeroContentCentered .landingHeroSubtext {
+  max-width: 100%;
+}
+
+.landingHeroContentCentered .landingChatContainer {
+  max-width: 100%;
+}
+
+.landingHeroContentCentered .landingHeroCTA {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .landingHeroIllustration {
@@ -2504,7 +2529,7 @@ html[data-theme="light"] .d2ChartBar{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .landingSuccessTitle {
@@ -2937,7 +2962,7 @@ html[data-theme="light"] .d2ChartBar{
 .testimonialsSwiper .swiper-button-prev:after,
 .testimonialsSwiper .swiper-button-next:after {
   font-size: 20px;
-  color: #7c3aed;
+  color: #3b82f6;
   font-weight: 900;
 }
 
@@ -3212,11 +3237,11 @@ html[data-theme="light"] .d2ChartBar{
 
 .settingsNavItemActive {
   background: var(--card2);
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .settingsNavItemActive svg {
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .settingsContent {
@@ -3346,24 +3371,24 @@ html[data-theme="light"] .d2ChartBar{
 
 .settingsLanguageOption:hover {
   background: var(--card);
-  border-color: #7c3aed;
+  border-color: #3b82f6;
 }
 
 .settingsLanguageOptionActive {
   background: var(--card2);
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .settingsLanguageOptionActive svg {
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .settingsLanguageCheck {
   margin-left: auto;
   font-size: 18px;
   font-weight: 700;
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 /* Responsive */
@@ -3429,12 +3454,12 @@ html[data-theme="light"] .d2ChartBar{
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .websiteSettingsBack:hover {
   background: rgba(255, 255, 255, 1);
-  border-color: #7c3aed;
+  border-color: #3b82f6;
   transform: translateX(-4px);
 }
 
@@ -3502,7 +3527,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .websiteSettingsCardLeft svg {
-  color: #7c3aed;
+  color: #3b82f6;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -3529,7 +3554,7 @@ html[data-theme="light"] .d2ChartBar{
 .websiteSettingsBadge {
   font-size: 14px;
   font-weight: 600;
-  color: #7c3aed;
+  color: #3b82f6;
   background: rgba(124, 58, 237, 0.1);
   padding: 6px 16px;
   border-radius: 20px;
@@ -3547,7 +3572,7 @@ html[data-theme="light"] .d2ChartBar{
 }
 
 .websiteSettingsToggleActive {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
 .websiteSettingsToggleThumb {
@@ -3644,17 +3669,17 @@ html[data-theme="light"] .d2ChartBar{
 
 .websiteSettingsLanguageActive {
   background: rgba(124, 58, 237, 0.1);
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .websiteSettingsLanguageActive svg {
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .websiteSettingsLanguageCheck {
   margin-left: auto;
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 /* ===== Platform Selection Page ===== */
@@ -3720,7 +3745,7 @@ body[data-theme="light"] .platformSelectionPage::before {
   width: 80px;
   height: 80px;
   border-radius: 24px;
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: #ffffff;
   margin-bottom: 24px;
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5), 0 0 80px rgba(124, 58, 237, 0.3);
@@ -3805,7 +3830,7 @@ body[data-theme="light"] .platformCard::before {
 .platformCard:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 60px rgba(124, 58, 237, 0.4), 0 0 100px rgba(124, 58, 237, 0.2);
-  border-color: #7c3aed;
+  border-color: #3b82f6;
   background: rgba(124, 58, 237, 0.08);
 }
 
@@ -3815,7 +3840,7 @@ body[data-theme="light"] .platformCard:hover {
 }
 
 .platformCardSelected {
-  border-color: #7c3aed;
+  border-color: #3b82f6;
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.35);
   background: rgba(124, 58, 237, 0.1);
 }
@@ -3904,7 +3929,7 @@ body[data-theme="light"] .platformCardDescription {
 }
 
 body[data-theme="light"] .platformCardFeaturesTitle {
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .platformCardFeaturesList {
@@ -4124,11 +4149,11 @@ body[data-theme="light"] .landingAuthModal {
 }
 
 .candidateNameLink:hover {
-  color: #7c3aed;
+  color: #3b82f6;
 }
 
 .candidateProfileLink {
-  color: #7c3aed;
+  color: #3b82f6;
   opacity: 0.7;
   transition: all 0.2s;
   display: inline-flex;
@@ -4262,7 +4287,7 @@ body[data-theme="light"] .landingAuthModal {
   padding: 16px 20px;
   background: var(--card);
   border-radius: 12px;
-  border-left: 4px solid #7c3aed;
+  border-left: 4px solid #3b82f6;
 }
 
 /* Candidate Link Icon - LinkedIn dark navy blue */
