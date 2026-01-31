@@ -20,18 +20,18 @@ export default function Topbar({ pathname }) {
     <div className="topbar">
       <div className="row space">
         {!isEditPage && (
-        <div className="stack" style={{ gap: 2 }}>
-          <div className="h1">{title}</div>
-        </div>
+          <div className="stack" style={{ gap: 2 }}>
+            <div className="h1">{title}</div>
+          </div>
         )}
 
         <div className="row" style={{ gap: 10, marginLeft: isEditPage ? 0 : "auto" }}>
           {!isEditPage && (
-          <div className="search">
-            <Search size={16} />
-            <input className="searchInput" placeholder="Search projects, candidates…" />
-            <kbd>⌘K</kbd>
-          </div>
+            <div className="search">
+              <Search size={16} />
+              <input className="searchInput" placeholder="Search projects, candidates…" />
+              <kbd>⌘K</kbd>
+            </div>
           )}
 
           <button

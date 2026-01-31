@@ -124,7 +124,7 @@ export default function RunDetail() {
                   <td>{c.title}</td>
                   <td>{c.location}</td>
                   <td className="right">
-                    <span className={`pill ${c.score >= 8 ? "pillScoreHigh" : c.score >= 7 ? "pillScoreMid" : "pillScoreLow"}`}>
+                    <span className={`pill ${c.score >= 8 ? "pillGood" : c.score >= 7 ? "pillWarn" : "pillBad"}`}>
                       {c.score.toFixed(1)}
                     </span>
                   </td>

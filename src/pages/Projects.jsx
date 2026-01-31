@@ -69,31 +69,31 @@ export default function Projects() {
 
   return (
     <>
-    <div className="card" style={{ padding: 16 }}>
-      <div className="row space">
-        <div className="h2">Recruiting projects</div>
-        <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
-          Create project
-        </button>
-      </div>
+      <div className="card" style={{ padding: 16 }}>
+        <div className="row space">
+          <div className="h2">Recruiting projects</div>
+          <button className="btn btnPrimary" onClick={() => nav("/projects/new")}>
+            Create project
+          </button>
+        </div>
 
-      <div className="hr" />
+        <div className="hr" />
 
-      <div className="tableWrap">
-        <table className="table">
-          <thead>
-            <tr>
+        <div className="tableWrap">
+          <table className="table">
+            <thead>
+              <tr>
                 <th>Project name</th>
                 <th style={{ textAlign: "center" }}>Shortlisted</th>
                 <th style={{ textAlign: "center" }}>Candidates screened</th>
                 <th style={{ textAlign: "center" }}>Status</th>
                 <th style={{ textAlign: "center" }}>Actions</th>
-            </tr>
-          </thead>
+              </tr>
+            </thead>
 
-          <tbody>
-            {projects.map((p) => (
-              <tr key={p.id}>
+            <tbody>
+              {projects.map((p) => (
+                <tr key={p.id}>
                   <td style={{ verticalAlign: "middle" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <button 
@@ -123,7 +123,7 @@ export default function Projects() {
                         </a>
                       )}
                     </div>
-                </td>
+                  </td>
 
                   <td style={{ textAlign: "center", verticalAlign: "middle" }}>{p.shortlisted || 0}</td>
                   <td style={{ textAlign: "center", verticalAlign: "middle" }}>{p.screened || 0}</td>
@@ -139,35 +139,35 @@ export default function Projects() {
                       >
                         <Play size={16} fill="currentColor" />
                         Run again
-                    </button>
+                      </button>
 
-                    <button
-                      className="btn btnSmall"
-                      onClick={() => onDelete(p)}
-                      disabled={deletingId === p.id}
-                      title="Delete project"
+                      <button
+                        className="btn btnSmall"
+                        onClick={() => onDelete(p)}
+                        disabled={deletingId === p.id}
+                        title="Delete project"
                         style={{ color: "#ef4444" }}
-                    >
+                      >
                         <Trash2 size={16} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
 
-            {projects.length === 0 ? (
-              <tr>
+              {projects.length === 0 ? (
+                <tr>
                   <td colSpan={5}>
-                  <div className="small muted" style={{ padding: 12 }}>
-                    No projects yet. Create one to get started.
-                  </div>
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
+                    <div className="small muted" style={{ padding: 12 }}>
+                      No projects yet. Create one to get started.
+                    </div>
+                  </td>
+                </tr>
+              ) : null}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
 
       {/* Run Again Confirmation Modal */}
       {runAgainProject && (

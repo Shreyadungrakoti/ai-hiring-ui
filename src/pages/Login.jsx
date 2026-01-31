@@ -46,7 +46,7 @@ export default function Login() {
     setSubmitting(true);
     try {
       await signInWithGoogle();
-    nav("/", { replace: true });
+      nav("/", { replace: true });
     } catch (err) {
       setError(err?.message || "Google sign-in failed. Please try again.");
     } finally {
@@ -97,7 +97,7 @@ export default function Login() {
 
           <label className="stack" style={{ gap: 6 }}>
             <div className="small">Password</div>
-              <input
+            <input
               className="input"
               type="password"
               value={password}

@@ -126,11 +126,11 @@ export default function Dashboard() {
       {/* Running now - full width */}
       <div className="d2Panel">
         <div className="d2PanelHeader" style={{ marginBottom: 12 }}>
-              <div className="d2Title">Running now</div>
-            <StatusPill status={d.activeRun?.status || "idle"} />
-          </div>
+          <div className="d2Title">Running now</div>
+          <StatusPill status={d.activeRun?.status || "idle"} />
+        </div>
 
-          {d.activeRun ? (
+        {d.activeRun ? (
           <>
             <div style={{ display: "flex", justifyContent: "center", margin: "20px 0" }}>
               <div style={{ 
@@ -173,29 +173,29 @@ export default function Dashboard() {
                 <div className="d2KVk">Started</div>
                 <div className="d2KVv">{d.activeRun.created_at || "—"}</div>
               </div>
-              </div>
+            </div>
 
-              <div className="d2Progress">
-                <div className="d2ProgressTrack">
-                  <div
-                    className="d2ProgressFill"
-                    style={{ width: `${Math.max(0, Math.min(100, Math.round((Number(d.activeRun.progress) || 0) * 100)))}%` }}
-                  />
-                </div>
+            <div className="d2Progress">
+              <div className="d2ProgressTrack">
+                <div
+                  className="d2ProgressFill"
+                  style={{ width: `${Math.max(0, Math.min(100, Math.round((Number(d.activeRun.progress) || 0) * 100)))}%` }}
+                />
+              </div>
               <div className="d2Muted" style={{ fontSize: 12, fontWeight: 600 }}>
                 {Math.round((Number(d.activeRun.progress) || 0) * 100)}% complete
               </div>
             </div>
           </>
-          ) : (
+        ) : (
           <div className="d2Muted">No active run.</div>
-          )}
-        </div>
+        )}
+      </div>
 
 
       {/* Analytics - Vertical bar charts */}
       <div className="d2Panel">
-          <div className="d2PanelHeader">
+        <div className="d2PanelHeader">
           <div className="d2Title">Run activity</div>
           <div className="d2Tabs">
             <button className="d2Tab d2TabActive">Weekly</button>
@@ -294,7 +294,7 @@ export default function Dashboard() {
 
         <div className="d2Panel d2Span2">
           <div className="d2PanelHeader">
-              <div className="d2Title">Recent projects</div>
+            <div className="d2Title">Recent projects</div>
             <button className="d2GhostBtn" onClick={() => nav("/projects/new")}>
               New <ArrowUpRight size={16} />
             </button>

@@ -55,12 +55,12 @@ export default function NewProject() {
         <div className="stack">
           <div>
             <div className="small">Project name</div>
-              <input
-                className="input"
+            <input
+              className="input"
               value={projectName}
               onChange={(e) => setProjectName(e.target.value)}
               placeholder="e.g. Senior Data Scientist - AI Team"
-              />
+            />
           </div>
 
           <div>
