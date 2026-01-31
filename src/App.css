@@ -2504,7 +2504,6 @@ html[data-theme="light"] .d2ChartBar{
 .landingContact::before {
   display: none;
 }
-}
 
 .landingContactContent {
   max-width: 800px;
