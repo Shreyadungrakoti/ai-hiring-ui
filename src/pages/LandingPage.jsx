@@ -449,9 +449,6 @@ export default function LandingPage() {
             <p className="landingHeroSubtitle">
               End-to-end automation from JD to shortlist.
             </p>
-            <p className="landingHeroSubtext">
-              Built for speed, engineered for quality.
-            </p>
             
             {/* AI Chat Input */}
             <div className="landingChatContainer">
