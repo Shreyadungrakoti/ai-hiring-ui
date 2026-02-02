@@ -1580,7 +1580,7 @@ html[data-theme="light"] .d2ChartBar{
   text-transform: capitalize;
 }
 .d2Pill-good{ background: linear-gradient(135deg, #4A7FE0 0%, #6B8FE8 100%); color: #ffffff; border: none; }
-.d2Pill-warn{ background: linear-gradient(135deg, #5F8EE8 0%, #7C8FE8 100%); color: #ffffff; border: none; }
+.d2Pill-warn{ background: linear-gradient(135deg, #7C5FE8 0%, #9D5FE8 100%); color: #ffffff; border: none; }
 .d2Pill-bad{ background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: none; }
 .d2Pill-neutral{ background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: none; }
 
