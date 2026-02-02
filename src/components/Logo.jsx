@@ -3,52 +3,49 @@ export default function Logo({ size = 44 }) {
     <svg
       width={size}
       height={size}
-      viewBox="0 0 50 70"
+      viewBox="0 0 80 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Sleek Modern Number 4 */}
+      {/* Combined 4A Logo - Sleek and Modern */}
       
-      {/* Vertical right stroke - thin and elegant */}
+      {/* Left diagonal - forms the A's left side and 4's angled part */}
       <path
-        d="M 32 5
-           C 33.5 5, 35 6.5, 35 8
-           L 35 62
-           C 35 63.5, 33.5 65, 32 65
-           L 29 65
-           C 27.5 65, 26 63.5, 26 62
-           L 26 8
-           C 26 6.5, 27.5 5, 29 5
-           L 32 5 Z"
+        d="M 20 65
+           L 20 50
+           L 35 8
+           C 35.5 6.5, 36.5 5, 38 5
+           L 41 5
+           C 42 5, 42.5 5.5, 42.5 6.5
+           L 42.5 50
+           L 42.5 65
+           C 42.5 67, 41 68, 39.5 68
+           L 22 68
+           C 20.5 68, 20 67, 20 65 Z
+           M 28 40
+           L 36 18
+           L 36 40
+           L 28 40 Z"
         fill="white"
       />
       
-      {/* Diagonal stroke - sleek angled line */}
-      <path
-        d="M 5 38
-           C 4 39, 3 40.5, 3 42
-           L 3 44
-           C 3 45, 3.5 46, 4.5 46.5
-           L 25 46.5
-           L 26 46.5
-           L 26 10
-           C 26 9, 25.5 8.5, 24.5 9
-           L 6 38
-           C 5.5 38.5, 5 38.5, 5 38 Z"
+      {/* Right vertical stroke - extends full height */}
+      <rect
+        x="42.5"
+        y="5"
+        width="5.5"
+        height="63"
+        rx="2"
         fill="white"
       />
       
-      {/* Horizontal crossbar - thin modern line */}
-      <path
-        d="M 4 42
-           C 2.5 42, 1 43.5, 1 45
-           L 1 47
-           C 1 48.5, 2.5 50, 4 50
-           L 45 50
-           C 46.5 50, 48 48.5, 48 47
-           L 48 45
-           C 48 43.5, 46.5 42, 45 42
-           L 4 42 Z"
+      {/* Horizontal crossbar - connects both parts */}
+      <rect
+        x="12"
+        y="45"
+        width="56"
+        height="5"
+        rx="2"
         fill="white"
       />
     </svg>
