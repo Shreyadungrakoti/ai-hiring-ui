@@ -3,44 +3,52 @@ export default function Logo({ size = 44 }) {
     <svg
       width={size}
       height={size}
-      viewBox="0 0 60 80"
+      viewBox="0 0 50 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Bold Curvy Number 4 */}
+      {/* Sleek Modern Number 4 */}
+      
+      {/* Vertical right stroke - thin and elegant */}
       <path
-        d="M 38 5
-           C 41 5, 43 7, 43 10
-           L 43 70
-           C 43 73, 41 75, 38 75
-           L 33 75
-           C 30 75, 28 73, 28 70
-           L 28 48
-           L 8 48
-           C 6 48, 5 47, 5 45
-           L 5 41
-           C 5 39.5, 5.5 38.5, 7 37
-           L 28 8
-           C 29 7, 30.5 5, 33 5
-           L 38 5 Z
-           M 28 35
-           L 28 19
-           L 17 35
-           L 28 35 Z"
+        d="M 32 5
+           C 33.5 5, 35 6.5, 35 8
+           L 35 62
+           C 35 63.5, 33.5 65, 32 65
+           L 29 65
+           C 27.5 65, 26 63.5, 26 62
+           L 26 8
+           C 26 6.5, 27.5 5, 29 5
+           L 32 5 Z"
         fill="white"
       />
       
-      {/* Horizontal crossbar extension */}
+      {/* Diagonal stroke - sleek angled line */}
       <path
-        d="M 8 41
-           C 5 41, 3 43, 3 46
-           L 3 48
-           C 3 51, 5 53, 8 53
-           L 50 53
-           C 53 53, 55 51, 55 48
-           L 55 46
-           C 55 43, 53 41, 50 41
-           L 8 41 Z"
+        d="M 5 38
+           C 4 39, 3 40.5, 3 42
+           L 3 44
+           C 3 45, 3.5 46, 4.5 46.5
+           L 25 46.5
+           L 26 46.5
+           L 26 10
+           C 26 9, 25.5 8.5, 24.5 9
+           L 6 38
+           C 5.5 38.5, 5 38.5, 5 38 Z"
+        fill="white"
+      />
+      
+      {/* Horizontal crossbar - thin modern line */}
+      <path
+        d="M 4 42
+           C 2.5 42, 1 43.5, 1 45
+           L 1 47
+           C 1 48.5, 2.5 50, 4 50
+           L 45 50
+           C 46.5 50, 48 48.5, 48 47
+           L 48 45
+           C 48 43.5, 46.5 42, 45 42
+           L 4 42 Z"
         fill="white"
       />
     </svg>
